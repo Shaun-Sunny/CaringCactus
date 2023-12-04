@@ -1,6 +1,3 @@
-body {
-    font-family: Arial, sans-serif;
-}
 .home{
     background-color: black;
     color: white;
@@ -379,6 +376,7 @@ i {
     background-color: #f2f2f2;
     padding-block: 10px 10px;
 }
+
 @media screen and (max-width: 1150px){
     .footer{
         height: 50vh;
