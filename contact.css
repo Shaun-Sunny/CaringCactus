@@ -351,6 +351,11 @@ label{
     border-radius: 30px;
     box-shadow: 0px 5px 15px 0px grey;
 }
+.submit:active {
+    transform: translateY(2px); /* Slight clicking animation */
+    box-shadow: none; /* Remove box shadow when clicked */
+}
+
 .contact-left h3{
     color: black;
     font-weight: 600;

@@ -332,7 +332,7 @@ section{
     list-style: none;
 }
 .price-col ul li{
-    margin: 15px 0;
+    margin: 10px -10px;
 }
 .price-col ul li::before{
     content: '\2022';
