@@ -7,34 +7,34 @@
         <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css">
         <link rel="icon" type="image/x-icon" href="cac.png">
     </head>
-    <div>
-        <img class="logo" src="caring cactus new logo 002-4_page-0001.jpg">
-        <style>
-            .logo{
-                width: 280px;   
-            }
-        </style>
-        <!--<button class="home">Home</button>--><a href="./index.html" class="home">Home</a>
-        <!--<button class="about">About Us</button>--><a href="./about.html" class="about">All-Star Alliance</a>
-        <!--<button class="contact">Contact</button>--><a href="./contact.html" class="contact">Contact</a>
-        <div class="dropdown">
-            <button class="services">Services</button>
-            <div class="dropdown-content">
-                <a href="#">Seminars</a>
-                <a href="#">Webinars</a>
-                <a href="./one.html">One on One consultation</a>
-                <a href="./sub.html">Subscription Programs</a>
+    <div class="header">
+        <div class="logo">
+            <img src="caring cactus new logo 002-4_page-0001.jpg" alt="Logo">
+        </div>
+        <nav class="nav">
+            <a href="index.html" class="button">Home</a>
+            <a href="about.html" class="button">All-Star Alliance</a>
+            <div class="with-dropdown">
+                <a class="button">Services</a>
+                <div class="dropdown-content">
+                    <a href="#">Seminars</a>
+                    <a href="#">Webinars</a>
+                    <a href="one.html">One-on-One Consultation</a>
+                    <a href="sub.html">Subscription Program</a>
+                </div>
             </div>
-        </div>        
-        <div class="dropdown-2">
-            <button class="events">Events</button>
-            <div class="dropdown-content-2">
-                <a href="#">2023</a>
-                <a href="#">Coming up</a>
+            <div class="with-dropdown">
+                <a class="button">Events</a>
+                <div class="dropdown-content">
+                    <a href="2023.html">2023</a>
+                    <a href="coming_up.html">Coming Up</a>
+                </div>
             </div>
-        </div>    
-        <!--<button class="subs">Subscription Programs</button>--><a href="./sub.html" class="subs">Subscription Programs</a>
-        <a href="./blog.html" class="blog">Blog</a>
+            <a href="blog.html" class="button">Blog</a>
+            <a href="subprog.html" class="button">Subscription Programs</a>
+            <a href="contact.html" class="button">Contact</a>
+        </nav>
+    </div>
         <!--<marquee bgcolor = "yellow" width = "100%" scrolldelay: 50>🌵 CARING CACTUS 🌵</marquee>-->
         <div class="heading-1">
             <h1>One on One Consultation</h1>
@@ -43,42 +43,37 @@
 <div class="calendly-inline-widget" data-url="https://calendly.com/macetheg/one-on-one-consultation" style="min-width:320px;height:700px;"></div>
 <script type="text/javascript" src="https://assets.calendly.com/assets/external/widget.js" async></script>
 <!-- Calendly inline widget end -->
-    <footer>
-        <div class="footer-content">
-            <div class="footer">
-                <div class="footer-heading footer-1">
-                    <h2>About Us</h2>
-                    <a href="#">Blog</a>
-                    <!--<a href="#">Demo</a>-->
-                    <a href="#">Testimonials</a>
-                    <!--<a href="#">Investors</a>-->
-                    <a href="#">Terms of Service</a>
-                </div>
-                <div class="footer-heading footer-2">
-                    <h2>Contact Us</h2>
-                    <!--<a href="#">Jobs</a>-->
-                    <a href="#">Support</a>
-                    <a href="#">Contact</a>
-                    <!--<a href="#">Sponsorship</a>-->
-                </div>
-                <div class="footer-heading footer-3">
-                    <h2>Social Media</h2>
-                    <a href="#" class="fab fa-instagram">&ensp;Instagram</a>
-                    <a href="#" class="fab fa-facebook-f">&ensp;&nbsp;Facebook</a>
-                    <a href="#" class="fab fa-youtube">&nbsp;Youtube</a>
-                    <a href="#" class="fab fa-twitter">&ensp;Twitter</a>
-                    <a href="#" class="fab fa-whatsapp">&ensp;WhatsApp</a>
-                    <a href="#" class="fab fa-linkedin">&ensp;LinkedIn</a>
-                </div>
-                <div class="footer-email-form">
-                    <h2>Join our newsletter</h2>
-                    <input type="email"
-                    placeholder="Enter your email address"
-                    id="footer-email">
-                    <input type="submit" value="Sign Up"
-                    id="footer-email-btn">
-                </div>
+<footer>
+    <div class="footer-content">
+        <div class="footer">
+            <div class="footer-heading footer-1">
+                <h2>About Us</h2>
+                <a href="#">Blog</a>
+                <a href="#">Testimonials</a>
+                <a href="#">Terms of Service</a>
+            </div>
+            <div class="footer-heading footer-2">
+                <h2>Contact Us</h2>
+                <a href="#">Support</a>
+                <a href="#">Contact</a>
+            </div>
+            <div class="footer-heading footer-3">
+                <h2>Social Media</h2>
+                <a href="#" class="fab fa-instagram">&ensp;Instagram</a>
+                <a href="#" class="fab fa-facebook-f">&ensp;&nbsp;Facebook</a>
+                <a href="#" class="fab fa-youtube">&nbsp;Youtube</a>
+                <a href="#" class="fab fa-twitter">&ensp;Twitter</a>
+                <a href="#" class="fab fa-whatsapp">&ensp;WhatsApp</a>
+                <a href="#" class="fab fa-linkedin">&ensp;LinkedIn</a>
+            </div>
+            <div class="footer-email-form">
+                <h2>Join our newsletter</h2>
+                <input type="email" placeholder="Enter your email address" id="footer-email">
+                <input type="submit" value="Sign Up" id="footer-email-btn">
             </div>
         </div>
-    </footer>
+    </div>
+</footer>
+<script src="index.js"></script>
+</body>
 </html>

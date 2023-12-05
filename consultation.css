@@ -1,0 +1,84 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f2f2f2;
+}
+
+.form-container {
+    max-width: 800px;
+    margin: 20px auto;
+}
+
+.form-row {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+
+.form-column {
+    flex: 1;
+    margin-right: 10px;
+    position: relative; /* Added relative positioning */
+}
+
+/* Style for capsule-shaped input fields */
+.capsule-input {
+    border: none;
+    border-radius: 25px;
+    padding: 10px;
+    width: 100%;
+    box-sizing: border-box;
+    margin-top: 15px; /* Increased spacing */
+    padding-left: 30px; /* Added padding for icon */
+}
+
+/* Style for the submit button */
+.submit-button {
+    background-color: #ff0000;
+    color: white;
+    padding: 10px; /* Reduced size */
+    border: none;
+    cursor: pointer;
+    width: auto; /* Set width to auto */
+    box-sizing: border-box;
+    border-radius: 25px;
+    transition: 0.3s;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); /* Added box shadow */
+}
+
+.submit-button:hover {
+    background-color: #0011ff;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3); /* Adjusted box shadow on hover */
+}
+
+.submit-button:active {
+    transform: translateY(2px); /* Slight clicking animation */
+    box-shadow: none; /* Remove box shadow when clicked */
+}
+
+/* Style for icons */
+i {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    left: 10px;
+    bottom: 20px;
+}
+/* Your existing styles go here */
+
+.date-time-input {
+    padding-right: 30px; /* Adjusted padding for date-time input */
+    width: auto;
+}
+
+.date-time-input:hover::after {
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #fff;
+    padding: 5px;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+}
