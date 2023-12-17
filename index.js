@@ -1,20 +1,39 @@
-document.addEventListener('DOMContentLoaded', function () {
-    const dropdownButtons = document.querySelectorAll('.with-dropdown');
+const sheetName = 'Free Consultation'; // Replace with the name of your sheet
 
-    dropdownButtons.forEach(button => {
-        button.addEventListener('click', function () {
-            this.querySelector('.dropdown-content').classList.toggle('show');
-        });
+function intialSetup() {
+  const activeSpreadsheet = SpreadsheetApp.getActiveSpreadsheet();
+  if (!activeSpreadsheet.getSheetByName(sheetName)) {
+    activeSpreadsheet.insertSheet(sheetName);
+  }
+}
+
+function doPost(e) {
+  try {
+    const lock = LockService.getScriptLock();
+    lock.tryLock(10000);
+
+    const doc = SpreadsheetApp.getActiveSpreadsheet();
+    const sheet = doc.getSheetByName(sheetName);
+
+    const headers = sheet.getRange(1, 1, 1, sheet.getLastColumn()).getValues()[0];
+    const nextRow = sheet.getLastRow() + 1;
+
+    const newRow = headers.map(function (header) {
+      return header === 'Date' ? new Date() : e.parameter[header];
     });
 
-    window.addEventListener('click', function (event) {
-        if (!event.target.matches('.with-dropdown')) {
-            const dropdowns = document.getElementsByClassName('dropdown-content');
-            for (const dropdown of dropdowns) {
-                if (dropdown.classList.contains('show')) {
-                    dropdown.classList.remove('show');
-                }
-            }
-        }
-    });
-});
+    sheet.getRange(nextRow, 1, 1, newRow.length).setValues([newRow]);
+
+    // Return an empty response
+    return ContentService.createTextOutput('')
+      .setMimeType(ContentService.MimeType.TEXT);
+  } catch (e) {
+    // Log the error, you can customize this part based on your needs
+    console.error(e);
+    // Return an empty response
+    return ContentService.createTextOutput('')
+      .setMimeType(ContentService.MimeType.TEXT);
+  } finally {
+    lock.releaseLock();
+  }
+}

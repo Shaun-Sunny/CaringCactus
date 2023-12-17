@@ -64,7 +64,7 @@
                         </div>
                         <label>Message:</label>
                         <textarea rows="5" placeholder="Your Message"></textarea>
-                        <button class="submit" type="submit">SEND</button>
+                        <button class="submit" type="submit" onclick="sendEmail()">SEND</button>
                     </form>
                 </div>
                 <div class="contact-right">
@@ -87,6 +87,72 @@
                 </div>
             </div>
         </div>
+        <script>
+            // Add this JavaScript function to handle form submission
+            function submitForm(event) {
+                event.preventDefault(); // Prevent the form from submitting normally
+        
+                // Get form data
+                const formData = new FormData(event.target);
+                const formObject = {};
+                formData.forEach((value, key) => {
+                    formObject[key] = value;
+                });
+        
+                // Call the existing validateForm function (if needed)
+                if (!validateForm(formObject)) {
+                    return;
+                }
+        
+                // Call the existing doPost function with the form data
+                fetch('https://script.google.com/macros/s/AKfycbz8ofpbhw0gXVZ91KAq7IrQUc5ETAlEHdiVjGzD9DBtnzKWIn0CM99j1XB58ndwEdi8/exec', {
+                    method: 'POST',
+                    body: new URLSearchParams(formObject),
+                    headers: {
+                        'Content-Type': 'application/x-www-form-urlencoded',
+                    },
+                })
+                .then(response => response.json())
+                .then(data => {
+                    if (data.result === 'success') {
+                        // If form submission is successful, trigger any additional actions (e.g., show popup)
+                        openPopup();
+                        // You may add more actions here if needed
+                    } else {
+                        // Handle errors if necessary
+                        console.error(data.error);
+                    }
+                })
+                .catch(error => {
+                    console.error('Error:', error);
+                });
+            }
+            function sendEmail() {
+            // Get form data
+            const formData = new FormData(document.getElementById('consultationForm'));
+            const formObject = {};
+            formData.forEach((value, key) => {
+                formObject[key] = value;
+            });
+
+            // Make an AJAX request to a server-side script that sends the email
+            const xhr = new XMLHttpRequest();
+            xhr.open('POST', 'https://your-server-side-script-url'); // Replace with your server-side script URL
+            xhr.setRequestHeader('Content-Type', 'application/json');
+            xhr.onload = function() {
+                if (xhr.status === 200) {
+                    // Email sent successfully, show the popup
+                    openPopup();
+                } else {
+                    // Handle errors if necessary
+                    console.error('Error sending email:', xhr.responseText);
+                }
+            };
+            xhr.send(JSON.stringify(formObject));
+        }
+            // The rest of your existing JavaScript code
+        
+        </script>        
         <footer>
             <div class="footer-content">
                 <div class="footer">
