@@ -167,11 +167,15 @@ body {
 }
 
 .team-member img {
-    max-width: 50%; /* Reduced image size */
+    max-width: 100%; /* Set maximum width to 100% */
     height: auto;
     margin-right: 20px; /* Adjusted margin for spacing between image and text */
     border-radius: 50%;
+    object-fit: cover; /* Maintain aspect ratio and cover the entire container */
+    width: 255px; /* Set a fixed width for the small circles */
+    height: 255px; /* Set a fixed height for the small circles */
 }
+
 
 .team-member .about {
     width: 50%; /* Adjusted width for the text content */
@@ -190,6 +194,20 @@ body {
     color: #3d3d3d;
     line-height: 1.5;
 }
+
+.team-member .about p.job-title {
+    color: #d70000; /* Change the color to your preference */
+    font-size: 18px; /* Adjust the font size for the title */
+    font-weight: bold; /* Make the title bold or adjust as needed */
+    margin-bottom: 10px; /* Adjusted margin for spacing */
+}
+
+.team-member .about p.description {
+    font-size: 16px;
+    color: #3d3d3d;
+    line-height: 1.5;
+}
+
 
 /* Keyframes for fade-in animation */
 @keyframes fadeInSlide {
