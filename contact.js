@@ -1,40 +1,38 @@
 function doPost(e) {
-    const lock = LockService.getScriptLock();
-    lock.tryLock(10000);
-  
-    try {
-      const doc = SpreadsheetApp.openById(scriptProp.getProperty('key'));
-      const sheet = doc.getSheetByName(sheetName);
-  
-      const headers = sheet.getRange(1, 1, 1, sheet.getLastColumn()).getValues()[0];
-      const nextRow = sheet.getLastRow() + 1;
-  
-      const newRow = headers.map(function (header) {
-        return header === 'Date' ? new Date() : e.parameter[header];
-      });
-  
-      sheet.getRange(nextRow, 1, 1, newRow.length).setValues([newRow]);
-  
-      // Send email with form data
-      sendEmail(
-        e.parameter['Full Name'],
-        e.parameter['Mobile Number'],
-        e.parameter['Your email'],
-        e.parameter['Your location'],
-        e.parameter['Your Message']
-      );
-  
-      // Return success message with row number
-      return ContentService
-        .createTextOutput(JSON.stringify({ 'result': 'success', 'row': nextRow }))
-        .setMimeType(ContentService.MimeType.JSON);
-    } catch (e) {
-      // Return error message
-      return ContentService
-        .createTextOutput(JSON.stringify({ 'result': 'error', 'error': e }))
-        .setMimeType(ContentService.MimeType.JSON);
-    } finally {
-      lock.releaseLock();
-    }
+  try {
+    const recipientEmail = 'macetheg@gmail.com';
+    
+    // Get form data
+    const fullName = e.parameter['Full Name'];
+    const mobileNumber = e.parameter['Mobile Number'];
+    const userEmail = e.parameter['Your email'];
+    const userLocation = e.parameter['Your location'];
+    const userMessage = e.parameter['Your Message'];
+
+    // Compose email body
+    const emailBody = `
+      Name: ${fullName}
+      Mobile Number: ${mobileNumber}
+      Email: ${userEmail}
+      Location: ${userLocation}
+      Message: ${userMessage}
+    `;
+
+    // Send email
+    GmailApp.sendEmail({
+      to: recipientEmail,
+      subject: 'New Form Submission',
+      body: emailBody,
+    });
+
+    // Return success message
+    return ContentService
+      .createTextOutput(JSON.stringify({ 'result': 'success' }))
+      .setMimeType(ContentService.MimeType.JSON);
+  } catch (error) {
+    // Return error message
+    return ContentService
+      .createTextOutput(JSON.stringify({ 'result': 'error', 'error': error }))
+      .setMimeType(ContentService.MimeType.JSON);
   }
-  
+}

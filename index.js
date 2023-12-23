@@ -19,7 +19,13 @@ function doPost(e) {
     const nextRow = sheet.getLastRow() + 1;
 
     const newRow = headers.map(function (header) {
-      return header === 'Date' ? new Date() : e.parameter[header];
+      if (header === 'Date') {
+        // Use the current date without time
+        const currentDate = new Date();
+        return new Date(currentDate.getFullYear(), currentDate.getMonth(), currentDate.getDate());
+      } else {
+        return e.parameter[header];
+      }
     });
 
     sheet.getRange(nextRow, 1, 1, newRow.length).setValues([newRow]);
