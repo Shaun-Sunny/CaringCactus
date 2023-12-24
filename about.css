@@ -236,6 +236,23 @@ body {
     padding: 40px;
 }
 
+.header.about-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px;
+    background-color: #ffffff;
+}
+.logo.about-logo {
+    display: flex;
+    align-items: center;
+}
+
+.logo.about-logo img {
+    width: 280px;
+    height: auto;
+    margin-right: 20px;
+}
 .about-card {
     width: 48%; /* Adjusted width to accommodate padding and spacing */
     margin-bottom: 20px; /* Adjusted margin for spacing between cards */
