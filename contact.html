@@ -45,27 +45,56 @@
             <div class="contact-box">
                 <div class="contact-left">
                     <h3>Sent your request</h3>
-                    <form>
+                    <form action="" name="contact" onsubmit="return submitForm()" method="post">
                         <div class="input-row">
-                            <label>Name:</label>
-                            <input type="text" placeholder="Full Name"> 
-                        </div>
-                        <div class="input-row">
-                            <label>Phone:</label>
-                            <input type="text" placeholder="Mobile Number"> 
-                        </div>
-                        <div class="input-row">
-                            <label>Email:</label>
-                            <input type="email" placeholder="Your email"> 
-                        </div>
-                        <div class="input-row">
-                            <label>Location:</label>
-                            <input type="text" placeholder="Your location"> 
-                        </div>
-                        <label>Message:</label>
-                        <textarea rows="5" placeholder="Your Message"></textarea>
-                        <button class="submit" type="submit" onclick="submitForm(event)">SEND</button>
-                    </form>
+                            <label for="name">Name:</label>
+                            <input type="text" name="name" id="name" placeholder="Full Name"> 
+                          </div>
+                          <div class="input-row">
+                            <label for="phone">Phone:</label>
+                            <input type="text" name="phone" id="phone" placeholder="Mobile Number">
+                          </div>
+                          <div class="input-row">
+                            <label for="email">Email:</label>
+                            <input type="email" name="email" id="email" placeholder="Your email"> 
+                          </div>
+                          <div class="input-row">
+                            <label for="location">Location:</label>
+                            <input type="text" name="location" id="location" placeholder="Your location">
+                          </div>
+                          <label for="message">Message:</label>
+                          <textarea name="message" id="message" rows="5" placeholder="Your Message"></textarea>
+                          <button class="submit" type="submit">SEND</button>
+                      </form>
+                      <script>
+                        const scriptURL = 'https://script.google.com/macros/s/AKfycbzpCuOdDTi3oy_UlJVVd2CDvUnXbZVmD_ke-XO1-LZ0F7llxT0ykttZpMyeWt0nm52x/exec';
+                        const form = document.forms['contact'];
+                    
+                        form.addEventListener('submit', e => {
+                            e.preventDefault();
+                            // Add your validation logic here
+                            var name = document.getElementById("name").value;
+                            var phone = document.getElementById("phone").value;
+                            var email = document.getElementById("email").value;
+                            var location = document.getElementById("location").value;
+                    
+                            // Example: Check if the name is not empty
+                            if (name.trim() === "" || phone.trim() === "" || email.trim() === "" || location.trim() === "") {
+                                alert("Please fill in all required fields.");
+                                return false; // Prevent form submission
+                            }
+                    
+                            // You can add more validation for other fields
+                    
+                            // If all validation passes, submit the form
+                            fetch(scriptURL, { method: 'POST', body: new FormData(form) })
+                                .then(response => alert("Thank you! Your form is submitted successfully."))
+                                .then(() => { window.location.reload(); })
+                                .catch(error => console.error('Error!', error.message));
+                        });
+                    </script>
+                    
+                                    
                 </div>
                 <div class="contact-right">
                     <h3>Reach Us</h3>
@@ -87,85 +116,20 @@
                 </div>
             </div>
         </div>
-        <script>
-            // Add this JavaScript function to handle form submission
-            function submitForm(event) {
-                event.preventDefault(); // Prevent the form from submitting normally
-        
-                // Get form data
-                const formData = new FormData(event.target);
-                const formObject = {};
-                formData.forEach((value, key) => {
-                    formObject[key] = value;
-                });
-        
-                // Call the existing validateForm function (if needed)
-                if (!validateForm(formObject)) {
-                    return;
-                }
-        
-                // Call the existing doPost function with the form data
-                fetch('https://script.google.com/macros/s/AKfycbz8ofpbhw0gXVZ91KAq7IrQUc5ETAlEHdiVjGzD9DBtnzKWIn0CM99j1XB58ndwEdi8/exec', {
-                    method: 'POST',
-                    body: new URLSearchParams(formObject),
-                    headers: {
-                        'Content-Type': 'application/x-www-form-urlencoded',
-                    },
-                })
-                .then(response => response.json())
-                .then(data => {
-                    if (data.result === 'success') {
-                        // If form submission is successful, trigger any additional actions (e.g., show popup)
-                        openPopup();
-                        // You may add more actions here if needed
-                    } else {
-                        // Handle errors if necessary
-                        console.error(data.error);
-                    }
-                })
-                .catch(error => {
-                    console.error('Error:', error);
-                });
-            }
-            function sendEmail() {
-            // Get form data
-            const formData = new FormData(document.getElementById('consultationForm'));
-            const formObject = {};
-            formData.forEach((value, key) => {
-                formObject[key] = value;
-            });
-
-            // Make an AJAX request to a server-side script that sends the email
-            const xhr = new XMLHttpRequest();
-            xhr.open('POST', 'https://your-server-side-script-url'); // Replace with your server-side script URL
-            xhr.setRequestHeader('Content-Type', 'application/json');
-            xhr.onload = function() {
-                if (xhr.status === 200) {
-                    // Email sent successfully, show the popup
-                    openPopup();
-                } else {
-                    // Handle errors if necessary
-                    console.error('Error sending email:', xhr.responseText);
-                }
-            };
-            xhr.send(JSON.stringify(formObject));
-        }
-            // The rest of your existing JavaScript code
-        
-        </script>        
         <footer>
             <div class="footer-content">
                 <div class="footer">
                     <div class="footer-heading footer-1">
                         <h2>About Us</h2>
-                        <a href="#">Blog</a>
+                        <a href="blog.html">Blog</a>
                         <a href="#">Testimonials</a>
+                        <a href="#">Community</a>
                         <a href="#">Terms of Service</a>
                     </div>
                     <div class="footer-heading footer-2">
                         <h2>Contact Us</h2>
-                        <a href="#">Support</a>
-                        <a href="#">Contact</a>
+                        <a href="contact.html">Support</a>
+                        <a href="contact.html">Contact</a>
                     </div>
                     <div class="footer-heading footer-3">
                         <h2>Social Media</h2>

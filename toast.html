@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <script src="https://kit.fontawesome.com/6668b61402.js" crossorigin="anonymous"></script>
+        <link rel="stylesheet" href="toast.css">
+    </head>
+    <body>
+        <div id="toastBox"></div>
+
+        <script>
+            let toastBox = document.getElementById('toastBox');
+            let successMsg = "<i class='fa-solid fa-circle-check'></i> Successfully Submitted";
+
+            function showToast(msg){
+                let toast = document.createElement('div');
+                toast.classList.add('toast');
+                toast.innerHTML = msg; // Use the msg variable here
+                toastBox.appendChild(toast);
+
+                setTimeout(()=>{
+                    toast.remove();
+                }, 5000);
+            }
+            
+            // Example: Display the success toast
+            showToast(successMsg);
+        </script>
+    </body>
+</html>
