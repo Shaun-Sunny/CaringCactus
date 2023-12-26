@@ -9,7 +9,7 @@ body {
     align-items: center;
     justify-content: space-between; /* Adjusted to left align */
     padding: 20px;
-    background-color: #ffffff;
+    background-color: #f2f2f2;
 }
 
 .logo {
@@ -286,7 +286,9 @@ body {
     justify-content: space-between;
     padding: 40px;
 }
-
+.about-us h1{
+    text-align: center;
+}
 .header.about-header {
     display: flex;
     align-items: center;

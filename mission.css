@@ -9,7 +9,7 @@ body {
     align-items: center;
     justify-content: space-between; /* Adjusted to left align */
     padding: 20px;
-    background-color: #ffffff;
+    background-color: #f2f2f2;
 }
 
 .logo {
@@ -149,29 +149,38 @@ body {
     background-color: blue;
     transition: all 0.4s ease-out;
 }
-body{
-font-family: 'Arial', sans-serif;
-margin: 0;
-padding: 0;
-box-sizing: border-box;
-background: #f2f2f2;
+/* Separate CSS for vision-mission section */
+.vision-mission {
+    background-color: #f2f2f2;
+    padding: 30px;
+    text-align: center;
+    display: flex;
+    justify-content: space-around; /* Adjusted spacing */
+    align-items: center;
 }
 
-.vision-mission {
-background-color: #f2f2f2;
-padding: 30px;
-text-align: center;
+.vision-mission .left-content,
+.vision-mission .right-content {
+    max-width: 45%; /* Adjusted max-width for responsiveness */
 }
 
 .vision-mission h2 {
-color: #000000;
+    color: #000000;
+    margin-bottom: 10px;
 }
 
 .vision-mission p {
-color: #666;
-line-height: 1.6;
-margin-bottom: 20px;
+    color: #666;
+    line-height: 1.6;
+    margin-bottom: 20px;
 }
+
+.vision-mission img {
+    width: 255px;
+    height: 255px;
+    margin-right: 20px;
+}
+
 @media screen and (max-width: 768px) {
     .header {
         flex-direction: column;
