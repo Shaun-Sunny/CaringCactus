@@ -43,37 +43,68 @@
     </div>
     <div class="container">
         <h2 class="form">Webinar Booking</h2>
-        <form action="#" method="post">
+        <form action="https://script.google.com/macros/s/AKfycbzZcZZ_7YgkS3KoCDA2R_oJ81PiKvmLBLHhC4MjYheWylKWobwU_zkmqZ8v6SphTlcu/exec" method="post" onsubmit="return validateForm()">
             <label for="name">Your Name:</label>
             <input type="text" id="name" name="name" required>
-    
-            <label for="email">Email:</label>
-            <input type="email" id="email" name="email" required>
-    
+
             <label for="phone">Phone:</label>
             <input type="tel" id="phone" name="phone" required>
-    
-            <label for="event-type">Webinar selected:</label>
-            <select id="event-type" name="event-type" disabled>
-                <option value="Webinar" selected>Webinar</option>
-            </select>
-    
-            <!--<label for="date">Select Date:</label>
-            <input type="date" id="date" name="date" required>-->
-    
-            <button type="submit" onclick="redirectToCalendly(event)">Book Now</button>
 
-    
-            <script>
-                function redirectToCalendly(event) {
-                    event.preventDefault(); // Prevent the default form submission behavior
-                    window.location.href = "https://calendly.com/hellocaringcactus/webinars";
-                }
-            </script>
-            
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+
+            <label for="event-type">Type of Seminar:</label>
+            <select id="event-type" name="event-type" required>
+                <option value="General">General</option>
+                <option value="Special">Special</option>
+            </select>
+
+            <button type="submit" onclick="redirectToScript(event)">Book Now</button>
         </form>
+
+        <script>
+            function redirectToScript(event) {
+                event.preventDefault(); // Prevent the default form submission behavior
+                validateForm(); // Call the validateForm function
+            }
+
+            function validateForm() {
+                // Your form validation logic here
+                var name = document.getElementById('name').value;
+                var phone = document.getElementById('phone').value;
+                var email = document.getElementById('email').value;
+                var eventType = document.getElementById('event-type').value;
+
+                if (name === '' || phone === '' || email === '' || eventType === '') {
+                    // Display an alert if any field is left blank
+                    alert("Please fill in all fields before submitting.");
+                } else {
+                    // If all fields are filled, proceed with fetching text and redirecting
+                    fetch("https://script.google.com/macros/s/AKfycbzZcZZ_7YgkS3KoCDA2R_oJ81PiKvmLBLHhC4MjYheWylKWobwU_zkmqZ8v6SphTlcu/exec", {
+                            method: "POST",
+                            body: new FormData(document.querySelector('form')),
+                        })
+                        .then(response => response.text()) // Get the plain text response
+                        .then(data => {
+                            // Optionally, you can log the data received from the script
+                            console.log('Data from Apps Script:', data);
+
+                            // Redirect the user to 'https://calendly.com/hellocaringcactus/webinars'
+                            window.location.href = 'https://calendly.com/hellocaringcactus/webinars';
+                        })
+                        .catch(error => {
+                            console.error('Error:', error);
+                            // Handle errors if needed
+                        });
+                }
+
+                // Prevent the default form submission
+                return false;
+            }
+        </script>
     </div>
-    
+
+    </div>
     <footer>
         <div class="footer-content">
             <div class="footer">

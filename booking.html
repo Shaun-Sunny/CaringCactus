@@ -41,38 +41,63 @@
             <a href="contact.html" class="button">Contact</a>
         </nav>
     </div>
-        <div class="container">
-            <h2 class="form">Seminar Booking</h2>
-            <form action="#" method="post">
-                <label for="name">Your Name:</label>
-                <input type="text" id="name" name="name" required>
+    <div class="container">
+        <h2 class="form">Seminar Booking</h2>
+        <form action="https://script.google.com/macros/s/AKfycbz8DOXtPkO8OOgvL4wvNvQ1VOrB6g_6cE7G3lzTs_dow1F11-4cKLWJ0FCTnrjlBG1k/exec" method="post" onsubmit="return validateForm()">
+            <label for="name">Your Name:</label>
+            <input type="text" id="name" name="Name" required>
     
-                <label for="email">Email:</label>
-                <input type="email" id="email" name="email" required>
+            <label for="phone">Phone:</label>
+            <input type="tel" id="phone" name="Phone" required>
     
-                <label for="phone">Phone:</label>
-                <input type="tel" id="phone" name="phone" required>
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="Email" required>
     
-                <label for="event-type">Seminar selected:</label>
-<select id="event-type" name="event-type" required disabled>
-    <option value="Seminar" selected>Seminar</option>
-</select>
-
+            <label for="event-type">Type of Seminar:</label>
+            <select id="event-type" name="Type" required>
+                <option value="General">General</option>
+                <option value="Special">Special</option>
+            </select>
     
-                <!--<label for="date">Select Date:</label>
-                <input type="date" id="date" name="date" required>-->
+            <label for="preferred-datetime1">Preferred Date and Time 1:</label>
+            <input type="datetime-local" id="preferred-datetime1" name="Date1" required>
     
-                <button type="submit" onclick="redirectToCalendly(event)">Book Now</button>
-
+            <label for="preferred-datetime2">Preferred Date and Time 2:</label>
+            <input type="datetime-local" id="preferred-datetime2" name="Date2" required>
     
-            <script>
-                function redirectToCalendly(event) {
-                    event.preventDefault(); // Prevent the default form submission behavior
-                    window.location.href = "https://calendly.com/hellocaringcactus/webinars";
-                }
-            </script>
-            </form>
-        </div>
+            <label for="preferred-datetime3">Preferred Date and Time 3:</label>
+            <input type="datetime-local" id="preferred-datetime3" name="Date3" required>
+    
+            <button type="submit">Book Now</button>
+        </form>
+    </div>
+    <script>
+        function validateForm() {
+            // Your form validation logic here
+    
+            // Assuming the form is valid, proceed with fetching text and redirecting
+            fetch("https://script.google.com/macros/s/AKfycbz8DOXtPkO8OOgvL4wvNvQ1VOrB6g_6cE7G3lzTs_dow1F11-4cKLWJ0FCTnrjlBG1k/exec", {
+                method: "POST",
+                body: new FormData(document.querySelector('form')),
+            })
+            .then(response => response.text())  // Get the plain text response
+            .then(data => {
+                // Optionally, you can log the data received from the script
+                console.log('Data from Apps Script:', data);
+                
+                // Redirect the user to 'contact.html'
+                alert("Thank you! Your form is submitted successfully.");
+                window.location.href = 'contact.html';
+            })
+            .catch(error => {
+                console.error('Error:', error);
+                // Handle errors if needed
+            });
+    
+            // Prevent the default form submission
+            return false;
+        }
+    </script>
     <footer>
         <div class="footer-content">
             <div class="footer">

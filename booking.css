@@ -231,17 +231,18 @@ body {
     display: block;
     white-space: nowrap;
 }
+/* Your existing CSS rules */
 
 .container {
     background-color: #fff;
     padding: 20px;
     border-radius: 8px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    width: 300px;
+    width: 400px; /* Adjusted width for the seminar booking form */
     text-align: center;
-    margin: auto; /* Center the container */
-    margin-top: 20px; /* Adjusted margin for space below header */
-    margin-bottom: 20px; /* Adjusted margin for space above footer */
+    margin: auto;
+    margin-top: 20px;
+    margin-bottom: 20px;
 }
 
 form h2 {
@@ -282,6 +283,7 @@ input:focus, select:focus {
     border-color: #4caf50;
     box-shadow: 0 0 5px rgba(76, 175, 80, 0.5);
 }
+
 
 @media screen and (max-width: 768px) {
     .header {
