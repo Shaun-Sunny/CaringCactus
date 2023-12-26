@@ -4,6 +4,12 @@ body {
     padding: 0;
     background-color: #f2f2f2;
 }
+.title-text{
+    text-align: center;
+    font-weight: bold;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 20px;
+}
 .header {
     display: flex;
     align-items: center;
@@ -91,7 +97,7 @@ body {
 .footer{
     position: sticky;
     bottom: 0;
-    left: 100;
+    left: 0;
     width: 100%;
     height: 100%;
     background-color: black;
@@ -148,184 +154,6 @@ body {
     cursor: pointer;
     background-color: blue;
     transition: all 0.4s ease-out;
-}
-.wrapper {
-    padding: 40px;
-}
-.heading-1{
-    margin-left: 40px;
-    color: black;
-    font-weight: bold;
-    text-align: center;
-}
-.additional-section {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 20px;
-    background-color: #ffffff;
-    margin-top: 20px; /* Adjusted margin-top to create separation */
-    padding-left: 40px;
-}
-
-.left-side {
-    text-align: left;
-}
-
-.right-side {
-    text-align: right;
-}
-
-.caring-cactus {
-    font-size: 16px;
-    margin-bottom: 10px;
-}
-
-.welcome-message {
-    font-size: 42px;
-    line-height: 1.2;
-    margin-bottom: 15px;
-}
-
-.wellness-message {
-    font-size: 15px;
-    margin-bottom: 30px;
-}
-
-.cactus-image {
-    max-width: 382px;
-    max-height: 382px;
-    width: auto;
-    height: auto;}
-    .button-container {
-        text-align: center;
-        margin-top: 20px; /* Adjusted margin-top to move the button below the text */
-    }
-    
-    /* New styles for the animated button */
-    /* New styles for the animated button */
-/* New styles for the animated button */
-.view-services-btn {
-    display: inline-block;
-    margin-top: 10px; /* Adjusted margin-top to move the button right below the text */
-    padding: 15px 30px;
-    font-size: 18px;
-    font-weight: bold;
-    text-decoration: none;
-    color: #ffffff;
-    background-color: #007bff;
-    border: none;
-    border-radius: 8px;
-    cursor: pointer;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Added box shadow */
-}
-
-.view-services-btn:hover {
-    background-color: #0056b3;
-    transform: translateY(5px) scale(0.95); /* Added scale transformation */
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Adjusted box shadow on hover */
-}
-
-/* Existing styles */
-
-/* New styles for the What We Offer section */
-.what-we-offer-section {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-}
-
-.section-heading {
-    font-size: 16px;
-    width: 100%; /* Ensure the section heading spans the full width */
-}
-
-.offer-box {
-    background-color: #ffffff;
-    border: 2px solid #333333; /* Dark highlighted border */
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4); /* Dark shadows */
-    padding: 20px;
-    margin-bottom: 20px;
-    width: calc(50% - 20px); /* Two boxes in a row with 20px margin in between */
-    box-sizing: border-box; /* Include padding and border in the box sizing */
-}
-
-.center-box {
-    width: 100%; /* Full width for the center box */
-}
-
-.box-image {
-    width: 90px;
-    height: 90px;
-    margin-bottom: 10px;
-}
-
-.box-title {
-    font-size: 20px;
-    margin-bottom: 10px;
-}
-
-.box-description {
-    font-size: 14.5px;
-    color: #555555;
-}
-
-.go-to-button {
-    display: block;
-    padding: 8px 16px;
-    font-size: 15px;
-    background-color: #007bff;
-    color: #ffffff;
-    border: none;
-    border-radius: 5px;
-    margin-top: 10px;
-    cursor: pointer;
-}
-
-.go-to-button:hover {
-    background-color: #0056b3;
-}
-
-/* New styles for the Caring Cactus Text */
-.caring-cactus-text {
-    padding: 40px;
-    background-color: #f7f7f7; /* Use a light background color */
-    color: black;
-    text-align: center;
-    font-size: 16px;
-    line-height: 1.5;
-    font-weight: bold;
-}
-.center-box {
-    background-color: #ffffff;
-    border: 2px solid #333333; /* Dark highlighted border */
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4); /* Dark shadows */
-    padding: 20px; /* Reduced padding to 20px */
-    margin: 0 auto 20px; /* Center the box horizontally with auto margin */
-    width: 80%; /* Reduced width to 80% */
-    box-sizing: border-box; /* Include padding and border in the box sizing */
-    text-align: center; /* Center align text */
-}
-
-.center-box .box-title {
-    font-size: 20px; /* Font size remains 20px */
-    margin-bottom: 10px;
-}
-
-.center-box .box-description {
-    font-size: 14.5px;
-    color: #555555;
-    margin-bottom: 10px;
-}
-/* Existing styles */
-
-/* New styles for removing underline from links */
-.center-box .box-description a {
-    text-decoration: none;
-    color: #007bff; /* Set the color for unvisited link */
 }
 .heading-1{
     margin-left: 40px;

@@ -1,12 +1,15 @@
 <!DOCTYPE html>
-<html>
-    <head>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="sub-form.css">
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css">
+    <link rel="icon" type="image/x-icon" href="cac.png">
+    <title>Caring Cactus</title>
+</head>
+<body>
 
-        <title>Caring Cactus</title>
-        <link rel="stylesheet" href="sub.css">
-        <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css">
-        <link rel="icon" type="image/x-icon" href="cac.png">
-    </head>
     <div class="header">
         <div class="logo">
             <img src="caring cactus new logo 002-4_page-0001.jpg" alt="Logo">
@@ -41,68 +44,45 @@
             <a href="contact.html" class="button">Contact</a>
         </nav>
     </div>
-        <!--<marquee bgcolor = "yellow" width = "100%" scrolldelay: 50>🌵 CARING CACTUS 🌵</marquee>-->
-    <section>
-        <div class="container">
-            <h2>Choose your Plan</h2>
-            <div class="price-row">
-                <div class="price-col">
-                    <p>1 Month</p>
-                    <h4>
-                        <del>₹3500</del>
-                        <span style="font-size: 2em;">₹2800</span>
-                      </h4>
-                    <p font-size="18px"><b>( 20% off )</b></p>
-                    <ul>
-                        <li>Nutritional Assesment</li>
-                        <li>Care taking</li>
-                        <li>Nutritional Counselling</li>
-                        <li>7 day diet plan - 1</li>
-                        <li>Nutritional Reassesment - 1</li>
-                        <li>Follow-ups and Consultation as and when required</li>
-                        <li>30 days WhatsApp support</li>
-                    </ul>
-                    <a href="sub-form.html"><button>Sign Up</button></a>
-                </div>
-                <div class="price-col">
-                    <p>3 Month</p>
-                    <h4>
-                        <del>₹10000</del>
-                        <span style="font-size: 2em;">₹7500</span>
-                      </h4>
-                    <p font-size="18px"><b>( 25% off )</b></p>
-                    <ul>
-                        <li>Nutritional Assesment</li>
-                        <li>Care taking</li>
-                        <li>Nutritional Counselling</li>
-                        <li>7 day diet plan - 3</li>
-                        <li>Nutritional Reassesment - 5 or more as required</li>
-                        <li>Follow-ups and Consultation as and when required</li>
-                        <li>90 days WhatsApp support</li>
-                    </ul>
-                    <a href="sub-form3.html"><button>Sign Up</button></a>
-                </div>
-                <div class="price-col">
-                    <p>6 Month</p>
-                    <h4>
-                        <del>₹18000</del>
-                        <span style="font-size: 2em;">₹12500</span>
-                      </h4>
-                    <p font-size="18px"><b>( 30% off )</b></p>
-                    <ul>
-                        <li>Nutritional Assesment</li>
-                        <li>Care taking</li>
-                        <li>Nutritional Counselling</li>
-                        <li>7 day diet plan - 6</li>
-                        <li>Nutritional Reassesment - as many as required</li>
-                        <li>Follow-ups and Consultation as and when required</li>
-                        <li>180 days WhatsApp support</li>
-                    </ul>
-                    <a href="sub-form6.html"><button>Sign Up</button></a>
-                </div>
-            </div>
-        </div>
-    </section>
+
+    <div class="container">
+        <h1>Customer Details</h1>
+        <form name="registration" class="registartion-form" onsubmit="return formValidation()">
+          <table>
+            <tr>
+              <td><label for="name">Name:</label></td>
+              <td><input type="text" name="name" id="name" placeholder="Your Name"></td>
+            </tr>
+            <tr>
+              <td><label for="phoneNumber">Phone Number:</label></td>
+              <td><input type="text" name="phoneNumber" id="phoneNumber" placeholder="Your Phone Number"></td>
+            </tr>
+            <tr>
+              <td><label for="email">Email:</label></td>
+              <td><input type="email" name="email" id="email" placeholder="Your Email"></td>
+            </tr>
+            <tr>
+              <td><label for="location">Location:</label></td>
+              <td><input type="text" name="location" id="location" placeholder="Your Location"></td>
+            </tr>
+            <tr>
+                <td><label for="selectedPlan">Selected Plan:</label></td>
+                <td>
+                  <!--<label><input type="radio" name="selectedPlan" value="1_month"> 1 month</label>-->
+                  <label><input type="radio" name="selectedPlan" value="3_months" checked> 3 months</label>
+                  <!--<label><input type="radio" name="selectedPlan" value="6_months"> 6 months</label>-->
+                </td>
+              </tr>
+              
+              <td colspan="2"><input type="submit" class="submit" value="Proceed" /></td>
+            </tr>
+          </table>
+        </form>
+      </div>
+      
+      
+
+
     <footer>
         <div class="footer-content">
             <div class="footer">

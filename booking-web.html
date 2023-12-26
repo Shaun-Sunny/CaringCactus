@@ -41,30 +41,39 @@
             <a href="contact.html" class="button">Contact</a>
         </nav>
     </div>
-        <div class="container">
-            <h2 class="form">Webinar Booking</h2>
-            <form action="#" method="post">
-                <label for="name">Your Name:</label>
-                <input type="text" id="name" name="name" required>
+    <div class="container">
+        <h2 class="form">Webinar Booking</h2>
+        <form action="#" method="post">
+            <label for="name">Your Name:</label>
+            <input type="text" id="name" name="name" required>
     
-                <label for="email">Email:</label>
-                <input type="email" id="email" name="email" required>
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
     
-                <label for="phone">Phone:</label>
-                <input type="tel" id="phone" name="phone" required>
+            <label for="phone">Phone:</label>
+            <input type="tel" id="phone" name="phone" required>
     
-                <label for="event-type">Webinar selected:</label>
-<select id="event-type" name="event-type" required disabled>
-    <option value="Webinar" selected>Webinar</option>
-</select>
+            <label for="event-type">Webinar selected:</label>
+            <select id="event-type" name="event-type" disabled>
+                <option value="Webinar" selected>Webinar</option>
+            </select>
+    
+            <!--<label for="date">Select Date:</label>
+            <input type="date" id="date" name="date" required>-->
+    
+            <button type="submit" onclick="redirectToCalendly(event)">Book Now</button>
 
     
-                <label for="date">Select Date:</label>
-                <input type="date" id="date" name="date" required>
+            <script>
+                function redirectToCalendly(event) {
+                    event.preventDefault(); // Prevent the default form submission behavior
+                    window.location.href = "https://calendly.com/hellocaringcactus/webinars";
+                }
+            </script>
+            
+        </form>
+    </div>
     
-                <button type="submit">Book Now</button>
-            </form>
-        </div>
     <footer>
         <div class="footer-content">
             <div class="footer">
