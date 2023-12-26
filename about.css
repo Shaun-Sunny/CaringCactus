@@ -218,6 +218,57 @@ body {
     margin-bottom: 5px;
 }
 
+.founding-member {
+    display: flex;
+    justify-content: center; /* Center align items */
+    align-items: center;
+    margin-bottom: 40px;
+    animation: fadeInSlide 1s ease-in-out; /* Fade-in and slide animation */
+}
+
+.founding-member img {
+    max-width: 100%; /* Set maximum width to 100% */
+    height: auto;
+    margin-right: 20px; /* Adjusted margin for spacing between image and text */
+    border-radius: 50%;
+    object-fit: cover; /* Maintain aspect ratio and cover the entire container */
+    width: 255px; /* Set a fixed width for the small circles */
+    height: 255px; /* Set a fixed height for the small circles */
+}
+
+
+.founding-member .about {
+    width: 50%; /* Adjusted width for the text content */
+    text-align: center; /* Center align text content */
+    padding: 20px; /* Added padding for spacing */
+}
+
+.founding-member .about h3 {
+    color: #2b9ec2;
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+.founding-member .about p {
+    font-size: 16px;
+    color: #3d3d3d;
+    line-height: 1.5;
+}
+
+.founding-member .about p.job-title {
+    color: #d70000; /* Change the color to your preference */
+    font-size: 18px; /* Adjust the font size for the title */
+    font-weight: bold; /* Make the title bold or adjust as needed */
+    margin-bottom: 10px; /* Adjusted margin for spacing */
+}
+
+.founding-member .about p.description {
+    font-size: 16px;
+    color: #3d3d3d;
+    line-height: 1.5;
+}
+
+
 /* Keyframes for fade-in animation */
 @keyframes fadeInSlide {
     from {
