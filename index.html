@@ -49,7 +49,7 @@
             <b><div class="caring-cactus">Caring Cactus</div></b>
             <div class="welcome-message">Welcome to CaringCactus.com – Nourishing Your Life, Elevating Your Lifestyle!</div>
             <b><div class="wellness-message">Discover an Oasis of Wellness, Rooted in Nutrition and Flourishing in Well-being!</div></b>
-            <a href="#" class="view-services-btn">View Services</a>
+            <a href="sub.html" class="view-services-btn">View Services</a>
         </div>
         
         <div class="right-side">
@@ -65,7 +65,7 @@
             <img src="doc.png" alt="Personalized Guidance" class="box-image">
             <h3 class="box-title">Personalized Guidance</h3>
             <p class="box-description">Meet our expert dietitians, your partners in crafting a personalized journey to optimum health. Book a consultation and embark on a culinary adventure designed just for you. Say goodbye to generic diets; your plate, your rules!</p>
-            <button class="go-to-button">Go to →</button>
+            <button class ="go-to-button"><a href="one.html">Go to →</button></a>
         </div>
 
         <!-- Box 2 -->
@@ -73,7 +73,7 @@
             <img src="sem.png" alt="Webinars & Seminars" class="box-image">
             <h3 class="box-title">Webinars & Seminars</h3>
             <p class="box-description">Join our exclusive sessions led by wellness maestros. Delve into the world of balanced living, nutrition myths, and practical tips that transform everyday meals into extraordinary experiences. Let's make wellness a lifestyle, not a task!</p>
-            <button class="go-to-button">Go to →</button>
+            <button class="go-to-button"><a href="booking-web.html">Go to →</button></a>
         </div>
 
         <!-- Box 3 -->
@@ -81,7 +81,7 @@
             <img src="nut.png" alt="Blog Adventures – Nutrition Edition" class="box-image">
             <h3 class="box-title">Blog Adventures – Nutrition Edition</h3>
             <p class="box-description">Hungry for knowledge? Our blog is a treasure trove of insights, mouth-watering recipes, and captivating stories. Dive into a world where nutrition is as exciting as it is essential. Because healthy living should never be dull!</p>
-            <button class="go-to-button">Go to →</button>
+            <button class="go-to-button"><a href="blog.html">Go to →</button></a>
         </div>
 
         <!-- Box 4 -->
@@ -89,7 +89,7 @@
             <img src="contact.png" alt="Need a Hand? Reach Out!" class="box-image">
             <h3 class="box-title">Need a Hand? Reach Out!</h3>
             <p class="box-description">Have questions about nutrition, want culinary suggestions, or simply craving a chat? Our support team is here 24/7 – because your journey deserves the best!</p>
-            <button class="go-to-button">Go to →</button>
+            <button class="go-to-button"><a href="contact.html">Go to →</button></a>
         </div>
 
         <div class="offer-box center-box">
@@ -205,10 +205,6 @@
             </div>
         </div>
         <div class="form-row">
-            <div class="form-column">
-                <i class="far fa-calendar-alt"></i>
-                <input type="date" id="date" name="Date" placeholder="Select Date" class="capsule-input date-time-input">
-            </div>
         </div>
         <div class="form-row">
             <div class="form-column">
@@ -234,7 +230,6 @@
             var contactNumber = document.getElementById("contact-number").value;
             var whatsappNumber = document.getElementById("whatsapp-number").value;
             var emailAddress = document.getElementById("email").value;
-            var date = document.getElementById("date").value;
     
             // Example: Check if the name is not empty
             if (
@@ -246,8 +241,7 @@
                 medicalConcern.trim() === "" ||
                 contactNumber.trim() === "" ||
                 whatsappNumber.trim() === "" ||
-                emailAddress.trim() === "" ||
-                date.trim() === ""
+                emailAddress.trim() === ""
             ) {
                 alert("Please fill in all required fields.");
                 return false; // Prevent form submission
@@ -255,10 +249,12 @@
     
             // If all validation passes, submit the form
             fetch(scriptURL, { method: 'POST', body: new FormData(form) })
-                .then(response => alert("Thank you! Your form is submitted successfully."))
-                .then(() => { window.location.reload(); })
-                .catch(error => console.error('Error!', error.message));
-        });
+            .then(response => {
+                alert("Thank you! Your form is submitted successfully.");
+                window.location.href = 'https://calendly.com/hellocaringcactus/30min';
+            })
+            .catch(error => console.error('Error!', error.message));
+    });
     </script>
     
     </form>

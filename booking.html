@@ -59,10 +59,18 @@
 </select>
 
     
-                <label for="date">Select Date:</label>
-                <input type="date" id="date" name="date" required>
+                <!--<label for="date">Select Date:</label>
+                <input type="date" id="date" name="date" required>-->
     
-                <button type="submit">Book Now</button>
+                <button type="submit" onclick="redirectToCalendly(event)">Book Now</button>
+
+    
+            <script>
+                function redirectToCalendly(event) {
+                    event.preventDefault(); // Prevent the default form submission behavior
+                    window.location.href = "https://calendly.com/hellocaringcactus/webinars";
+                }
+            </script>
             </form>
         </div>
     <footer>

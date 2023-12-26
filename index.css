@@ -151,6 +151,7 @@ body {
 }
 .wrapper {
     padding: 40px;
+    font-family: Lato, Helvetica, sans-serif;;
 }
 .heading-1{
     margin-left: 40px;
@@ -213,7 +214,7 @@ body {
     font-weight: bold;
     text-decoration: none;
     color: #ffffff;
-    background-color: #007bff;
+    background-color: red;
     border: none;
     border-radius: 8px;
     cursor: pointer;
@@ -222,7 +223,7 @@ body {
 }
 
 .view-services-btn:hover {
-    background-color: #0056b3;
+    background-color: blue;
     transform: translateY(5px) scale(0.95); /* Added scale transformation */
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Adjusted box shadow on hover */
 }
@@ -276,16 +277,39 @@ body {
     display: block;
     padding: 8px 16px;
     font-size: 15px;
-    background-color: #007bff;
+    background-color: red;
     color: #ffffff;
     border: none;
     border-radius: 5px;
     margin-top: 10px;
     cursor: pointer;
+    text-decoration: none;
+}
+.go-to-button {
+    display: block;
+    padding: 8px 16px;
+    font-size: 15px;
+    background-color: red;
+    color: #ffffff;
+    border: none;
+    border-radius: 5px;
+    margin-top: 10px;
+    cursor: pointer;
+    transition: background-color 0.4s ease-out, color 0.4s ease-out; /* Add color transition */
+}
+
+.go-to-button a {
+    color: #ffffff;
+    text-decoration: none;
 }
 
 .go-to-button:hover {
-    background-color: #0056b3;
+    background-color: blue;
+    color: #ffffff; /* Change text color on hover */
+}
+
+.go-to-button:hover a {
+    text-decoration: none;
 }
 
 /* New styles for the Caring Cactus Text */
