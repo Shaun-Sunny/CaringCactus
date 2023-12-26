@@ -42,7 +42,7 @@
         </nav>
     </div>
         <div class="container">
-            <h2>Webinar Booking</h2>
+            <h2 class="form">Webinar Booking</h2>
             <form action="#" method="post">
                 <label for="name">Your Name:</label>
                 <input type="text" id="name" name="name" required>
@@ -53,12 +53,11 @@
                 <label for="phone">Phone:</label>
                 <input type="tel" id="phone" name="phone" required>
     
-                <!--<label for="seminar">Select Seminar/Webinar:</label>
-                <select id="seminar" name="seminar" required>
-                    <option value="" disabled selected>Select Seminar</option>
-                    <option value="Seminar">Seminar</option>
-                    <option value="Webinar">Webinar</option>
-                </select>-->
+                <label for="event-type">Webinar selected:</label>
+<select id="event-type" name="event-type" required disabled>
+    <option value="Webinar" selected>Webinar</option>
+</select>
+
     
                 <label for="date">Select Date:</label>
                 <input type="date" id="date" name="date" required>

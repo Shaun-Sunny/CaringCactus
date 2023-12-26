@@ -175,6 +175,8 @@ body {
     font-family: sans-serif;
     background-color: #2997d6;
     padding: 20px;
+    border-radius: 30px;
+    box-shadow: 5px 10px #888888;
   }
   
   .registartion-form input,

@@ -244,8 +244,8 @@ body {
     margin-bottom: 20px; /* Adjusted margin for space above footer */
 }
 
-h2 {
-    color: #333;
+form h2 {
+    color: #000000;
 }
 
 form {
