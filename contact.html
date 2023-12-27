@@ -148,12 +148,60 @@
                     </div>
                     <div class="footer-email-form">
                         <h2>Join our newsletter</h2>
-                        <input type="email" placeholder="Enter your email address" id="footer-email">
-                        <input type="submit" value="Sign Up" id="footer-email-btn">
+                        <form id="newsletter-form" onsubmit="return redirectToScript(event)">
+                            <input type="email" name="Email" placeholder="Enter your email address" id="footer-email" required>
+                            <button class="newsletter-button" type="submit">Sign up</button>
+                        </form>
                     </div>
                 </div>
             </div>
         </footer>
         <script src="index.js"></script>
+        <script>
+            function redirectToScript(event) {
+            event.preventDefault(); // Prevent the default form submission behavior
+            validateForm(); // Call the validateForm function
+        }
+        
+        function validateForm() {
+            // Your form validation logic here
+            var email = document.getElementById('footer-email').value;
+        
+            if (email === '') {
+                // Display an alert if the email field is left blank
+                alert("Please fill in the email field before submitting.");
+            } else {
+                // If the email field is filled, proceed with fetching text and redirecting
+                var formData = new FormData();
+                formData.append("Email", email);
+        
+                fetch("https://script.google.com/macros/s/AKfycbwtB97un4ulFyUvIX3ObE4jDZyrhCVmPc-oeKdzxfWlN5sT8Cmzzlvlv6lTN8EX7SQM/exec", {
+                        method: "POST",
+                        body: formData,
+                    })
+                    .then(response => response.json()) // Get the JSON response
+                    .then(data => {
+                        // Log the data received from the script
+                        console.log('Data from Apps Script:', data);
+                        if (data.result === 'success') {
+                            alert("Thank you! Your form is submitted successfully.");
+                            // Optionally, redirect the user to another page
+                        } else {
+                            // Display an alert with the error message from the server
+                            alert("Error: " + data.error);
+                        }
+                    })
+                    .catch(error => {
+                        console.error('Error:', error);
+                        // Handle errors if needed
+                    });
+            }
+        
+            // Prevent the default form submission
+            return false;
+        }
+        
+        
+        </script>
     </body>
 </html>

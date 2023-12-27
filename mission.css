@@ -180,7 +180,17 @@ body {
     height: 255px;
     margin-right: 20px;
 }
-
+.newsletter-button
+    {
+        width: 100px;
+        height: 40px;
+        border-radius: 4px;
+        background-color: red;
+        outline: none;
+        border: none;
+        color: white;
+        font-size: 1rem;
+    }
 @media screen and (max-width: 768px) {
     .header {
         flex-direction: column;
