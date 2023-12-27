@@ -46,40 +46,80 @@
     </div>
 
     <div class="container">
-        <h1>Customer Details</h1>
-        <form name="registration" class="registartion-form" onsubmit="return formValidation()">
-          <table>
-            <tr>
-              <td><label for="name">Name:</label></td>
-              <td><input type="text" name="name" id="name" placeholder="Your Name"></td>
-            </tr>
-            <tr>
-              <td><label for="phoneNumber">Phone Number:</label></td>
-              <td><input type="text" name="phoneNumber" id="phoneNumber" placeholder="Your Phone Number"></td>
-            </tr>
-            <tr>
-              <td><label for="email">Email:</label></td>
-              <td><input type="email" name="email" id="email" placeholder="Your Email"></td>
-            </tr>
-            <tr>
-              <td><label for="location">Location:</label></td>
-              <td><input type="text" name="location" id="location" placeholder="Your Location"></td>
-            </tr>
-            <tr>
-              <td><label for="selectedPlan">Selected Plan:</label></td>
-              <td>
-                <!--<label><input type="radio" name="selectedPlan" value="1_month"> 1 month</label>-->
-                <label><input type="radio" name="selectedPlan" value="1_month" checked> 1 month</label>
-                <!--<label><input type="radio" name="selectedPlan" value="6_months"> 6 months</label>-->
-              </td>
-            </tr>
-            <tr>
-              <td colspan="2"><input type="submit" class="submit" value="Proceed" /></td>
-            </tr>
-          </table>
-        </form>
-      </div>
-      
+      <h1>Customer Details</h1>
+      <form name="registration" class="registration-form" onsubmit="return formValidation()" action="https://script.google.com/macros/s/AKfycbxOru5xayLCnHSUTNKxK-6MSZ-92nQ-mT8hsU5laEQQcrjdbdv2xqZS67VliEjsL-sS/exec" method="post">
+        <div class="form-group">
+          <label for="name">Name:</label>
+          <input type="text" name="Name" id="name" placeholder="Your Name" class="styled-input">
+        </div>
+    
+        <div class="form-group">
+          <label for="phoneNumber">Phone Number:</label>
+          <input type="text" name="PhoneNumber" id="phoneNumber" placeholder="Your Phone Number" class="styled-input">
+        </div>
+    
+        <div class="form-group">
+          <label for="email">Email:</label>
+          <input type="email" name="Email" id="email" placeholder="Your Email" class="styled-input">
+        </div>
+    
+        <div class="form-group">
+          <label for="location">Location:</label>
+          <input type="text" name="Location" id="location" placeholder="Your Location" class="styled-input">
+        </div>
+    
+        <div class="form-group">
+          <label for="selectedPlan">Selected Plan:</label>
+          <label><input type="radio" name="SelectedPlan" value="1 month" checked> 1 month</label>
+        </div>
+    
+        <div class="form-group">
+          <button type="submit" class="submit-button" value="Proceed">Proceed</button>
+        </div>
+    
+        <!-- Add a hidden input field for the script function name -->
+        <input type="hidden" name="functionName" value="doPost">
+      </form>
+    </div>
+    <script>
+  const scriptURL = 'https://script.google.com/macros/s/AKfycbxOru5xayLCnHSUTNKxK-6MSZ-92nQ-mT8hsU5laEQQcrjdbdv2xqZS67VliEjsL-sS/exec';
+  const form = document.forms['registration']; // Updated form name
+
+  form.addEventListener('submit', e => {
+    e.preventDefault();
+
+    // Extract form data
+    var name = document.getElementById("name").value;
+    var phoneNumber = document.getElementById("phoneNumber").value; // Updated ID
+    var email = document.getElementById("email").value;
+    var location = document.getElementById("location").value;
+    var selectedPlan = document.querySelector('input[name="SelectedPlan"]:checked').value; // Updated name
+
+    // Example: Check if the name is not empty
+    if (
+      name.trim() === "" ||
+      phoneNumber.trim() === "" ||
+      email.trim() === "" ||
+      location.trim() === ""
+    ) {
+      alert("Please fill in all required fields.");
+      return false; // Prevent form submission
+    }
+
+    // If all validation passes, submit the form
+    fetch(scriptURL, {
+        method: 'POST',
+        body: new FormData(form)
+    })
+    .then(response => {
+        alert("Thank you! Your form is submitted successfully.");
+        // Add any additional logic or redirect as needed
+    })
+    .catch(error => console.error('Error!', error.message));
+  });
+</script>
+
+    
       
 
 

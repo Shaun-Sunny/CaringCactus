@@ -150,14 +150,16 @@ body {
     transition: all 0.4s ease-out;
 }
 
-  .container {
+.container {
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
     height: 100vh;
-    background-color: #f2f2f2;
+    background-color: white; /* Change container color to black */
+    color: white; /* Change text color to white */
   }
+  
   
   .container h1 {
     color: black;
@@ -165,17 +167,11 @@ body {
     margin: 20px;
   }
   
-  .registartion-form {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 600px;
-    color: rgb(255, 255, 255);
-    font-size: 18px;
-    font-family: sans-serif;
-    background-color: #2997d6;
+  .registration-form {
+    width: 300px; /* Adjust the width as needed */
+    background-color: black; /* Change form background color to black */
     padding: 20px;
-    border-radius: 30px;
+    border-radius: 15px; /* Add rounded corners */
     box-shadow: 5px 10px #888888;
   }
   
@@ -206,7 +202,43 @@ body {
     box-shadow: 3px 3px 6px rgb(255, 214, 176);
   }
 
+/* Add the following styles to your existing CSS */
 
+.styled-input {
+    border: 1px solid #555; /* Darker border color */
+    border-radius: 8px;
+    padding: 8px;
+    width: 100%;
+    box-sizing: border-box;
+    margin-top: 8px;
+    color: #555; /* Darker text color */
+  }
+  
+  .styled-input:focus {
+    outline: none;
+    box-shadow: 0 0 5px rgba(255, 214, 176, 1);
+  }
+  
+  .registration-form table {
+    width: 100%;
+  }
+  
+  .submit-button {
+    width: 100%;
+    padding: 12px;
+    font-size: 18px;
+    color: #fff;
+    background-color: red; /* Change submit button color to red */
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, color 0.3s ease;
+  }
+  
+  .submit-button:hover {
+    background-color: #d70000; /* Darker red on hover */
+  }
+  
 @media screen and (max-width: 768px) {
     .header {
         flex-direction: column;

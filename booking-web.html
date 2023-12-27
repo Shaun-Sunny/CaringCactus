@@ -43,18 +43,18 @@
     </div>
     <div class="container">
         <h2 class="form">Webinar Booking</h2>
-        <form action="https://script.google.com/macros/s/AKfycbzZcZZ_7YgkS3KoCDA2R_oJ81PiKvmLBLHhC4MjYheWylKWobwU_zkmqZ8v6SphTlcu/exec" method="post" onsubmit="return validateForm()">
+        <form action="https://script.google.com/macros/s/AKfycbzvXpFwUsYGC3fsRLyd5IBKSaYaT4kTwBvi9NYNsyWgf292ACjbNGkdpDwCM5wGqmfS/exec" method="post" onsubmit="return validateForm()">
             <label for="name">Your Name:</label>
-            <input type="text" id="name" name="name" required>
+            <input type="text" id="name" name="Name" required>
 
             <label for="phone">Phone:</label>
-            <input type="tel" id="phone" name="phone" required>
+            <input type="tel" id="phone" name="Phone" required>
 
             <label for="email">Email:</label>
-            <input type="email" id="email" name="email" required>
+            <input type="email" id="email" name="Email" required>
 
             <label for="event-type">Type of Seminar:</label>
-            <select id="event-type" name="event-type" required>
+            <select id="event-type" name="Event Type" required>
                 <option value="General">General</option>
                 <option value="Special">Special</option>
             </select>
@@ -80,7 +80,7 @@
                     alert("Please fill in all fields before submitting.");
                 } else {
                     // If all fields are filled, proceed with fetching text and redirecting
-                    fetch("https://script.google.com/macros/s/AKfycbzZcZZ_7YgkS3KoCDA2R_oJ81PiKvmLBLHhC4MjYheWylKWobwU_zkmqZ8v6SphTlcu/exec", {
+                    fetch("https://script.google.com/macros/s/AKfycbzvXpFwUsYGC3fsRLyd5IBKSaYaT4kTwBvi9NYNsyWgf292ACjbNGkdpDwCM5wGqmfS/exec", {
                             method: "POST",
                             body: new FormData(document.querySelector('form')),
                         })
@@ -88,7 +88,7 @@
                         .then(data => {
                             // Optionally, you can log the data received from the script
                             console.log('Data from Apps Script:', data);
-
+                            alert("Thank you! Your form is submitted successfully.");
                             // Redirect the user to 'https://calendly.com/hellocaringcactus/webinars'
                             window.location.href = 'https://calendly.com/hellocaringcactus/webinars';
                         })
