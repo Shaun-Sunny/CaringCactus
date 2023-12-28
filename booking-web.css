@@ -134,17 +134,18 @@ body {
 #footer-email::placeholder{
     color: gray;
 }
-#footer-email-btn{
+.newsletter-button{
     width: 100px;
     height: 40px;
     border-radius: 4px;
     background-color: red;
+    margin-left: 10px;
     outline: none;
     border: none;
     color: white;
     font-size: 1rem;
-}
-#footer-email-btn:hover{
+} 
+.newsletter-button:hover{
     cursor: pointer;
     background-color: blue;
     transition: all 0.4s ease-out;
@@ -232,67 +233,77 @@ body {
     white-space: nowrap;
 }
 
-.container {
+.webinar {
+    width: 70%;
+    margin: 50px auto;
     background-color: #fff;
     padding: 20px;
-    border-radius: 8px;
+    border-radius: 10px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    width: 300px;
-    text-align: center;
-    margin: auto; /* Center the container */
-    margin-top: 20px; /* Adjusted margin for space below header */
-    margin-bottom: 20px; /* Adjusted margin for space above footer */
 }
 
-form h2 {
+.form {
+    text-align: center;
     color: #333;
 }
 
 form {
     display: flex;
-    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: center; /* Center the content horizontally */
 }
 
+.left-section,
+.right-section {
+    width: 50%;
+    box-sizing: border-box;/* Include padding and border in the total width */
+}
+
+.right-section .form-group {
+    margin-bottom: 20px;
+}
+
+.center-section {
+    text-align: center;
+    width: 100%;
+}
+#name, #phone{
+    margin-left:220px
+}
+.name, .phone{
+    margin-left: 220px;
+}
 label {
-    margin-top: 10px;
+    display: block;
     font-weight: bold;
-    color: #555;
+    margin-bottom: 5px;
 }
 
-input, select, button {
-    margin-top: 5px;
-    padding: 8px;
+/* Set text field width to 50% */
+input, select {
+    width: 50%; /* Full width within the sections */
+    padding: 10px;
+    box-sizing: border-box;
     border: 1px solid #ccc;
-    border-radius: 4px;
+    border-radius: 5px;
+    margin-bottom: 10px;
 }
 
 button {
-    background-color: red;
+    width: 30%;
+    background-color: #FF0000;
     color: white;
+    padding: 15px;
+    border: none;
+    border-radius: 5px;
     cursor: pointer;
+    font-size: 16px;
     transition: background-color 0.3s;
 }
 
 button:hover {
-    background-color: blue;
+    background-color: #0000FF;
 }
-
-input:focus, select:focus {
-    outline: none;
-    border-color: #4caf50;
-    box-shadow: 0 0 5px rgba(76, 175, 80, 0.5);
-}
-.newsletter-button
-    {
-        width: 100px;
-        height: 40px;
-        border-radius: 4px;
-        background-color: red;
-        outline: none;
-        border: none;
-        color: white;
-        font-size: 1rem;
-    }
 @media screen and (max-width: 768px) {
     .header {
         flex-direction: column;

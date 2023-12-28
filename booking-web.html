@@ -41,27 +41,41 @@
             <a href="contact.html" class="button">Contact</a>
         </nav>
     </div>
-    <div class="container">
+    <div class="webinar">
         <h2 class="form">Webinar Booking</h2>
         <form action="https://script.google.com/macros/s/AKfycbzvXpFwUsYGC3fsRLyd5IBKSaYaT4kTwBvi9NYNsyWgf292ACjbNGkdpDwCM5wGqmfS/exec" method="post" onsubmit="return validateForm()">
-            <label for="name">Your Name:</label>
-            <input type="text" id="name" name="Name" required>
-
-            <label for="phone">Phone:</label>
-            <input type="tel" id="phone" name="Phone" required>
-
-            <label for="email">Email:</label>
-            <input type="email" id="email" name="Email" required>
-
-            <label for="event-type">Type of Seminar:</label>
-            <select id="event-type" name="Event Type" required>
-                <option value="General">General</option>
-                <option value="Special">Special</option>
-            </select>
-
-            <button type="submit" onclick="redirectToScript(event)">Book Now</button>
+            <div class="right-section">
+                <div class="form-group">
+                    <label for="name" class="name">Your Name:</label>
+                    <input type="text" id="name" name="Name" required>
+                </div>
+    
+                <div class="form-group">
+                    <label for="phone" class="phone">Phone:</label>
+                    <input type="tel" id="phone" name="Phone" required>
+                </div>
+            </div>
+    
+            <div class="right-section">
+                <div class="form-group">
+                    <label for="email" class="email">Email:</label>
+                    <input type="email" id="email" name="Email" required>
+                </div>
+    
+                <div class="form-group">
+                    <label for="event-type" class="event-type">Webinar selected:</label>
+                    <select id="event-type" name="Event Type" required>
+                        <option value="General">General</option>
+                        <option value="Special">Special</option>
+                    </select>
+                </div>
+            </div>
+    
+            <div class="center-section">
+                <button type="submit" onclick="redirectToScript(event)">Book Now</button>
+            </div>
         </form>
-
+    </div>
         <script>
             function redirectToScript(event) {
                 event.preventDefault(); // Prevent the default form submission behavior

@@ -1,8 +1,8 @@
 body {
-    font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
     background-color: #f2f2f2;
+    font-family: Arial, sans-serif;
 }
 .header {
     display: flex;
@@ -234,12 +234,15 @@ body {
 .what-we-offer-section {
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-between;
+    justify-content: center;
+
 }
 
 .section-heading {
-    font-size: 16px;
+    font-size: 32px;
     width: 100%; /* Ensure the section heading spans the full width */
+    font-family: 'Lora', serif;
+    font-family: 'Roboto Serif', serif;
 }
 
 .offer-box {
@@ -248,11 +251,20 @@ body {
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4); /* Dark shadows */
     padding: 20px;
+    margin: 20px;
     margin-bottom: 20px;
-    width: calc(50% - 20px); /* Two boxes in a row with 20px margin in between */
+    width: 455px; /* Adjust width to fit content */
+    height: auto; /* Adjust height to fit content */
     box-sizing: border-box; /* Include padding and border in the box sizing */
 }
-
+.offer-box.center-box{
+    width: 950px;
+    height: 287px;
+}
+.go-to-button.center{
+    position: center;
+    margin-left: 400px;
+}
 .center-box {
     width: 100%; /* Full width for the center box */
 }
@@ -263,14 +275,21 @@ body {
     margin-bottom: 10px;
 }
 
+.box-image.center{
+    width: 150px;
+    height: 87.5px;
+}
+
 .box-title {
     font-size: 20px;
     margin-bottom: 10px;
+    font-family: 'Poppins', sans-serif;
 }
 
 .box-description {
     font-size: 14.5px;
     color: #555555;
+    font-family: 'Roboto Serif', serif;
 }
 
 .go-to-button {
@@ -337,12 +356,14 @@ body {
 .center-box .box-title {
     font-size: 20px; /* Font size remains 20px */
     margin-bottom: 10px;
+    font-family: 'Poppins', sans-serif;
 }
 
 .center-box .box-description {
     font-size: 14.5px;
     color: #555555;
     margin-bottom: 10px;
+    font-family: 'Roboto Serif', serif;
 }
 /* Existing styles */
 
