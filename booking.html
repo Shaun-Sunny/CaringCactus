@@ -42,8 +42,8 @@
         </nav>
     </div>
     <div class="seminar">
-        <h2 class="form">Seminar Booking</h2>
-        <form action="https://script.google.com/macros/s/AKfycbz8DOXtPkO8OOgvL4wvNvQ1VOrB6g_6cE7G3lzTs_dow1F11-4cKLWJ0FCTnrjlBG1k/exec" method="post" onsubmit="return validateForm()">
+        <h2 class="form">Book a Seminar</h2>
+        <form action="#" method="post" onsubmit="return validateForm()">
             <div class="left-section">
                 <div class="form-group">
                     <label for="name">Your Name:</label>
@@ -93,31 +93,49 @@
     </div>
     <script>
         function validateForm() {
-            // Your form validation logic here
+            // Get values from text fields
+            const name = document.getElementById('name').value;
+            const phone = document.getElementById('phone').value;
+            const email = document.getElementById('email').value;
+            const eventType = document.getElementById('event-type').value;
+            const date1 = document.getElementById('preferred-datetime1').value;
+            const date2 = document.getElementById('preferred-datetime2').value;
+            const date3 = document.getElementById('preferred-datetime3').value;
+    
+            // Check if any of the fields are empty
+            if (!name || !phone || !email || !eventType || !date1 || !date2 || !date3) {
+                alert("Please fill in all fields before submitting.");
+                return false; // Prevent form submission
+            }
     
             // Assuming the form is valid, proceed with fetching text and redirecting
-            fetch("https://script.google.com/macros/s/AKfycbz8DOXtPkO8OOgvL4wvNvQ1VOrB6g_6cE7G3lzTs_dow1F11-4cKLWJ0FCTnrjlBG1k/exec", {
+            fetch("https://script.google.com/macros/s/AKfycbwsOpKbBQUT2m1FgNIaTup-0tP5l_bGZ2fgsDMCjJyvbcGrDFomkPjzDIr2UDy-h8Ho/exec", {
                 method: "POST",
                 body: new FormData(document.querySelector('form')),
             })
-            .then(response => response.text())  // Get the plain text response
+            .then(response => response.json()) // Get the JSON response
             .then(data => {
-                // Optionally, you can log the data received from the script
+                // Log the data received from the script (optional)
                 console.log('Data from Apps Script:', data);
-                
-                // Redirect the user to 'contact.html'
-                alert("Thank you! Your form is submitted successfully.");
-                window.location.href = 'contact.html';
+    
+                // Show an alert based on the result from the server
+                if (data.result === 'success') {
+                    alert("Thank you! Your form is submitted successfully.");
+                    // Optionally, redirect the user to another page
+                } else {
+                    alert("Error submitting form. Please try again.");
+                }
             })
             .catch(error => {
                 console.error('Error:', error);
-                // Handle errors if needed
+                alert("An unexpected error occurred. Please try again.");
             });
     
             // Prevent the default form submission
             return false;
         }
     </script>
+    
     <footer>
         <div class="footer-content">
             <div class="footer">
@@ -156,10 +174,10 @@
     <script>
         function redirectToScript(event) {
         event.preventDefault(); // Prevent the default form submission behavior
-        validateForm(); // Call the validateForm function
+        validateNewsletter(); // Call the validateForm function
     }
     
-    function validateForm() {
+    function validateNewsletter() {
         // Your form validation logic here
         var email = document.getElementById('footer-email').value;
     

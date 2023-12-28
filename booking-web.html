@@ -42,8 +42,8 @@
         </nav>
     </div>
     <div class="webinar">
-        <h2 class="form">Webinar Booking</h2>
-        <form action="https://script.google.com/macros/s/AKfycbzvXpFwUsYGC3fsRLyd5IBKSaYaT4kTwBvi9NYNsyWgf292ACjbNGkdpDwCM5wGqmfS/exec" method="post" onsubmit="return validateForm()">
+        <h2 class="form">Book a Webinar</h2>
+        <form action="" method="post" onsubmit="return validateForm()">
             <div class="right-section">
                 <div class="form-group">
                     <label for="name" class="name">Your Name:</label>
@@ -72,53 +72,47 @@
             </div>
     
             <div class="center-section">
-                <button type="submit" onclick="redirectToScript(event)">Book Now</button>
+                <button type="submit">Book Now</button>
             </div>
         </form>
     </div>
-        <script>
-            function redirectToScript(event) {
-                event.preventDefault(); // Prevent the default form submission behavior
-                validateForm(); // Call the validateForm function
+    
+    <script>
+        function validateForm() {
+            var name = document.getElementById('name').value;
+            var phone = document.getElementById('phone').value;
+            var email = document.getElementById('email').value;
+            var eventType = document.getElementById('event-type').value;
+    
+            if (name === '' || phone === '' || email === '' || eventType === '') {
+                // Display an alert if any field is left blank
+                alert("Please fill in all fields before submitting.");
+                return false; // Prevent form submission
             }
-
-            function validateForm() {
-                // Your form validation logic here
-                var name = document.getElementById('name').value;
-                var phone = document.getElementById('phone').value;
-                var email = document.getElementById('email').value;
-                var eventType = document.getElementById('event-type').value;
-
-                if (name === '' || phone === '' || email === '' || eventType === '') {
-                    // Display an alert if any field is left blank
-                    alert("Please fill in all fields before submitting.");
-                } else {
-                    // If all fields are filled, proceed with fetching text and redirecting
-                    fetch("https://script.google.com/macros/s/AKfycbzvXpFwUsYGC3fsRLyd5IBKSaYaT4kTwBvi9NYNsyWgf292ACjbNGkdpDwCM5wGqmfS/exec", {
-                            method: "POST",
-                            body: new FormData(document.querySelector('form')),
-                        })
-                        .then(response => response.text()) // Get the plain text response
-                        .then(data => {
-                            // Optionally, you can log the data received from the script
-                            console.log('Data from Apps Script:', data);
-                            alert("Thank you! Your form is submitted successfully.");
-                            // Redirect the user to 'https://calendly.com/hellocaringcactus/webinars'
-                            window.location.href = 'https://calendly.com/hellocaringcactus/webinars';
-                        })
-                        .catch(error => {
-                            console.error('Error:', error);
-                            // Handle errors if needed
-                        });
-                }
-
-                // Prevent the default form submission
-                return false;
-            }
-        </script>
-    </div>
-
-    </div>
+    
+            // If all fields are filled, proceed with fetching text and redirecting
+            fetch("https://script.google.com/macros/s/AKfycbzvXpFwUsYGC3fsRLyd5IBKSaYaT4kTwBvi9NYNsyWgf292ACjbNGkdpDwCM5wGqmfS/exec", {
+                method: "POST",
+                body: new FormData(document.querySelector('form')),
+            })
+            .then(response => response.text()) // Get the plain text response
+            .then(data => {
+                // Optionally, you can log the data received from the script
+                console.log('Data from Apps Script:', data);
+                alert("Thank you! Your form is submitted successfully.");
+                // Redirect the user to 'https://calendly.com/hellocaringcactus/webinars'
+                window.location.href = 'https://calendly.com/hellocaringcactus/webinars';
+            })
+            .catch(error => {
+                console.error('Error:', error);
+                // Handle errors if needed
+            });
+    
+            // Prevent the default form submission
+            return false;
+        }
+    </script>
+    
     <footer>
         <div class="footer-content">
             <div class="footer">
@@ -157,10 +151,10 @@
     <script>
         function redirectToScript(event) {
         event.preventDefault(); // Prevent the default form submission behavior
-        validateForm(); // Call the validateForm function
+        validateNewsletter(); // Call the validateForm function
     }
     
-    function validateForm() {
+    function validateNewsletter() {
         // Your form validation logic here
         var email = document.getElementById('footer-email').value;
     

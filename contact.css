@@ -9,7 +9,7 @@ body {
     align-items: center;
     justify-content: space-between; /* Adjusted to left align */
     padding: 20px;
-    background-color: #f2f2f2;
+    background-color: #fff;
 }
 
 .logo {
@@ -158,7 +158,7 @@ body {
 .container{
     width: 80%;
     margin: 50px auto;
-    background: skyblue;
+    background: #c1e1c1;
     font-size: 14px;
     font-family: 'Poppins', sans-serif;
     padding: 20px;
@@ -211,7 +211,7 @@ label{
     color: blue;
 }
 .submit{
-    background: black;
+    background: red;
     width: 100px;
     border: none;
     outline: none;

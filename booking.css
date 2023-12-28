@@ -2,14 +2,14 @@ body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
-    background-color: white;
+    background-color: #f2f2f2;
 }
 .header {
     display: flex;
     align-items: center;
     justify-content: space-between; /* Adjusted to left align */
     padding: 20px;
-    background-color: #f2f2f2;
+    background-color: #ffffff;
 }
 
 .logo {
@@ -153,90 +153,122 @@ body {
 
 /* Your existing CSS rules */
 
-    .seminar {
-        width: 70%;
-        margin: 50px auto;
-        background-color: #fff;
-        padding: 20px;
-        border-radius: 10px;
-        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-        background-color: #f2f2f2;
-    }
-    
-    .form {
-        text-align: center;
-        color: #333;
-    }
-    
-    form {
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: center; /* Center the content horizontally */
-    }
-    
-    .left-section,
-    .right-section,
-    .center-section {
-        width: auto;
-        margin: 20px;
+.seminar {
+    width: 70%;
+    margin: 50px auto;
+    background-color: #f2f2f2;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    background-color: #c1e1c1;
+}
 
-    }
-    
+.form {
+    text-align: center;
+    color: #333;
+}
+
+form {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center; /* Center the content horizontally */
+}
+
+.left-section,
+.right-section,
+.center-section {
+    width: auto;
+    margin: 20px;
+}
+
+.left-section .form-group,
+.right-section .form-group {
+    width: 100%; /* Adjusted width to have some space between left and right sections */
+    margin: 0 10px 20px; /* Added margin to separate form groups */
+}
+
+.center-section {
+    text-align: center;
+    width: 100%;
+    justify-content: center;
+}
+
+#event-type {
+    margin-left: 100px;
+    width: 120%; /* Set width to 50% for consistency */
+}
+
+.seminar-selected {
+    margin-left: 100px; /* Adjusted margin */
+}
+
+label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+input,
+select {
+    width: 100%;
+    padding: 10px;
+    box-sizing: border-box;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.book-now-button {
+    width: 50%;
+    background-color: #FF0000;
+    color: white;
+    padding: 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s;
+}
+
+.book-now-button:hover {
+    background-color: #0000FF;
+}
+
+@media (max-width: 600px) {
     .left-section .form-group,
     .right-section .form-group {
-        width: 100%; /* Adjusted width to have some space between left and right sections */
-        margin: 0 10px 20px; /* Added margin to separate form groups */
-    }
-    
-    .center-section {
-        text-align: center;
         width: 100%;
-        justify-content: center;
+        margin: 0; /* Remove margins on small screens */
     }
-#event-type{
-    margin-left: 100px;
 }
-.seminar-selected{
-    margin-left: 200px
-}
-    label {
+
+@media screen and (max-width: 768px) {
+    .header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .nav {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .button {
         display: block;
-        font-weight: bold;
-        margin-bottom: 5px;
-    }
-    
-    input, select {
         width: 100%;
-        padding: 10px;
         box-sizing: border-box;
-        border: 1px solid #ccc;
-        border-radius: 5px;
+        text-align: center;
+    }
+
+    .logo img {
+        width: 100%;
+        margin-right: 0;
     }
     
-    .book-now-button {
-        width: 50%;
-        background-color: #FF0000;
-        color: white;
-        padding: 15px;
-        border: none;
-        border-radius: 5px;
-        cursor: pointer;
-        font-size: 16px;
-        transition: background-color 0.3s;
+    .container {
+        width: 80%; /* Adjusted width for smaller screens */
     }
-    
-    .book-now-button:hover {
-        background-color: #0000FF;
-    }
-    
-    @media (max-width: 600px) {
-        .left-section .form-group,
-        .right-section .form-group {
-            width: 100%;
-            margin: 0; /* Remove margins on small screens */
-        }
-    }
-    
+}
+
 @media screen and (max-width: 768px) {
     .header {
         flex-direction: column;

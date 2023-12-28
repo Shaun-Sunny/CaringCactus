@@ -2,7 +2,7 @@ body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
-    background-color: #f2f2f2;
+    background-color: #b392ac;
 }
 .title-text{
     text-align: center;
@@ -15,7 +15,7 @@ body {
     align-items: center;
     justify-content: space-between; /* Adjusted to left align */
     padding: 20px;
-    background-color: #f2f2f2;
+    background-color: #b392ac;
 }
 
 .logo {
@@ -80,7 +80,7 @@ body {
 }
 
 .dropdown-content a:hover {
-    background-color: #f2f2f2;
+    background-color: #b392ac;
 }
 .with-dropdown:hover .dropdown-content {
     display: block;
@@ -247,7 +247,7 @@ i {
     z-index: 1;
 }
 .consultation{
-    background-color: #f2f2f2;
+    background-color: #b392ac;
     padding-block: 10px 10px;
 }
 .home-text{
