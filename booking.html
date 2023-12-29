@@ -62,7 +62,7 @@
     
                 <div class="form-group">
                     <label for="event-type" class="seminar-selected">Seminar selected:</label>
-                    <select id="event-type" name="Type" required>
+                    <select id="event-type" name="Seminar Selected" required>
                         <option value="General">General</option>
                         <option value="Special">Special</option>
                     </select>
@@ -72,17 +72,17 @@
             <div class="right-section">
                 <div class="form-group">
                     <label for="preferred-datetime1">Preferred Date and Time 1:</label>
-                    <input type="datetime-local" id="preferred-datetime1" name="Date1" required>
+                    <input type="datetime-local" id="preferred-datetime1" name="Date 1" required>
                 </div>
     
                 <div class="form-group">
                     <label for="preferred-datetime2">Preferred Date and Time 2:</label>
-                    <input type="datetime-local" id="preferred-datetime2" name="Date2" required>
+                    <input type="datetime-local" id="preferred-datetime2" name="Date 2" required>
                 </div>
     
                 <div class="form-group">
                     <label for="preferred-datetime3">Preferred Date and Time 3:</label>
-                    <input type="datetime-local" id="preferred-datetime3" name="Date3" required>
+                    <input type="datetime-local" id="preferred-datetime3" name="Date 3" required>
                 </div>
             </div>
     
@@ -109,7 +109,7 @@
             }
     
             // Assuming the form is valid, proceed with fetching text and redirecting
-            fetch("https://script.google.com/macros/s/AKfycbxCyPf4iT9ikxulE3dCFur5GY43jZjUagWcWoTPwuqWW4B1hhPwCLxGF1wrC2EtCsIQ/exec", {
+            fetch("https://script.google.com/macros/s/AKfycbzKDKCZ1CUugi4IOsRNbap2Rb2CG7gMxhTcydGvgaQ9IBDE4QfCBFvRCqWexfxh_2B5/exec", {
                 method: "POST",
                 body: new FormData(document.querySelector('form')),
             })
@@ -189,7 +189,7 @@
             var formData = new FormData();
             formData.append("Email", email);
     
-            fetch("https://script.google.com/macros/s/AKfycbziEAvDXIT3r9C5NfgNWyPiu5jtrOt7uioHNW4RrI5poHDjMD06CJ4zqA_jzA4KN7jkzQ/exec", {
+            fetch("https://script.google.com/macros/s/AKfycbxdaVyQt0tK2-eaO0u7G_0Mi5D3e2emt9JuHigIODK_DsCh2G8gtku1pOG5J0qImAxhgw/exec", {
                     method: "POST",
                     body: formData,
                 })

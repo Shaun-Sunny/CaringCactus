@@ -64,7 +64,7 @@
     
                 <div class="form-group">
                     <label for="event-type" class="event-type">Webinar selected:</label>
-                    <select id="event-type" name="Event Type" required>
+                    <select id="event-type" name="Webinar Selected" required>
                         <option value="General">General</option>
                         <option value="Special">Special</option>
                     </select>
@@ -91,7 +91,7 @@
             }
     
             // If all fields are filled, proceed with fetching text and redirecting
-            fetch("https://script.google.com/macros/s/AKfycbxO_d8fHM8U38am8leZxUfpNKi4i0Z0FTQhm-T2ZM1DohtOyv69WYEqwsk8lkzXjFJYgQ/exec", {
+            fetch("https://script.google.com/macros/s/AKfycbzDVkvTv2mQh9ilaJfUL7vkZWDHbm4H4A1hLjPtimjbmQH3k-87GAmAMrzFO3rY8riD5A/exec", {
                 method: "POST",
                 body: new FormData(document.querySelector('form')),
             })
@@ -166,7 +166,7 @@
             var formData = new FormData();
             formData.append("Email", email);
     
-            fetch("https://script.google.com/macros/s/AKfycbziEAvDXIT3r9C5NfgNWyPiu5jtrOt7uioHNW4RrI5poHDjMD06CJ4zqA_jzA4KN7jkzQ/exec", {
+            fetch("https://script.google.com/macros/s/AKfycbxdaVyQt0tK2-eaO0u7G_0Mi5D3e2emt9JuHigIODK_DsCh2G8gtku1pOG5J0qImAxhgw/exec", {
                     method: "POST",
                     body: formData,
                 })
