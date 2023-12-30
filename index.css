@@ -3,24 +3,28 @@ body {
     padding: 0;
     background-color: #c1e1c1;
     font-family: Arial, sans-serif;
+    overflow-x: hidden;
 }
+
 .header {
     display: flex;
     align-items: center;
-    justify-content: space-between; /* Adjusted to left align */
+    justify-content: space-between;
     padding: 20px;
     background-color: #ffffff;
+    width: 100%;
+    box-sizing: border-box;
+    align-content: flex-start;
 }
 
-.logo {
-    display: flex;
-    align-items: center;
+.header * {
+    box-sizing: inherit;
 }
 
 .logo img {
     width: 280px;
     height: auto;
-    margin-right: 20px; /* Adjusted margin for spacing */
+    margin-right: 20px;
 }
 
 .nav {
@@ -32,23 +36,55 @@ body {
 .button {
     font-weight: bold;
     padding: 12px 16px;
-    background-color: #000000;
-    color: #ffffff;
+    color: #000;
     text-decoration: none;
-    border: none;
     cursor: pointer;
-    border-radius: 8px;
-    transition: background-color 0.3s ease, color 0.3s ease;
+    border: none;
+    position: relative;
+    overflow: hidden;
+    transition: font-size 0.3s ease, color 0.3s ease;
+    font-size: 20px;
 }
 
 .button:hover {
-    background-color: #d70000;
-    color: #ffffff;
+    font-size: 130%;
+}
+
+.button::before {
+    content: '';
+    position: absolute;
+    left: 50%;
+    bottom: 0;
+    width: 0;
+    height: 2px;
+    background-color: #000000;
+    transform: translateX(-50%);
+    transition: width 0.3s ease;
+}
+
+.button:hover::before {
+    width: 100%;
+}
+
+.button::after {
+    content: '';
+    position: absolute;
+    left: 50%;
+    bottom: 0;
+    height: 2px;
+    width: 0;
+    background-color: #000000;
+    transition: width 0.3s ease;
+}
+
+.button:hover::after {
+    width: 100%;
 }
 
 .with-dropdown {
     position: relative;
 }
+
 .button, .with-dropdown:hover .button {
     font-weight: bold;
 }
@@ -61,8 +97,8 @@ body {
     border-radius: 8px;
     padding: 10px;
     z-index: 1;
-    width: 185px; /* Adjusted width */
-    margin-top: 5px; /* Adjusted margin-top to prevent overlap */
+    width: 185px;
+    margin-top: 15px;
 }
 
 .dropdown-content a {
@@ -76,14 +112,21 @@ body {
 .dropdown-content a:hover {
     background-color: #c1e1c1;
 }
+
 .with-dropdown:hover .dropdown-content {
     display: block;
-}
-
-.dropdown:hover .dropdown-content {
-    display: block;
+    position: absolute;
+    top: 120%;
+    left: 0;
+    width: 185px;
+    background-color: #ffffff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    padding: 10px;
+    z-index: 1;
     white-space: nowrap;
 }
+
 .footer-content{
     background-color: black;
     padding-bottom: 4rem 0 4rem 0;
@@ -536,26 +579,58 @@ i {
 html{
     scroll-behavior: smooth;
 }
-@media screen and (max-width: 768px) {
-    .header {
-        flex-direction: column;
-        align-items: flex-start;
-    }
-
-    .nav {
-        flex-direction: column;
-        gap: 10px;
-    }
-
-    .button {
-        display: block;
-        width: 100%;
-        box-sizing: border-box;
+@media screen and (max-width: 480px) {
+    .button-container {
         text-align: center;
     }
 
-    .logo img {
-        width: 100%;
-        margin-right: 0;
+    .view-services-btn {
+        margin-top: 10px;
+        padding: 12px 24px;
+        font-size: 16px;
+    }
+
+    .offer-box {
+        width: 100%; /* Full width for offer boxes on smaller screens */
+        margin: 10px;
+    }
+
+    .box-image.center {
+        width: 120px;
+        height: 70px;
+    }
+
+    .center-box {
+        width: 100%; /* Full width for center boxes on smaller screens */
+        padding: 10px; /* Reduced padding for smaller screens */
+    }
+
+    .center-box .box-title {
+        font-size: 18px; /* Font size adjustment */
+    }
+
+    .center-box .box-description {
+        font-size: 13px; /* Font size adjustment */
+    }
+
+    .submit-button {
+        padding: 8px; /* Reduced padding for smaller screens */
+        font-size: 14px; /* Font size adjustment */
+    }
+
+    .capsule-input {
+        padding: 8px; /* Reduced padding for smaller screens */
+    }
+
+    .popup {
+        width: 90%; /* Adjust popup width for smaller screens */
+    }
+
+    .popup h2 {
+        font-size: 24px; /* Font size adjustment */
+    }
+
+    .newsletter-button {
+        width: 80px; /* Adjust button width for smaller screens */
     }
 }
