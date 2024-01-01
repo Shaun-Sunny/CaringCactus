@@ -1,3 +1,6 @@
+*{
+    max-width: 1000%;
+}
 body {
     margin: 0;
     padding: 0;
@@ -5,26 +8,37 @@ body {
     font-family: Arial, sans-serif;
     overflow-x: hidden;
 }
-
 .header {
     display: flex;
     align-items: center;
-    justify-content: space-between;
+    justify-content: space-between; /* Adjusted to left align */
     padding: 20px;
     background-color: #ffffff;
     width: 100%;
+    background-size: cover;
+    box-sizing: border-box; /* Include padding and borders within the total width */
+    width: 100%; /* Ensure the header spans the full width */
+}
+.header * {
+    box-sizing: inherit; /* Inherit box-sizing property for child elements */
+    /* Add other styles as needed */
+}
+body, .header {
+    padding: 0;
+}
+* {
     box-sizing: border-box;
-    align-content: flex-start;
 }
 
-.header * {
-    box-sizing: inherit;
+.logo {
+    display: flex;
+    align-items: center;
 }
 
 .logo img {
     width: 280px;
     height: auto;
-    margin-right: 20px;
+    margin-right: 20px; /* Adjusted margin for spacing */
 }
 
 .nav {
@@ -41,15 +55,14 @@ body {
     cursor: pointer;
     border: none;
     position: relative;
-    overflow: hidden;
+    overflow: hidden; /* Hide overflow for the underline animation */
     transition: font-size 0.3s ease, color 0.3s ease;
     font-size: 20px;
 }
 
 .button:hover {
-    font-size: 130%;
+    font-size: 130%; /* Increase font size on hover */
 }
-
 .button::before {
     content: '';
     position: absolute;
@@ -59,32 +72,25 @@ body {
     height: 2px;
     background-color: #000000;
     transform: translateX(-50%);
-    transition: width 0.3s ease;
+    transition: width 0.3s ease; /* Add transition effect for the underline */
 }
-
 .button:hover::before {
     width: 100%;
 }
-
-.button::after {
+.button:hover::after {
     content: '';
     position: absolute;
     left: 50%;
     bottom: 0;
-    height: 2px;
+    height: 2px; /* Set the height of the underline */
     width: 0;
-    background-color: #000000;
-    transition: width 0.3s ease;
+    background-color: #000000; /* Set the color of the underline */
+    transition: width 0.3s ease; /* Add transition effect for the underline */
+    width: 0%;
 }
-
-.button:hover::after {
-    width: 100%;
-}
-
 .with-dropdown {
     position: relative;
 }
-
 .button, .with-dropdown:hover .button {
     font-weight: bold;
 }
@@ -97,8 +103,8 @@ body {
     border-radius: 8px;
     padding: 10px;
     z-index: 1;
-    width: 185px;
-    margin-top: 15px;
+    width: 195px; /* Adjusted width */
+    margin-top: 15px; /* Adjusted margin-top to prevent overlap */
 }
 
 .dropdown-content a {
@@ -112,13 +118,12 @@ body {
 .dropdown-content a:hover {
     background-color: #c1e1c1;
 }
-
 .with-dropdown:hover .dropdown-content {
     display: block;
     position: absolute;
-    top: 120%;
+    top: 100%; /* Adjust the top value for spacing */
     left: 0;
-    width: 185px;
+    width: 195px;
     background-color: #ffffff;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     border-radius: 8px;
@@ -126,7 +131,10 @@ body {
     z-index: 1;
     white-space: nowrap;
 }
-
+.dropdown:hover .dropdown-content {
+    display: block;
+    white-space: nowrap;
+}
 .footer-content{
     background-color: black;
     padding-bottom: 4rem 0 4rem 0;
