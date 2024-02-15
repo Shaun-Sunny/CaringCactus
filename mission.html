@@ -6,6 +6,7 @@
     <link rel="stylesheet" href="mission.css">
     <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css">
     <link rel="icon" type="image/x-icon" href="cac.png">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Caring Cactus</title>
 </head>
 <body>
@@ -14,6 +15,14 @@
         <div class="logo">
             <a href="index.html"><img src="logo.png" alt="Logo"></a>
         </div>
+<nav class="nav">
+    <!-- Your navigation buttons here -->
+</nav>
+<div class="menu-button">
+    <div class="line"></div>
+        <div class="line"></div>
+        <div class="line"></div>
+</div>
         <nav class="nav">
             <a href="index.html" class="button">Home</a>
             <div class="with-dropdown">
@@ -44,7 +53,19 @@
             <a href="contact.html" class="button">Contact</a>
         </nav>
     </div>
-
+    <script>
+        // Get the menu button and navigation elements
+        const menuButton = document.querySelector('.menu-button');
+        const nav = document.querySelector('.nav');
+    
+        // Add click event listener to the menu button
+        menuButton.addEventListener('click', function() {
+            // Toggle the active class on the menu button
+            menuButton.classList.toggle('active');
+            // Toggle the active class on the navigation
+            nav.classList.toggle('active');
+        });
+    </script>
     <div class="vision-mission">
         <div class="left-content">
             <img src="vision.png" alt="Vision Image">
@@ -137,8 +158,6 @@
         // Prevent the default form submission
         return false;
     }
-    
-    
     </script>
 </body>
 </html>

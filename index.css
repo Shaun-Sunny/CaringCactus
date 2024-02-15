@@ -45,6 +45,7 @@ body, .header {
     display: flex;
     gap: 20px;
     align-items: center;
+    justify-content: space-between;
 }
 
 .button {
@@ -587,58 +588,16 @@ i {
 html{
     scroll-behavior: smooth;
 }
-@media screen and (max-width: 480px) {
-    .button-container {
-        text-align: center;
-    }
-
-    .view-services-btn {
-        margin-top: 10px;
-        padding: 12px 24px;
-        font-size: 16px;
-    }
-
-    .offer-box {
-        width: 100%; /* Full width for offer boxes on smaller screens */
-        margin: 10px;
-    }
-
-    .box-image.center {
-        width: 120px;
-        height: 70px;
-    }
-
-    .center-box {
-        width: 100%; /* Full width for center boxes on smaller screens */
-        padding: 10px; /* Reduced padding for smaller screens */
-    }
-
-    .center-box .box-title {
-        font-size: 18px; /* Font size adjustment */
-    }
-
-    .center-box .box-description {
-        font-size: 13px; /* Font size adjustment */
-    }
-
-    .submit-button {
-        padding: 8px; /* Reduced padding for smaller screens */
-        font-size: 14px; /* Font size adjustment */
-    }
-
-    .capsule-input {
-        padding: 8px; /* Reduced padding for smaller screens */
-    }
-
-    .popup {
-        width: 90%; /* Adjust popup width for smaller screens */
-    }
-
-    .popup h2 {
-        font-size: 24px; /* Font size adjustment */
-    }
-
-    .newsletter-button {
-        width: 80px; /* Adjust button width for smaller screens */
-    }
+.hamburger{
+    display: none;
+    cursor: pointer;
+}
+.bars{
+    display: block;
+    width: 25px;
+    height: 3px;
+    margin: 5px auto;
+    -webkit-transition: all 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out;
+    background-color: #000;
 }
