@@ -237,42 +237,33 @@ body, .header {
         font-size: 1rem;
     }
     @media screen and (max-width: 480px) {
-        /* Adjustments for stacking elements */
-    
         .vision img,
         .mission img {
-            max-width: 80%; /* Adjust image width */
+            max-width: 80%;
             display: block;
-            margin: 0 auto 10px; /* Center align the images and add bottom margin */
+            margin: 0 auto 10px;
         }
     
         .vision p,
         .mission p {
             font-size: 14px;
-            text-align: center; /* Center align the text */
-            margin: 0 10px; /* Add margin to the sides of the text */
+            text-align: center;
+            margin: 0 10px;
         }
     
         .vision,
         .mission {
-            text-align: center; /* Center align the sections */
-            width: 100%; /* Occupy full width */
-            margin-bottom: 20px; /* Add some space between sections */
+            text-align: center;
+            width: 100%;
+            margin-bottom: 20px;
         }
     
-        /* Set flex direction for vision-mission container */
         .vision-mission {
             display: flex;
-            flex-direction: column; /* Stack items vertically */
-            align-items: center; /* Center align items horizontally */
+            flex-direction: column;
+            align-items: center;
         }
     
-        /* Set order for vision and mission */
-        .vision img {
-            order: 1; /* Make vision image appear first */
-        }
-    
-        /* Existing styles for header, nav, and footer remain unchanged */
         .header {
             flex-direction: column;
             align-items: center;
@@ -284,13 +275,14 @@ body, .header {
             gap: 10px;
             align-items: center;
             display: none;
-            position: absolute;
-            top: 100%;
+            position: absolute; /* Keep the menu fixed at its initial position */
+            top: 200px; /* Adjust as needed */
             left: 0;
             width: 100%;
             background-color: #ffffff;
-            padding: 10px 0;
-            box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+            padding: 20px 0;
+            box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+            z-index: 9999;
         }
     
         .nav.active {
@@ -302,14 +294,24 @@ body, .header {
             width: 100%;
             box-sizing: border-box;
             text-align: center;
+            padding: 10px 0;
         }
     
         .logo img {
-            width: 100%;
-            margin-right: 0;
+            width: 280px; /* Set the width of the logo */
+            height: auto;
+            margin-right: 20px;
         }
     
-        .left-content, .right-content {
+        .logo {
+            position: relative;
+            display: flex;
+            align-items: center;
+            margin-bottom: 20px; /* Add margin to create space between logo and buttons */
+        }
+    
+        .left-content,
+        .right-content {
             max-width: 90%;
         }
     
@@ -324,11 +326,11 @@ body, .header {
         .menu-button {
             display: block;
             cursor: pointer;
-            position: absolute;
-            top: 50%;
-            right: 20px;
+            position: absolute; /* Keep the menu button fixed at its initial position */
+            top: 80px; /* Adjust as needed */
+            right: 20px; /* Adjust as needed */
             transform: translateY(-50%);
-            z-index: 999;
+            z-index: 10000;
         }
     
         .line {
@@ -345,7 +347,15 @@ body, .header {
     
         .menu-button.active .line:nth-child(2) {
             opacity: 0;
+        }
     
         .menu-button.active .line:nth-child(3) {
-            transform: rotate(45deg) translate(-5px, -6px);
+            transform: rotate(45deg) translate(-6px, -8px);
         }
+    
+        /* Show the navigation when the hamburger menu is active */
+        .menu-button.active + .nav {
+            display: flex;
+        }
+    }
+    
