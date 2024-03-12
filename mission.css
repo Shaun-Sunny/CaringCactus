@@ -247,23 +247,40 @@ body, .header {
         .vision p,
         .mission p {
             font-size: 14px;
-            text-align: center;
+            text-align: justify; /* Justify the text within paragraphs */
             margin: 0 10px;
+            width: 100%;
+            line-height: 1.5; /* Set line height to improve readability */
+        }
+        .paragraph-container {
+            width: 220%; /* Increase the width of the container */
+            margin: 0 auto; /* Center the container */
+            padding: 0 10px; /* Add padding if necessary */
         }
     
+        .paragraph-container p {
+            font-size: 14px;
+            text-align: justify;
+            margin: 0; /* Reset margin */
+            line-height: 1.5; /* Set line height to improve readability */
+        }
         .vision,
         .mission {
-            text-align: center;
+            text-align: left;
             width: 100%;
             margin-bottom: 20px;
+            padding: 0 10px;
         }
+    
     
         .vision-mission {
             display: flex;
             flex-direction: column;
-            align-items: center;
+            align-items: flex-start;
         }
+    }
     
+    @media screen and (max-width: 480px) {
         .header {
             flex-direction: column;
             align-items: center;
@@ -358,4 +375,3 @@ body, .header {
             display: flex;
         }
     }
-    
