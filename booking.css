@@ -372,7 +372,7 @@ select {
         display: flex;
     }
 }
-@media (max-width: 480px) {
+@media screen and (max-width: 480px) {
     .seminar {
         width: 90%;
         margin: 20px auto;
