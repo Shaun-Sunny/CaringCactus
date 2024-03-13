@@ -406,6 +406,7 @@ select {
 
     .center-section {
         text-align: center;
+        margin-right: 90px;
     }
 
     #event-type {
@@ -433,7 +434,7 @@ select {
     }
 
     .book-now-button {
-        width: 90%;
+        width: 81%; /* Set width to match text fields */
         background-color: #FF0000;
         color: white;
         padding: 15px;
@@ -444,6 +445,7 @@ select {
         transition: background-color 0.3s;
         margin: 10px auto;
     }
+    
 
     .book-now-button:hover {
         background-color: #0000FF;

@@ -237,48 +237,56 @@ body, .header {
         font-size: 1rem;
     }
     @media screen and (max-width: 480px) {
-        .vision img,
-        .mission img {
-            max-width: 80%;
-            display: block;
-            margin: 0 auto 10px;
-        }
-    
-        .vision p,
-        .mission p {
-            font-size: 14px;
-            text-align: justify; /* Justify the text within paragraphs */
-            margin: 0 10px;
-            width: 100%;
-            line-height: 1.5; /* Set line height to improve readability */
-        }
-        .paragraph-container {
-            width: 220%; /* Increase the width of the container */
-            margin: 0 auto; /* Center the container */
-            padding: 0 10px; /* Add padding if necessary */
-        }
-    
-        .paragraph-container p {
-            font-size: 14px;
-            text-align: justify;
-            margin: 0; /* Reset margin */
-            line-height: 1.5; /* Set line height to improve readability */
-        }
-        .vision,
-        .mission {
-            text-align: left;
-            width: 100%;
-            margin-bottom: 20px;
-            padding: 0 10px;
-        }
-    
-    
-        .vision-mission {
-            display: flex;
-            flex-direction: column;
-            align-items: flex-start;
-        }
+    .vision img,
+    .mission img {
+        max-width: 80%;
+        display: block;
+        margin: 0 auto 10px; /* Center the images horizontally */
     }
+
+    .vision h2,
+    .mission h2 {
+        margin: 0 auto 10px; /* Center the headers horizontally */
+        text-align: center; /* Center the text within the headers */
+    }
+
+    .vision p,
+    .mission p {
+        font-size: 14px;
+        text-align: justify;
+        margin: 0 10px;
+        width: 100%;
+        line-height: 1.5;
+    }
+
+    .paragraph-container {
+        width: 220%;
+        margin: 0 auto;
+        padding: 0 10px;
+    }
+
+    .paragraph-container p {
+        font-size: 14px;
+        text-align: justify;
+        margin: 0;
+        line-height: 1.5;
+    }
+
+    .vision,
+    .mission {
+        text-align: left;
+        width: 100%;
+        margin-bottom: 20px;
+        padding: 0 10px;
+    }
+
+    .vision-mission {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+    }
+}
+
     
     @media screen and (max-width: 480px) {
         .header {
