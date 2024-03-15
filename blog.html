@@ -4,12 +4,19 @@
 
         <title>Caring Cactus</title>
         <link rel="stylesheet" href="blog.css">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css">
         <link rel="icon" type="image/x-icon" href="cac.png">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
     </head>
     <div class="header">
         <div class="logo">
             <a href="index.html"><img src="logo.png" alt="Logo"></a>
+        </div>
+        <div class="menu-button">
+            <div class="line"></div>
+                <div class="line"></div>
+                <div class="line"></div>
         </div>
         <nav class="nav">
             <a href="index.html" class="button">Home</a>
@@ -41,6 +48,19 @@
             <a href="contact.html" class="button">Contact</a>
         </nav>
     </div>
+    <script>
+        // Get the menu button and navigation elements
+        const menuButton = document.querySelector('.menu-button');
+        const nav = document.querySelector('.nav');
+    
+        // Add click event listener to the menu button
+        menuButton.addEventListener('click', function() {
+            // Toggle the active class on the menu button
+            menuButton.classList.toggle('active');
+            // Toggle the active class on the navigation
+            nav.classList.toggle('active');
+        });
+    </script>
 <body>
     <header class="title">Winter Wellness: Embracing the Bounty of Nutrients from Indian Nature</header>
     <section>
