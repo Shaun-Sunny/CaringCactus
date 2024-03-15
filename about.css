@@ -1,6 +1,3 @@
-*{
-    max-width: 1000%;
-}
 body {
     margin: 0;
     padding: 0;
@@ -386,15 +383,29 @@ body, .header {
     opacity: 1;
     transform: translateY(0);
 }
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 480px) {
     .header {
         flex-direction: column;
-        align-items: flex-start;
+        align-items: center;
+        position: relative;
     }
-
     .nav {
         flex-direction: column;
         gap: 10px;
+        align-items: center;
+        display: none;
+        position: absolute; /* Keep the menu fixed at its initial position */
+        top: 200px; /* Adjust as needed */
+        left: 0;
+        width: 100%;
+        background-color: #ffffff;
+        padding: 20px 0;
+        box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+        z-index: 9999;
+    }
+
+    .nav.active {
+        display: flex;
     }
 
     .button {
@@ -402,11 +413,151 @@ body, .header {
         width: 100%;
         box-sizing: border-box;
         text-align: center;
+        padding: 10px 0;
     }
 
     .logo img {
-        width: 100%;
-        margin-right: 0;
+        width: 280px; /* Set the width of the logo */
+        height: auto;
+        margin-right: 20px;
+    }
+
+    .logo {
+        position: relative;
+        display: flex;
+        align-items: center;
+        margin-bottom: 20px; /* Add margin to create space between logo and buttons */
+    }
+
+    .left-content,
+    .right-content {
+        max-width: 90%;
+    }
+
+    .left-content {
+        order: 2;
+    }
+
+    .right-content {
+        order: 1;
+    }
+
+    .menu-button {
+        display: block;
+        cursor: pointer;
+        position: absolute; /* Keep the menu button fixed at its initial position */
+        top: 80px; /* Adjust as needed */
+        right: 20px; /* Adjust as needed */
+        transform: translateY(-50%);
+        z-index: 10000;
+    }
+
+    .line {
+        width: 30px;
+        height: 3px;
+        background-color: #000;
+        margin: 6px 0;
+        transition: 0.4s;
+    }
+
+    .menu-button.active .line:nth-child(1) {
+        transform: rotate(-45deg) translate(-5px, 6px);
+    }
+
+    .menu-button.active .line:nth-child(2) {
+        opacity: 0;
+    }
+
+    .menu-button.active .line:nth-child(3) {
+        transform: rotate(45deg) translate(-6px, -8px);
+    }
+
+    /* Show the navigation when the hamburger menu is active */
+    .menu-button.active + .nav {
+        display: flex;
     }
 }
 
+@media screen and (max-width: 480px) {
+    .container {
+        display: flex;
+        flex-direction: column;
+        justify-content: center; /* Center contents vertically */
+        align-items: center; /* Center contents horizontally */
+        padding: 10px; /* Adjusted padding */
+        border-width: 5px; /* Adjusted border width */
+    }
+
+    .team-member,
+    .founding-member {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center; /* Center align text content */
+    }
+
+    .team-member img,
+    .founding-member img,
+    {
+        max-width: 100%; /* Set maximum width to 100% */
+        height: auto;
+    }
+
+    .team-member img,
+    .founding-member img {
+        border-radius: 50%;
+        object-fit: cover; /* Maintain aspect ratio and cover the entire container */
+        width: 150px; /* Set a fixed width for the small circles */
+        height: 150px; /* Set a fixed height for the small circles */
+        margin-bottom: 10px; /* Adjusted margin */
+    }
+
+    .team-member .about,
+    .founding-member .about {
+        width: 100%; /* Adjusted width for the text content */
+        text-align: center; /* Center align text content */
+        padding: 20px; /* Added padding for spacing */
+        margin: 0; /* Remove any default margins */
+    }
+
+    .team-member .about h3,
+    .founding-member .about h3 {
+        color: #2b9ec2;
+        font-size: 18px; /* Adjusted font size */
+        margin-bottom: 10px; /* Adjusted margin */
+    }
+
+    .team-member .about p.job-title,
+    .founding-member .about p.job-title {
+        color: #d70000; /* Change the color to your preference */
+        font-size: 16px; /* Adjusted font size */
+        font-weight: bold; /* Make the title bold or adjust as needed */
+        margin-bottom: 5px; /* Adjusted margin for spacing */
+    }
+
+    .team-member .about p.description,
+    .founding-member .about p.description {
+        font-size: 14px; /* Adjusted font size */
+        color: #3d3d3d;
+        line-height: 1.3; /* Adjusted line height */
+    }
+
+    .about-us {
+        padding: 20px; /* Adjusted padding */
+    }
+
+    .header.about-header {
+        padding: 10px; /* Adjusted padding */
+    }
+
+    .about-logo img {
+        width: 200px; /* Adjusted width */
+        height: auto;
+        margin-right: 10px; /* Adjusted margin */
+    }
+
+    .about-card {
+        width: 100%; /* Full width for smaller screens */
+        margin-bottom: 15px; /* Adjusted margin */
+    }
+}

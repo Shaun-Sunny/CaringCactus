@@ -3,14 +3,21 @@
     <head>
 
         <title>Caring Cactus</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" href="about.css">
         <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css">
         <link rel="icon" type="image/x-icon" href="cac.png">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
     </head>
     <div class="header about-header">
         <div class="logo about-logo"
         <div class="logo">
             <a href="index.html"><img src="logo.png" alt="Logo"></a>
+        </div>
+        <div class="menu-button">
+            <div class="line"></div>
+                <div class="line"></div>
+                <div class="line"></div>
         </div>
         <nav class="nav">
             <a href="index.html" class="button">Home</a>
@@ -44,6 +51,19 @@
     </div>
 </div>
 </div>
+<script>
+    // Get the menu button and navigation elements
+    const menuButton = document.querySelector('.menu-button');
+    const nav = document.querySelector('.nav');
+
+    // Add click event listener to the menu button
+    menuButton.addEventListener('click', function() {
+        // Toggle the active class on the menu button
+        menuButton.classList.toggle('active');
+        // Toggle the active class on the navigation
+        nav.classList.toggle('active');
+    });
+</script>
     <section>
         <div class="about-us">
             <h1>Meet Our Dynamic Duo: The Visionaries Behind Caring Cactus</h1>
@@ -63,17 +83,18 @@ Meet Meera, the heartbeat of Caring Cactus. With over a decade of expertise as a
             <div class="founding-member">
                 
                 <div class="about">
+                    <img src="2.jpg" alt="Team Member 2">
                     <h3>Manjeet Bhatt</h3>
                     <p class="job-title">The Marketing Maestro - Director</p>
                     <p class="description">
 Say hello to Manjeet, the marketing virtuoso and entrepreneurial spirit behind the scenes. With a blend of youthfulness and seasoned experience, Manjeet is the marketing head of the company, steering the ship with an impressive track record in branding and marketing. Together, they've crafted Caring Cactus as more than just a brand; it's a lifestyle revolution.
                     </p>
                 </div>
-                <img src="2.jpg" alt="Team Member 2">
             </div>
 
             <!-- Repeat similar structure for Team Members 3, 4, and 5 -->
             <!-- Team Member 3 -->
+            <div class="team-members-container">
             <h1>Meet the rest of our extraordinary team, a diverse blend of talents and passion, dedicated to cultivating a world of well-being at Caring Cactus</h1>
             <div class="team-member">
                 <img src="3.jpg" alt="Team Member 3">
@@ -123,6 +144,7 @@ Say hello to Manjeet, the marketing virtuoso and entrepreneurial spirit behind t
 
             </div>
         </div>
+    </div>
     </section>
     <footer>
         <div class="footer-content">
