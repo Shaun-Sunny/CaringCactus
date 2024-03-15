@@ -1,6 +1,4 @@
-*{
-    max-width: 1000%;
-}
+
 body {
     margin: 0;
     padding: 0;
@@ -413,16 +411,18 @@ tr td{
     @media only screen and (max-width: 480px) {
         .contact-box {
             flex-direction: column; /* Stack items vertically */
+            border-radius: 15px; /* Add border radius for curved edges */
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Add shadow */
+            overflow: hidden; /* Ensure shadow doesn't overflow */
         }
     
-        .contact-left {
+        .contact-left,
+        .contact-right {
             flex-basis: 100%; /* Take up full width */
             padding: 10px; /* Adjust padding */
         }
     
         .contact-right {
-            flex-basis: 100%; /* Take up full width */
-            padding: 10px; /* Adjust padding */
             margin-top: 20px; /* Add margin between left and right sections */
         }
     
@@ -439,7 +439,11 @@ tr td{
         }
     
         input {
-            width: 100%; /* Take up full width */
+            width: calc(100% - 20px); /* Take up full width with padding */
+            padding: 8px; /* Adjust padding */
+            border-radius: 5px; /* Add border radius for curved edges */
+            border: 1px solid #ccc; /* Add border */
+            margin-bottom: 10px; /* Adjust margin */
         }
     }
     
