@@ -1,6 +1,4 @@
-*{
-    max-width: 1000%;
-}
+
 body {
     margin: 0;
     padding: 0;
@@ -601,3 +599,273 @@ html{
     transition: all 0.3s ease-in-out;
     background-color: #000;
 }
+@media screen and (max-width: 480px) {
+    .header {
+        flex-direction: column;
+        align-items: center;
+        position: relative;
+    }
+
+    .nav {
+        flex-direction: column;
+        gap: 10px;
+        align-items: center;
+        display: none;
+        position: absolute; /* Keep the menu fixed at its initial position */
+        top: 200px; /* Adjust as needed */
+        left: 0;
+        width: 100%;
+        background-color: #ffffff;
+        padding: 20px 0;
+        box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+        z-index: 9999;
+    }
+
+    .nav.active {
+        display: flex;
+    }
+
+    .button {
+        display: block;
+        width: 100%;
+        box-sizing: border-box;
+        text-align: center;
+        padding: 10px 0;
+    }
+
+    .logo img {
+        width: 280px; /* Set the width of the logo */
+        height: auto;
+        margin-right: 20px;
+    }
+
+    .logo {
+        position: relative;
+        display: flex;
+        align-items: center;
+        margin-bottom: 20px; /* Add margin to create space between logo and buttons */
+    }
+
+    .left-content,
+    .right-content {
+        max-width: 90%;
+    }
+
+    .left-content {
+        order: 2;
+    }
+
+    .right-content {
+        order: 1;
+    }
+
+    .menu-button {
+        display: block;
+        cursor: pointer;
+        position: absolute; /* Keep the menu button fixed at its initial position */
+        top: 80px; /* Adjust as needed */
+        right: 20px; /* Adjust as needed */
+        transform: translateY(-50%);
+        z-index: 10000;
+    }
+
+    .line {
+        width: 30px;
+        height: 3px;
+        background-color: #000;
+        margin: 6px 0;
+        transition: 0.4s;
+    }
+
+    .menu-button.active .line:nth-child(1) {
+        transform: rotate(-45deg) translate(-5px, 6px);
+    }
+
+    .menu-button.active .line:nth-child(2) {
+        opacity: 0;
+    }
+
+    .menu-button.active .line:nth-child(3) {
+        transform: rotate(45deg) translate(-6px, -8px);
+    }
+
+    /* Show the navigation when the hamburger menu is active */
+    .menu-button.active + .nav {
+        display: flex;
+    }
+}
+@media screen and (max-width: 480px) {
+    .wrapper {
+        padding: 20px; /* Adjusted padding for smaller screens */
+    }
+
+    .heading-1 {
+        margin-left: 20px; /* Adjusted margin for smaller screens */
+        text-align: center; /* Center align for smaller screens */
+    }
+
+    .additional-section {
+        flex-direction: column; /* Stack items vertically */
+        padding: 10px; /* Adjusted padding */
+        padding-left: 20px; /* Adjusted padding */
+    }
+
+    .left-side,
+    .right-side {
+        text-align: center; /* Center align for smaller screens */
+    }
+
+    .welcome-message {
+        font-size: 28px; /* Adjusted font size */
+        margin-bottom: 10px; /* Adjusted margin */
+    }
+
+    .wellness-message {
+        font-size: 14px; /* Adjusted font size */
+        margin-bottom: 20px; /* Adjusted margin */
+    }
+
+    .cactus-image {
+        max-width: 100%; /* Adjusted image size */
+        height: auto; /* Maintain aspect ratio */
+        padding-left: 50px;
+        padding-top: 20px;
+    }
+
+    .button-container {
+        text-align: center; /* Center align for smaller screens */
+        margin-top: 10px; /* Adjusted margin */
+    }
+
+    .view-services-btn {
+        margin-top: 10px; /* Adjusted margin */
+        font-size: 16px; /* Adjusted font size */
+    }
+
+    .what-we-offer-section {
+        margin: 0; /* Reset margin */
+    }
+
+    .offer-box {
+        width: 100%; /* Full width for smaller screens */
+        margin: 10px 0; /* Adjusted margin */
+    }
+
+    .center-box {
+        width: 100%; /* Full width for smaller screens */
+        margin: 0 auto 10px; /* Center the box horizontally with auto margin */
+    }
+
+    .box-image.center {
+        width: 100px; /* Adjusted image size */
+        height: auto; /* Maintain aspect ratio */
+    }
+
+    .form-container {
+        max-width: 100%; /* Full width for smaller screens */
+        margin: 20px auto; /* Center the form */
+    }
+
+    .form-row {
+        flex-direction: column; /* Stack form rows vertically */
+        margin-bottom: 10px; /* Adjusted margin */
+    }
+
+    .form-column {
+        margin-right: 0; /* Reset margin */
+    }
+
+    .capsule-input {
+        margin-top: 10px; /* Adjusted margin */
+        padding: 8px 15px; /* Adjusted padding */
+    }
+
+    .submit-button {
+        padding: 8px 15px; /* Adjusted padding */
+        font-size: 14px; /* Adjusted font size */
+    }
+
+    .date-time-input {
+        padding-right: 20px; /* Adjusted padding */
+    }
+
+    .popup {
+        width: 90%; /* Adjusted width */
+        padding: 0 15px 15px; /* Adjusted padding */
+    }
+
+    .popup img {
+        width: 70px; /* Adjusted image size */
+        margin-top: -35px; /* Adjusted margin */
+    }
+
+    .popup h2 {
+        font-size: 24px; /* Adjusted font size */
+        margin: 20px 0 10px; /* Adjusted margin */
+    }
+
+    .popup button {
+        margin-top: 30px; /* Adjusted margin */
+        font-size: 16px; /* Adjusted font size */
+    }
+
+    .home-text {
+        font-size: 16px; /* Adjusted font size */
+        padding-left: 20px; /* Adjusted padding */
+        padding-right: 20px; /* Adjusted padding */
+    }
+
+    .hamburger {
+        display: block; /* Show hamburger icon */
+    }
+
+    .bars {
+        margin: 5px auto; /* Adjusted margin */
+    }
+
+    .offer-box.center-box {
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        width: 420px; /* Increased size */
+        height: 400px; /* Increased size */
+        background-color: #fff; /* Background color */
+        border-radius: 10px; /* Rounded corners */
+        padding: 20px; /* Padding */
+        box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1); /* Box shadow */
+    }
+    
+    .go-to-button.center {
+        position: absolute;
+        bottom: 20px; /* Adjusted position */
+        right: 120px; /* Adjusted position */
+        padding: 5px 20px; /* Padding */
+        font-size: 16px; /* Font size */
+        color: #fff; /* Button text color */
+        border: none; /* No border */
+        border-radius: 5px; /* Rounded corners */
+        cursor: pointer; /* Cursor style */
+        transition: background-color 0.3s ease; /* Smooth transition */
+    }
+    .submit-button {
+        margin: 0 auto; /* Center horizontally */
+        display: block; /* Ensure it takes up the full width */
+    }
+    .form-column {
+        position: relative;
+    }
+    .form-column i {
+        position: absolute;
+        left: 10px; /* Adjust as needed */
+        top: 50%;
+        transform: translateY(-50%);
+    }
+    .form-column input,
+    .form-column select {
+        padding-left: 30px; /* Adjust as needed */
+    }
+
+}
+

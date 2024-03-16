@@ -3,6 +3,7 @@
     <head>
 
         <title>Caring Cactus</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" href="index.css">
         <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css">
         <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -15,9 +16,15 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Lora:wght@600&family=Roboto+Serif:ital,opsz,wght@1,8..144,300&display=swap" rel="stylesheet">
         <link rel="icon" type="image/x-icon" href="cac.png">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <div class="header">
         <div class="logo">
             <a href="index.html"><img src="logo.png" alt="Logo"></a>
+        </div>
+        <div class="menu-button">
+            <div class="line"></div>
+                <div class="line"></div>
+                <div class="line"></div>
         </div>
         <nav class="nav">
             <a href="index.html" class="button">Home</a>
@@ -49,6 +56,19 @@
             <a href="contact.html" class="button">Contact</a>
         </nav>
     </div>
+    <script>
+        // Get the menu button and navigation elements
+        const menuButton = document.querySelector('.menu-button');
+        const nav = document.querySelector('.nav');
+    
+        // Add click event listener to the menu button
+        menuButton.addEventListener('click', function() {
+            // Toggle the active class on the menu button
+            menuButton.classList.toggle('active');
+            // Toggle the active class on the navigation
+            nav.classList.toggle('active');
+        });
+    </script>
     <div class="hamburger">
         <span class="bar"></span>
         <span class="bar"></span>
