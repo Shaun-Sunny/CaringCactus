@@ -1,0 +1,313 @@
+body {
+    margin: 0;
+    padding: 0;
+    background-color: #c1e1c1;
+    font-family: Arial, sans-serif;
+    overflow-x: hidden;
+}
+.content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; /* Set height to the viewport height for vertical centering */
+}
+
+.content img {
+    max-width: 100%; /* Ensure the image doesn't exceed the container width */
+    max-height: 100%; /* Ensure the image doesn't exceed the container height */
+}
+
+.header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between; /* Adjusted to left align */
+    padding: 20px;
+    background-color: #ffffff;
+    width: 100%;
+    background-size: cover;
+    box-sizing: border-box; /* Include padding and borders within the total width */
+    width: 100%; /* Ensure the header spans the full width */
+}
+.header * {
+    box-sizing: inherit; /* Inherit box-sizing property for child elements */
+    /* Add other styles as needed */
+}
+body, .header {
+    padding: 0;
+}
+* {
+    box-sizing: border-box;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+}
+
+.logo img {
+    width: 280px;
+    height: auto;
+    margin-right: 20px; /* Adjusted margin for spacing */
+}
+
+.nav {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+}
+
+.button {
+    font-weight: bold;
+    padding: 12px 16px;
+    color: #000;
+    text-decoration: none;
+    cursor: pointer;
+    border: none;
+    position: relative;
+    overflow: hidden; /* Hide overflow for the underline animation */
+    transition: font-size 0.3s ease, color 0.3s ease;
+    font-size: 20px;
+}
+
+.button:hover {
+    font-size: 130%; /* Increase font size on hover */
+}
+.button::before {
+    content: '';
+    position: absolute;
+    left: 50%;
+    bottom: 0;
+    width: 0;
+    height: 2px;
+    background-color: #000000;
+    transform: translateX(-50%);
+    transition: width 0.3s ease; /* Add transition effect for the underline */
+}
+.button:hover::before {
+    width: 100%;
+}
+.button:hover::after {
+    content: '';
+    position: absolute;
+    left: 50%;
+    bottom: 0;
+    height: 2px; /* Set the height of the underline */
+    width: 0;
+    background-color: #000000; /* Set the color of the underline */
+    transition: width 0.3s ease; /* Add transition effect for the underline */
+    width: 0%;
+}
+.with-dropdown {
+    position: relative;
+}
+.button, .with-dropdown:hover .button {
+    font-weight: bold;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #ffffff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    padding: 10px;
+    z-index: 1;
+    width: 195px; /* Adjusted width */
+    margin-top: 15px; /* Adjusted margin-top to prevent overlap */
+}
+
+.dropdown-content a {
+    display: block;
+    padding: 8px 0;
+    color: black;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+}
+
+.dropdown-content a:hover {
+    background-color: #c1e1c1;
+}
+.with-dropdown:hover .dropdown-content {
+    display: block;
+    position: absolute;
+    top: 100%; /* Adjust the top value for spacing */
+    left: 0;
+    width: 195px;
+    background-color: #ffffff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    padding: 10px;
+    z-index: 1;
+    white-space: nowrap;
+}
+.footer-content{
+    background-color: black;
+    padding-bottom: 4rem 0 4rem 0;
+}
+.footer{
+    position: sticky;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: black;
+    color: white;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin: 0 auto;
+}   
+.footer-heading{
+    display: flex;
+    flex-direction: column;
+    margin-right: 4rem;
+}
+.footer-heading h2{
+    margin-bottom: 2rem;
+}
+.footer-heading a{
+    color: white;
+    text-decoration: none;
+    margin-bottom: 0.5rem;
+}
+.footer-heading a:hover{
+    color: red;
+    transition: 0.3s ease-out;
+}
+.footer-email-form h2{
+    margin-bottom: 2rem;
+}
+#footer-email{
+    width: 250px;
+    height: 40px;
+    border-radius: 4px;
+    outline: none;
+    border: none;
+    padding-left: 0.5rem;
+    font-size: 1rem;
+    margin-bottom: 1rem;
+}
+#footer-email::placeholder{
+    color: gray;
+}
+#footer-email-btn{
+    width: 100px;
+    height: 40px;
+    border-radius: 4px;
+    background-color: red;
+    outline: none;
+    border: none;
+    color: white;
+    font-size: 1rem;
+}
+#footer-email-btn:hover{
+    cursor: pointer;
+    background-color: blue;
+    transition: all 0.4s ease-out;
+}
+.newsletter-button
+    {
+        width: 100px;
+        height: 40px;
+        border-radius: 4px;
+        background-color: red;
+        outline: none;
+        border: none;
+        color: white;
+        font-size: 1rem;
+    }
+@media screen and (max-width: 480px) {
+    .header {
+        flex-direction: column;
+        align-items: center;
+        position: relative;
+    }
+
+    .nav {
+        flex-direction: column;
+        gap: 10px;
+        align-items: center;
+        display: none;
+        position: absolute; /* Keep the menu fixed at its initial position */
+        top: 200px; /* Adjust as needed */
+        left: 0;
+        width: 100%;
+        background-color: #ffffff;
+        padding: 20px 0;
+        box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+        z-index: 9999;
+    }
+
+    .nav.active {
+        display: flex;
+    }
+
+    .button {
+        display: block;
+        width: 100%;
+        box-sizing: border-box;
+        text-align: center;
+        padding: 10px 0;
+    }
+
+    .logo img {
+        width: 280px; /* Set the width of the logo */
+        height: auto;
+        margin-right: 20px;
+    }
+
+    .logo {
+        position: relative;
+        display: flex;
+        align-items: center;
+        margin-bottom: 20px; /* Add margin to create space between logo and buttons */
+    }
+
+    .left-content,
+    .right-content {
+        max-width: 90%;
+    }
+
+    .left-content {
+        order: 2;
+    }
+
+    .right-content {
+        order: 1;
+    }
+
+    .menu-button {
+        display: block;
+        cursor: pointer;
+        position: absolute; /* Keep the menu button fixed at its initial position */
+        top: 80px; /* Adjust as needed */
+        right: 20px; /* Adjust as needed */
+        transform: translateY(-50%);
+        z-index: 10000;
+    }
+
+    .line {
+        width: 30px;
+        height: 3px;
+        background-color: #000;
+        margin: 6px 0;
+        transition: 0.4s;
+    }
+
+    .menu-button.active .line:nth-child(1) {
+        transform: rotate(-45deg) translate(-5px, 6px);
+    }
+
+    .menu-button.active .line:nth-child(2) {
+        opacity: 0;
+    }
+
+    .menu-button.active .line:nth-child(3) {
+        transform: rotate(45deg) translate(-6px, -8px);
+    }
+
+    /* Show the navigation when the hamburger menu is active */
+    .menu-button.active + .nav {
+        display: flex;
+    }
+}
