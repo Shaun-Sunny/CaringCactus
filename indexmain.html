@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <title>Caring Cactus</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="index.css">
+        <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,500;1,600&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Roboto+Serif:ital,opsz,wght@1,8..144,300&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Lora:wght@600&family=Roboto+Serif:ital,opsz,wght@1,8..144,300&display=swap" rel="stylesheet">
+        <link rel="icon" type="image/x-icon" href="cac.png">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <div class="header">
+        <div class="logo">
+            <a href="index.html"><img src="logo.png" alt="Logo"></a>
+        </div>
+        <div class="menu-button">
+            <div class="line"></div>
+                <div class="line"></div>
+                <div class="line"></div>
+        </div>
+        <nav class="nav">
+            <a href="index.html" class="button">Home</a>
+            <div class="with-dropdown">
+                <a class="button">About Us</a>
+                <div class="dropdown-content">
+                    <a href="mission.html">Mission and Vision</a>
+                    <a href="about.html">Our team</a>
+                </div>
+            </div>
+            <div class="with-dropdown">
+                <a class="button">Services</a>
+                <div class="dropdown-content">
+                    <a href="booking.html">Seminars</a>
+                    <a href="booking-web.html">Webinars</a>
+                    <a href="one.html">One-on-One Consultation</a>
+                    <a href="sub.html">Subscription Program</a>
+                </div>
+            </div>
+            <div class="with-dropdown">
+                <a class="button">Events</a>
+                <div class="dropdown-content">
+                    <a href="2023.html">2023</a>
+                    <a href="coming_up.html">Coming Up</a>
+                </div>
+            </div>
+            <a href="blog.html" class="button">Blog</a>
+            <a href="sub.html" class="button">Subscription Programs</a>
+            <a href="contact.html" class="button">Contact</a>
+        </nav>
+    </div>
+    <script>
+        // Get the menu button and navigation elements
+        const menuButton = document.querySelector('.menu-button');
+        const nav = document.querySelector('.nav');
+    
+        // Add click event listener to the menu button
+        menuButton.addEventListener('click', function() {
+            // Toggle the active class on the menu button
+            menuButton.classList.toggle('active');
+            // Toggle the active class on the navigation
+            nav.classList.toggle('active');
+        });
+    </script>
+    <div class="hamburger">
+        <span class="bar"></span>
+        <span class="bar"></span>
+        <span class="bar"></span>
+    </div>
+    <script src="ham.js"></script>
+</head>
+<body>
+    <div class="additional-section">
+        <div class="left-side">
+            <div class="welcome-message">Welcome to Caring Cactus – Nourishing Your Life, Elevating Your Lifestyle!</div>
+            <b><div class="wellness-message">Discover an Oasis of Wellness, Rooted in Nutrition and Flourishing in Well-being!</div></b>
+            <a href="sub.html" class="view-services-btn">View Services</a>
+        </div>
+        
+        <div class="right-side">
+            <img src="cactus.png" alt="Cactus Image" class="cactus-image">
+        </div>
+    </div>
+    <div class="wrapper">
+    <div class="what-we-offer-section">
+        <h2 class="section-heading">What We Offer</h2>
+
+        <!-- Box 1 -->
+        <div class="offer-box top-left">
+            <img src="doc.png" alt="Personalized Guidance" class="box-image">
+            <h3 class="box-title">Personalized Guidance</h3>
+            <p class="box-description">Meet our expert dietitians, your partners in crafting a personalized journey to optimum health. Book a consultation and embark on a culinary adventure designed just for you. Say goodbye to generic diets; your plate, your rules!</p>
+            <button class ="go-to-button"><a href="one.html">Go to →</button></a>
+        </div>
+
+        <!-- Box 2 -->
+        <div class="offer-box top-right">
+            <img src="sem.png" alt="Webinars & Seminars" class="box-image">
+            <h3 class="box-title">Webinars & Seminars</h3>
+            <p class="box-description">Join our exclusive sessions led by wellness maestros. Delve into the world of balanced living, nutrition myths, and practical tips that transform everyday meals into extraordinary experiences. Let's make wellness a lifestyle, not a task!</p>
+            <button class="go-to-button"><a href="booking.html">Go to →</button></a>
+        </div>
+
+        <!-- Box 3 -->
+        <div class="offer-box bottom-left">
+            <img src="nut.png" alt="Blog Adventures – Nutrition Edition" class="box-image">
+            <h3 class="box-title">Blog Adventures – Nutrition Edition</h3>
+            <p class="box-description">Hungry for knowledge? Our blog is a treasure trove of insights, mouth-watering recipes, and captivating stories. Dive into a world where nutrition is as exciting as it is essential. Because healthy living should never be dull!</p>
+            <button class="go-to-button"><a href="blog.html">Go to →</button></a>
+        </div>
+
+        <!-- Box 4 -->
+        <div class="offer-box bottom-right">
+            <img src="contact.png" alt="Need a Hand? Reach Out!" class="box-image">
+            <h3 class="box-title">Need a Hand? Reach Out!</h3>
+            <p class="box-description">Have questions about nutrition, want culinary suggestions, or simply craving a chat? Get a hold of us – because your journey deserves the best!</p>
+            <button class="go-to-button"><a href="contact.html">Go to →</button></a>
+        </div>
+
+        <div class="offer-box center-box">
+            <img src="heart.png" alt="Subscribe for a Weekly Wellness Dispatch" class="box-image center">
+            <h3 class="box-title">Subscribe for a Weekly Wellness Dispatch</h3>
+            <p class="box-description">Elevate your inbox with our weekly dispatch of nutrition tips, exclusive deals, and a pinch of inspiration. Because every week should start with a dose of wellness!</p>
+            <button class="go-to-button center"><a href="#newsletter-form">Subscribe →</button></a>
+        </div>
+    </div>
+    </div>
+    <div class="caring-cactus-text">
+        <p>Caring Cactus:</p>
+        <p>Where Nutrition Meets Lifestyle Elevation:</p>
+        <p>Your passport to a world of tasteful living starts at Caring Cactus. It's not just a brand; it's a lifestyle choice.</p>
+        <p> Your well-being journey, personalized and powered by the essence of Caring Cactus.</p>
+    </div>
+    <div class="center-box">
+        <h3 class="box-title">Have Questions?</h3>
+        <p class="box-description">If you have any questions in your mind, Just <b><a href="contact.html">Click Here</a></b> to write or you can mail at <b>hellocaringcactus@gmail.com</p></b>
+    </div>
+</body>
+<div class="consultation">
+    <h1 class="heading-2">Request a Free Consultation</h1>
+    <form id="consultationForm" action="" name="consultation" method="post">
+    <div class="form-container">
+        <div class="form-row">
+            <div class="form-column">
+                <i class="fas fa-user"></i>
+                <input type="text" id="name" name="Name" placeholder="Your Name" class="capsule-input">
+            </div>
+            <div class="form-column">
+                <i class="fas fa-birthday-cake"></i>
+                <input type="text" id="age" name="Age" placeholder="Your Age" class="capsule-input">
+            </div>
+            <div class="form-column">
+                <i class="fas fa-map-marked"></i>
+                <select id="location" name="Location" class="capsule-input">
+                    <option value="" disabled selected>Select a City</option>
+                    <option value="Delhi">Delhi</option>
+<option value="Bengaluru">Bengaluru</option>
+<option value="Kolkata">Kolkata</option>
+<option value="Chennai">Chennai</option>
+<option value="Kochi">Kochi</option>
+<option value="Hyderabad">Hyderabad</option>
+<option value="Ahmedabad">Ahmedabad</option>
+<option value="Pune">Pune</option>
+<option value="Surat">Surat</option>
+<option value="Jaipur">Jaipur</option>
+<option value="Thiruvananthapuram">Thiruvananthapuram</option>
+<option value="Lucknow">Lucknow</option>
+<option value="Kanpur">Kanpur</option>
+<option value="Nagpur">Nagpur</option>
+<option value="Indore">Indore</option>
+<option value="Thane">Thane</option>
+<option value="Kozhikode">Kozhikode</option>
+<option value="Bhopal">Bhopal</option>
+<option value="Visakhapatnam">Visakhapatnam</option>
+<option value="Pimpri-Chinchwad">Pimpri-Chinchwad</option>
+<option value="Patna">Patna</option>
+<option value="Vadodara">Vadodara</option>
+<option value="Ghaziabad">Ghaziabad</option>
+<option value="Ludhiana">Ludhiana</option>
+<option value="Agra">Agra</option>
+<option value="Nashik">Nashik</option>
+<option value="Faridabad">Faridabad</option>
+<option value="Meerut">Meerut</option>
+<option value="Rajkot">Rajkot</option>
+<option value="Kalyan-Dombivali">Kalyan-Dombivali</option>
+<option value="Vasai-Virar">Vasai-Virar</option>
+<option value="Varanasi">Varanasi</option>
+                    <!-- Add more cities as needed -->
+                </select>
+            </div>
+        </div>
+        <div class="form-row">
+            <div class="form-column">
+                <i class="fas fa-weight"></i>
+                <input type="text" id="weight" name="Weight" placeholder="Your Weight" class="capsule-input">
+            </div>
+            <div class="form-column">
+                <i class="fas fa-ruler"></i>
+                <input type="text" id="height" name="Height" placeholder="Your Height" class="capsule-input">
+            </div>
+            <div class="form-column">
+                <i class="fas fa-notes-medical"></i>
+                <select id="medical-concern" name="Medical Concern" class="capsule-input">
+                    <option value="" disabled selected>Select Medical Concern</option>
+                    <option value="Obesity">Obesity</option>
+<option value="Diabetes">Diabetes</option>
+<option value="Cardiovascular Diseases">Cardiovascular Diseases</option>
+<option value="Gastrointestinal Disorders">Gastrointestinal Disorders</option>
+<option value="Kidney Diseases">Kidney Diseases</option>
+<option value="Food Allergies and Intolerances">Food Allergies and Intolerances</option>
+<option value="Eating Disorders">Eating Disorders</option>
+<option value="Cancer">Cancer</option>
+<option value="Autoimmune Diseases">Autoimmune Diseases</option>
+<option value="Malnutrition">Malnutrition</option>
+<option value="Neurological Disorders">Neurological Disorders</option>
+<option value="Osteoporosis">Osteoporosis</option>
+<option value="Pregnancy and Postpartum Nutrition">Pregnancy and Postpartum Nutrition</option>
+<option value="Sports Nutrition">Sports Nutrition</option>
+<option value="Chronic Respiratory Diseases">Chronic Respiratory Diseases</option>
+                    <!-- Add more cities as needed -->
+                </select>
+            </div>            
+        </div>
+        <div class="form-row">
+            <div class="form-column">
+                <i class="fas fa-phone"></i>
+                <input type="text" id="contact-number" name="Contact Number" placeholder="Contact Number" class="capsule-input">
+            </div>
+            <div class="form-column">
+                <i class="fab fa-whatsapp"></i>
+                <input type="text" id="whatsapp-number" name="WhatsApp Number" placeholder="WhatsApp Number" class="capsule-input">
+            </div>
+            <div class="form-column">
+                <i class="far fa-envelope"></i>
+                <input type="email" id="email" name="Email Address" placeholder="Your Email Address" class="capsule-input">
+            </div>
+        </div>
+        <div class="form-row">
+        </div>
+        <div class="form-row">
+            <div class="form-column">
+                <!-- Submit button now appears under everything -->
+                <button type="submit" class="submit-button">Submit</button>
+             </div>
+        </div>
+    </div>
+    </div>
+    <script>
+        const scriptURL = 'https://script.google.com/macros/s/AKfycbxmScl8CfXPRb1hPUBp-jueVwRr5BXznHm0z0WaeqePMJT7r-Bn_ld3w8I_CgPXvYftVg/exec';
+        const form = document.forms['consultation'];
+    
+        form.addEventListener('submit', e => {
+            e.preventDefault();
+            // Add your validation logic here
+            var name = document.getElementById("name").value;
+            var age = document.getElementById("age").value;
+            var location = document.getElementById("location").value;
+            var weight = document.getElementById("weight").value;
+            var height = document.getElementById("height").value;
+            var medicalConcern = document.getElementById("medical-concern").value;
+            var contactNumber = document.getElementById("contact-number").value;
+            var whatsappNumber = document.getElementById("whatsapp-number").value;
+            var emailAddress = document.getElementById("email").value;
+    
+            // Example: Check if the name is not empty
+            if (
+                name.trim() === "" ||
+                age.trim() === "" ||
+                location.trim() === "" ||
+                weight.trim() === "" ||
+                height.trim() === "" ||
+                medicalConcern.trim() === "" ||
+                contactNumber.trim() === "" ||
+                whatsappNumber.trim() === "" ||
+                emailAddress.trim() === ""
+            ) {
+                alert("Please fill in all required fields.");
+                return false; // Prevent form submission
+            }
+    
+            // If all validation passes, submit the form
+            fetch(scriptURL, { method: 'POST', body: new FormData(form) })
+            .then(response => {
+                alert("Thank you! Your form is submitted successfully.");
+                window.location.href = 'https://calendly.com/hellocaringcactus/30min';
+            })
+            .catch(error => console.error('Error!', error.message));
+    });
+    </script>
+    
+    </form>
+<footer>
+    <div class="footer-content">
+        <div class="footer">
+            <div class="footer-heading footer-1">
+                <h2>About Us</h2>
+                <a href="blog.html">Blog</a>
+                <a href="#">Testimonials</a>
+                <a href="#">Community</a>
+                <a href="#">Terms of Service</a>
+            </div>
+            <div class="footer-heading footer-2">
+                <h2>Contact Us</h2>
+                <a href="contact.html">Support</a>
+                <a href="contact.html">Contact</a>
+            </div>
+            <div class="footer-heading footer-3">
+                <h2>Social Media</h2>
+                <a href="https://instagram.com/caring_cactus?igshid=NzZlODBkYWE4Ng%3D%3D&utm_source=qr" class="fab fa-instagram">&ensp;Instagram</a>
+                <a href="https://www.facebook.com/profile.php?id=100089082535240&mibextid=LQQJ4d" class="fab fa-facebook-f">&ensp;&nbsp;Facebook</a>
+                <a href="#" class="fab fa-youtube">&nbsp;Youtube</a>
+                <a href="#" class="fab fa-twitter">&ensp;Twitter</a>
+                <a href="https://whatsapp.com/channel/0029VaBmUd11SWt1ArtUTR2Q" class="fab fa-whatsapp">&ensp;WhatsApp</a>
+                <a href="https://www.linkedin.com/company/99088024/admin/feed/posts/?feedType=following" class="fab fa-linkedin">&ensp;LinkedIn</a>
+            </div>
+            <div class="footer-email-form">
+                <h2>Join our newsletter</h2>
+                <form id="newsletter-form" onsubmit="return redirectToScript(event)">
+                    <input type="email" name="Email" placeholder="Enter your email address" id="footer-email" required>
+                    <button class="newsletter-button" type="submit">Sign up</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</footer>
+<script src="index.js"></script>
+<script>
+    function redirectToScript(event) {
+    event.preventDefault(); // Prevent the default form submission behavior
+    validateForm(); // Call the validateForm function
+}
+
+function validateForm() {
+    // Your form validation logic here
+    var email = document.getElementById('footer-email').value;
+
+    if (email === '') {
+        // Display an alert if the email field is left blank
+        alert("Please fill in the email field before submitting.");
+    } else {
+        // If the email field is filled, proceed with fetching text and redirecting
+        var formData = new FormData();
+        formData.append("Email", email);
+
+        fetch("https://script.google.com/macros/s/AKfycbxdaVyQt0tK2-eaO0u7G_0Mi5D3e2emt9JuHigIODK_DsCh2G8gtku1pOG5J0qImAxhgw/exec", {
+                method: "POST",
+                body: formData,
+            })
+            .then(response => response.json()) // Get the JSON response
+            .then(data => {
+                // Log the data received from the script
+                console.log('Data from Apps Script:', data);
+                if (data.result === 'success') {
+                    alert("Thank you! Your form is submitted successfully.");
+                    // Optionally, redirect the user to another page
+                } else {
+                    // Display an alert with the error message from the server
+                    alert("Error: " + data.error);
+                }
+            })
+            .catch(error => {
+                console.error('Error:', error);
+                // Handle errors if needed
+            });
+    }
+
+    // Prevent the default form submission
+    return false;
+}
+
+
+</script>
+</body>
+</html>
