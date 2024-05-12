@@ -445,5 +445,11 @@ tr td{
             border: 1px solid #ccc; /* Add border */
             margin-bottom: 10px; /* Adjust margin */
         }
+    
+        /* Reduce extra spaces between content name and value to 1 space */
+        .input-row .input-group span {
+            white-space: nowrap; /* Prevent wrapping */
+        }
     }
+    
     
