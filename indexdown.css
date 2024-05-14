@@ -1,0 +1,43 @@
+body {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    outline: 0;
+    font-size: 100%;
+    -ms-text-size-adjust: 100%;
+    -webkit-text-size-adjust: 100%;
+    vertical-align: baseline;
+    background: transparent;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #f4f4f4; /* Adjust background color as needed */
+    font-family: 'Poppins', sans-serif; /* Change font family */
+}
+
+.container {
+    text-align: center;
+}
+
+.logo {
+    max-width: 200px; /* Adjust max-width for your logo */
+    height: auto;
+    margin: 0 auto 20px; /* Center align the image */
+}
+
+.box {
+    background-color: white; /* Adjust box background color */
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Add shadow for depth */
+}
+
+.contact-info {
+    margin-top: 20px;
+}
+a {
+    text-decoration: none;
+    color: #2ea3f2;
+    font-weight: bold;
+}

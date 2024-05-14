@@ -1,10 +1,39 @@
 body {
     margin: 0;
     padding: 0;
-    background-color: #c1e1c1;
+    background-color: white;
     font-family: Arial, sans-serif;
     overflow-x: hidden;
 }
+
+.header {
+    position: fixed; /* Fixed positioning */
+    top: 20px; /* Adjust as needed for spacing from the top */
+    left: 50%; /* Center horizontally */
+    transform: translateX(-50%); /* Center horizontally */
+    width: 200px; /* Adjust the width as needed */
+    height: 120px; /* Adjust the height as needed */
+    background-color: white; /* Background color */
+    border-radius: 20px; /* Rounded corners for rectangle with rounded edges */
+    padding: 10px; /* Padding inside the header */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Shadow for depth */
+    z-index: 1000; /* Ensure it stays on top of other content */
+}
+.logo {
+    width: 60px; /* Adjust the size of the logo */
+    height: 60px; /* Adjust the size of the logo */
+    border-radius: 10px; /* Rounded corners for circular shape */
+}
+
+.menu-button {
+    display: none; /* Hide the menu button for compactness */
+}
+
+.nav {
+    display: none; /* Hide the navigation for compactness */
+}
+
+
 .header {
     display: flex;
     align-items: center;
@@ -37,11 +66,11 @@ body, .header {
     height: auto;
     margin-right: 20px; /* Adjusted margin for spacing */
 }
-
 .nav {
     display: flex;
     gap: 20px;
     align-items: center;
+    justify-content: space-between;
 }
 
 .button {
@@ -53,28 +82,31 @@ body, .header {
     border: none;
     position: relative;
     overflow: hidden; /* Hide overflow for the underline animation */
-    transition: font-size 0.3s ease, color 0.3s ease;
+    transition: font-size 0.3s ease, color 0.3s ease, padding 0.3s ease; /* Added padding transition */
     font-size: 20px;
 }
 
 .button:hover {
     font-size: 130%; /* Increase font size on hover */
+    padding-top: 16px; /* Adjusted padding top on hover */
 }
-.button::before {
+.button:not(.home-button)::before {
     content: '';
     position: absolute;
     left: 50%;
-    bottom: 0;
+    bottom: 5px; /* Adjusted bottom position to lift the line */
     width: 0;
     height: 2px;
     background-color: #000000;
     transform: translateX(-50%);
-    transition: width 0.3s ease; /* Add transition effect for the underline */
+    transition: width 0.3s ease, bottom 0.3s ease; /* Add transition effect for the underline and bottom position */
 }
-.button:hover::before {
+
+.button:not(.home-button):hover::before {
     width: 100%;
 }
-.button:hover::after {
+
+.button:not(.home-button):hover::after {
     content: '';
     position: absolute;
     left: 50%;
@@ -85,10 +117,13 @@ body, .header {
     transition: width 0.3s ease; /* Add transition effect for the underline */
     width: 0%;
 }
+
 .with-dropdown {
     position: relative;
 }
-.button, .with-dropdown:hover .button {
+
+.button,
+.with-dropdown:hover .button {
     font-weight: bold;
 }
 
@@ -101,7 +136,7 @@ body, .header {
     padding: 10px;
     z-index: 1;
     width: 195px; /* Adjusted width */
-    margin-top: 15px; /* Adjusted margin-top to prevent overlap */
+    margin-top: 10px; /* Adjusted margin-top to lift dropdown */
 }
 
 .dropdown-content a {
@@ -118,7 +153,7 @@ body, .header {
 .with-dropdown:hover .dropdown-content {
     display: block;
     position: absolute;
-    top: 100%; /* Adjust the top value for spacing */
+    top: calc(100% - 3px); /* Adjusted position for dropdown to be closer to the button */
     left: 0;
     width: 195px;
     background-color: #ffffff;
@@ -128,6 +163,50 @@ body, .header {
     z-index: 1;
     white-space: nowrap;
 }
+.home-button {
+    margin-top: -14px;
+    padding: 28px 16px 22px; /* Adjusted padding for the home button */
+    position: relative; /* Added relative positioning */
+}
+
+.home-button:hover img {
+    transform: scale(1.1); /* Scale the image on hover */
+}
+
+.home-button img {
+    vertical-align: middle; /* Ensure the image is vertically aligned */
+    transition: transform 0.3s ease; /* Add transition effect for scaling */
+}
+
+.search-bar {
+    display: inline-block;
+    margin-left: 20px; /* Adjust as needed */
+}
+
+.search-bar input[type="text"] {
+    padding: 8px 12px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px;
+    outline: none;
+}
+
+.search-bar button {
+    padding: 8px 16px;
+    font-weight: bold;
+    background-color: #000;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+    outline: none;
+}
+
+.search-bar button:hover {
+    background-color: #000;
+}
+
 .footer-content{
     background-color: #f2f2f2;
     padding-bottom: 4rem 0 4rem 0;
@@ -261,31 +340,47 @@ body, .header {
     font-weight: bold;
     margin-bottom: 5px;
 }
+/* Adjustments for the first team member */
+.founding-member {
+    margin-top: 50px; /* Adjust the top margin as needed */
+}
+.founding-member:nth-child(odd) {
+    flex-direction: row-reverse; /* Reverse the order for odd-numbered items */
+}
+
+/* Adjustments for the second team member */
+.founding-member:nth-child(even) {
+    flex-direction: row; /* Keep the default order for even-numbered items */
+}
 
 .founding-member {
     display: flex;
-    justify-content: center; /* Center align items */
+    justify-content: space-between;
     align-items: center;
     margin-bottom: 40px;
-    animation: fadeInSlide 1s ease-in-out; /* Fade-in and slide animation */
+    animation: fadeInSlide 1s ease-in-out;
 }
 
 .founding-member img {
-    max-width: 100%; /* Set maximum width to 100% */
+    max-width: 100%;
     height: auto;
-    margin-right: 20px; /* Adjusted margin for spacing between image and text */
     border-radius: 50%;
-    object-fit: cover; /* Maintain aspect ratio and cover the entire container */
-    width: 255px; /* Set a fixed width for the small circles */
-    height: 255px; /* Set a fixed height for the small circles */
+    object-fit: cover;
+    width: 255px;
+    height: 255px;
 }
-
 
 .founding-member .about {
-    width: 50%; /* Adjusted width for the text content */
-    text-align: center; /* Center align text content */
-    padding: 20px; /* Added padding for spacing */
+    width: 80%;
+    text-align: center; /* Center align the text */
+    padding: 20px;
 }
+
+.founding-member .about h3,
+.founding-member .about p {
+    text-align: center; /* Center align the name, title, and description */
+}
+
 
 .founding-member .about h3 {
     color: #2b9ec2;
@@ -300,10 +395,10 @@ body, .header {
 }
 
 .founding-member .about p.job-title {
-    color: #d70000; /* Change the color to your preference */
-    font-size: 18px; /* Adjust the font size for the title */
-    font-weight: bold; /* Make the title bold or adjust as needed */
-    margin-bottom: 10px; /* Adjusted margin for spacing */
+    color: #d70000;
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 10px;
 }
 
 .founding-member .about p.description {
@@ -312,6 +407,16 @@ body, .header {
     line-height: 1.5;
 }
 
+.team-members-container {
+    display: flex;
+    flex-wrap: wrap; /* Allow items to wrap to the next line */
+    justify-content: center; /* Center items horizontally */
+}
+
+.team-member {
+    flex: 1 0 200px; /* Flex item properties */
+    margin: 10px; /* Adjusted margin for spacing */
+}
 .newsletter-button
     {
         width: 100px;
@@ -338,6 +443,7 @@ body, .header {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
+    background-color: white;
     padding: 40px;
 }
 .about-us h1{
