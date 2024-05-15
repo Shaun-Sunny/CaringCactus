@@ -1,5 +1,3 @@
-
-
 body {
     margin: 0;
     padding: 0;
@@ -219,7 +217,7 @@ body, .header {
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: black;
+    background-color:black;
     color: white;
     display: flex;
     justify-content: center;
@@ -251,7 +249,7 @@ body, .header {
     height: 40px;
     border-radius: 4px;
     outline: none;
-
+    border: none;
     padding-left: 0.5rem;
     font-size: 1rem;
     margin-bottom: 1rem;
@@ -274,61 +272,11 @@ body, .header {
     background-color: blue;
     transition: all 0.4s ease-out;
 }
-/* Separate CSS for vision-mission section */
-.vision-mission {
-    background-color: #f2f2f2;
-    padding: 30px;
-    text-align: center;
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    background-image: url('bg3.jpg'); /* Replace 'bg3.jpg' with the path to your background image */
-    background-size: cover; /* Cover the entire div */
-    background-position: center center; /* Center align the background image */
-    margin-top: 150px;
-}
-
-/* Adjusted margin top for smaller screens */
-@media screen and (max-width: 480px) {
-    .vision-mission {
-        margin-top: 100px; /* Adjust as needed for smaller screens */
-    }
-}
-
-
-.vision-mission .left-content,
-.vision-mission .right-content {
-    max-width: 45%; /* Adjusted max-width for responsiveness */
-}
-
-.vision-mission h2 {
-    margin-bottom: 10px;
-}
-
-.vision-mission p {
-    line-height: 1.6;
-    margin-bottom: 20px;
-    font-weight: bold;
-    font-family: Poppins, sans-serif;
-}
-
-.vision-mission img {
-    width: 255px;
-    height: 255px;
-    margin-right: 20px;
-}
-.left-content h2{
-    color: #000;
-}
-.left-content p{
+.heading-1{
+    margin-left: 40px;
     color: black;
-}
-.right-content h2{
-    color: white;
-
-}
-.right-content p{
-    color: white;
+    font-weight: bold;
+    text-align: center;
 }
 .newsletter-button
     {
@@ -341,58 +289,53 @@ body, .header {
         color: white;
         font-size: 1rem;
     }
-    @media screen and (max-width: 480px) {
-    .vision img,
-    .mission img {
-        max-width: 80%;
-        display: block;
-        margin: 0 auto 10px; /* Center the images horizontally */
-    }
-
-    .vision h2,
-    .mission h2 {
-        margin: 0 auto 10px; /* Center the headers horizontally */
-        text-align: center; /* Center the text within the headers */
-    }
-
-    .vision p,
-    .mission p {
-        font-size: 14px;
-        text-align: justify;
-        margin: 0 10px;
-        width: 100%;
-        line-height: 1.5;
-    }
-
-    .paragraph-container {
-        width: 220%;
-        margin: 0 auto;
-        padding: 0 10px;
-    }
-
-    .paragraph-container p {
-        font-size: 14px;
-        text-align: justify;
-        margin: 0;
-        line-height: 1.5;
-    }
-
-    .vision,
-    .mission {
-        text-align: left;
-        width: 100%;
-        margin-bottom: 20px;
-        padding: 0 10px;
-    }
-
-    .vision-mission {
+    .sub-div {
         display: flex;
-        flex-direction: column;
-        align-items: flex-start;
+        justify-content: center; /* Center align items */
+        align-items: center;
+        margin-bottom: 40px;
+        animation: fadeInSlide 1s ease-in-out; /* Fade-in and slide animation */
     }
-}
-
     
+    .sub-div img {
+        max-width: 100%; /* Set maximum width to 100% */
+        height: auto;
+        margin-right: 20px; /* Adjusted margin for spacing between image and text */
+        border-radius: 50%;
+        object-fit: cover; /* Maintain aspect ratio and cover the entire container */
+        width: 255px; /* Set a fixed width for the small circles */
+        height: 255px; /* Set a fixed height for the small circles */
+    }
+    .description{
+        line-height: 1.5;
+    }
+    h2{
+        font-size: 1.8em;
+        font-weight: bold;
+        font-style: italic;
+        margin-bottom: 10px;
+        padding-top: 20px;
+        position: relative;
+        text-align: center;
+    
+    }
+    .title {
+        background-color: #f2f2f2;
+        margin-top: 150px;
+        color: black;
+        text-align: center;
+        padding: 20px;
+        font-size: 2.5em;
+        font-weight: bold;
+    }
+    .class{
+        text-align: center;
+        font-weight: bold;
+    }
+    section {
+        margin: 0 auto;
+        padding: 40px; /* Adjust padding as needed */
+    }
     @media screen and (max-width: 480px) {
         .header {
             flex-direction: column;
@@ -488,3 +431,59 @@ body, .header {
             display: flex;
         }
     }
+    @media only screen and (max-width: 480px) {
+        .sub-div {
+            display: flex;
+            justify-content: center; /* Center align items */
+            align-items: center;
+            flex-direction: column; /* Stack items vertically */
+            text-align: center; /* Center align content */
+            margin-bottom: 40px;
+            animation: fadeInSlide 1s ease-in-out; /* Fade-in and slide animation */
+        }
+    
+        .sub-div img {
+            max-width: 100%; /* Set maximum width to 100% */
+            height: auto;
+            margin-right: 0; /* Remove margin between image and text */
+            margin-bottom: 20px; /* Add spacing between images */
+            border-radius: 50%;
+            object-fit: cover; /* Maintain aspect ratio and cover the entire container */
+            width: 255px; /* Set a fixed width for the small circles */
+            height: 255px; /* Set a fixed height for the small circles */
+        }
+    
+        .description {
+            line-height: 1.5;
+        }
+    
+        h2 {
+            font-size: 1.8em;
+            font-weight: bold;
+            font-style: italic;
+            margin-bottom: 10px;
+            padding-top: 20px;
+            position: relative;
+            text-align: center;
+        }
+    
+        .title {
+            background-color: #f2f2f2;
+            color: black;
+            text-align: center;
+            padding: 20px;
+            font-size: 2.5em;
+            font-weight: bold;
+        }
+    
+        .class {
+            text-align: center;
+            font-weight: bold;
+        }
+    
+        section {
+            margin: 0 auto;
+            padding: 40px; /* Adjust padding as needed */
+        }
+    }
+    

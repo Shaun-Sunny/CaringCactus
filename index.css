@@ -119,6 +119,40 @@ body {
     color: #000;
     font-family: Poppins, sans-serif ;
 }
+.slide1 {
+    position: relative;
+    text-align: center;
+}
+
+.slide1 .text-container {
+    position: absolute;
+    top: 58%;
+    left: 33%; /* Adjust as needed */
+    transform: translateY(-50%);
+    text-align: left;
+    color: black;
+    width: 40%; /* Adjust the width of the container */
+}
+
+.slide1 .text {
+    font-size: 32px; /* Increased font size for better visibility */
+    line-height: 1.4; /* Adjust line height as needed */
+    font-family: Poppins, sans-serif ;
+}
+
+.slide1 h1 {
+    font-size: 48px; /* Increased font size for better visibility */
+    color: white;
+    font-family: Poppins, sans-serif ;
+}
+
+.slide1 .numbertext {
+    font-size: 20px; /* Adjust font size as needed */
+    text-align: center;
+    margin-top: 20px; /* Adjust as needed */
+    color: #fff;
+    font-family: Poppins, sans-serif ;
+}
 .action-button {
     display: inline-block;
     padding: 0; /* Remove default padding */
@@ -495,7 +529,6 @@ body, .header {
     transition: all 0.4s ease-out;
 }
 .wrapper {
-    padding: 40px;
     font-family: Lato, Helvetica, sans-serif;;
 }
 .heading-1{
@@ -623,6 +656,18 @@ body, .header {
     font-family: 'Poppins', sans-serif;
     text-align: center;
     transition: opacity 0.3s ease; /* Transition for opacity */
+    color: #000;
+    text-decoration: none;
+}
+/* Override default link styles */
+.offer-box a {
+    color: inherit; /* Inherit color from parent */
+    text-decoration: none; /* Remove underline */
+}
+
+/* Hover effect */
+.offer-box a:hover {
+    opacity: 0.8; /* Adjust opacity on hover */
 }
 
 .box-description {

@@ -2,7 +2,7 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>Caring Cactus</title>
+        <title>Caring Cactus™</title>
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" href="index.css">
         <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css">
@@ -41,7 +41,7 @@
                     <!--<a href="booking.html">Seminars</a>
                     <a href="booking-web.html">Webinars</a>-->
                     <a href="one.html">One-on-One Consultation</a>
-                    <a href="#">Group Wellness</a>
+                    <a href="group.html">Group Wellness</a>
                     <!--<a href="sub.html">Subscription Program</a>-->
                 </div>
             </div>
@@ -49,10 +49,11 @@
                 <a class="button">Events</a>
                 <div class="dropdown-content">
                     <a href="#">2023</a>
+                    <a href="#">2024</a>
                     <a href=#">Coming Up</a>
                 </div>
             </div>
-            <a href="blog.html" class="button">Blog</a>
+            <a href="blog.html" class="button">Blogs</a>
             <!--<a href="sub.html" class="button">Subscription Programs</a>-->
             <a href="contact.html" class="button">Contact</a>
             <div class="search-bar">
@@ -106,13 +107,19 @@
 <div class="slideshow-container">
 
     <!-- Full-width images with number and caption text -->
-    <div class="mySlides fade">
-      <div class="numbertext">1 / 3</div>
-      <img src="img1.jpg" style="width:100%">
-      <div class="text">Caption Text</div>
+    <div class="mySlides fade slide1">
+        <img src="img1.jpg" class="slide-image" style="width:100%">
+        <div class="text-container">
+            <h1 class="text">Welcome to Caring Cactus™ – Nourishing Your Life, Elevating Your Lifestyle!</h1>
+            <div class="numbertext-action-container">
+                <div class="numbertext">Discover an Oasis of Wellness, Rooted in Nutrition and Flourishing in Well-being!</div>
+            </div>
+        </div>
     </div>
     <div class="mySlides fade slide2">
-        <img src="img2.jpg" class="slide-image" style="width:100%">
+        <a href="corporate.html">
+            <img src="img2.jpg" class="slide-image" style="width:100%">
+        </a>
         <div class="text-container">
             <h1 class="text">Prioritize Employee Wellness</h1>
             <div class="numbertext-action-container">
@@ -121,8 +128,11 @@
         </div>
     </div>
     
+    
     <div class="mySlides fade slide3">
-        <img src="img3.jpg" class="slide-image" style="width:100%">
+        <a href="autism.html">
+            <img src="img3.jpg" class="slide-image" style="width:100%">
+        </a>
         <div class="text-container">
             <h1 class="text">Welcome to Neuroverse Connect!</h1>
             <div class="numbertext-action-container">
@@ -198,12 +208,12 @@
     });
     </script>
     
-    <div class="additional-section">
+    <!--<div class="additional-section">
         <div class="left-side">
-            <div class="welcome-message">Welcome to Caring Cactus – Nourishing Your Life, Elevating Your Lifestyle!</div>
+            <div class="welcome-message">Welcome to Caring Cactus™ – Nourishing Your Life, Elevating Your Lifestyle!</div>
             <b><div class="wellness-message">Discover an Oasis of Wellness, Rooted in Nutrition and Flourishing in Well-being!</div></b>
             <a href="#" class="view-services-btn">View Services</a>
-        </div>
+        </div>-->
         
         <!--<div class="right-side">
             <img src="cactus.png" alt="Cactus Image" class="cactus-image">
@@ -229,35 +239,46 @@
             <!--<button class="go-to-button"><a href="booking.html">Go to →</button></a>-->
         </div>
 
-        <!-- Box 3 -->
-        <div class="offer-box bottom-left">
-            <img src="nut.png" alt="Blog Adventures – Nutrition Edition" class="box-image">
-            <h3 class="box-title">Blog Adventures – Nutrition Edition</h3>
-            <p class="box-description">Hungry for knowledge? Our blog is a treasure trove of insights, mouth-watering recipes, and captivating stories. Dive into a world where nutrition is as exciting as it is essential. Because healthy living should never be dull!</p>
-            <!--<button class="go-to-button"><a href="blog.html">Go to →</button></a>-->
-        </div>
+        <nav class="offer-box bottom-left">
+            <a href="blog.html">
+                <img src="nut.png" alt="Blog Adventures – Nutrition Edition" class="box-image">
+                <h3 class="box-title">Blog Adventures – Nutrition Edition</h3>
+                <p class="box-description">Hungry for knowledge? Our blog is a treasure trove of insights, mouth-watering recipes, and captivating stories. Dive into a world where nutrition is as exciting as it is essential. Because healthy living should never be dull!</p>
+                <!-- Remove the button -->
+            </a>
+        </nav>
+        
 
-        <!-- Box 4 -->
-        <div class="offer-box bottom-right">
-            <img src="contact.png" alt="Need a Hand? Reach Out!" class="box-image">
-            <h3 class="box-title">Need a Hand? Reach Out!</h3>
-            <p class="box-description">Have questions about nutrition, want culinary suggestions, or simply craving a chat? Get a hold of us – because your journey deserves the best!</p>
-            <!--<button class="go-to-button"><a href="contact.html">Go to →</button></a>-->
-        </div>
+        <nav class="offer-box bottom-right">
+            <a href="contact.html">
+                <img src="contact.png" alt="Need a Hand? Reach Out!" class="box-image">
+                <h3 class="box-title">Need a Hand? Reach Out!</h3>
+                <p class="box-description">Have questions about nutrition, want culinary suggestions, or simply craving a chat? Get a hold of us – because your journey deserves the best!</p>
+                <!-- Remove the button -->
+            </a>
+        </nav>
+        
 
-        <div class="offer-box center-box">
+        <div class="offer-box center-box" onclick="scrollToBottom()">
             <img src="heart.png" alt="Subscribe for a Weekly Wellness Dispatch" class="box-image center">
             <h3 class="box-title">Subscribe for a Weekly Wellness Dispatch</h3>
             <p class="box-description">Elevate your inbox with our weekly dispatch of nutrition tips, exclusive deals, and a pinch of inspiration. Because every week should start with a dose of wellness!</p>
-            <!--<button class="go-to-button center"><a href="#newsletter-form">Subscribe →</button></a>-->
+            <!-- Remove the button -->
         </div>
+        
+        <script>
+            function scrollToBottom() {
+                window.scrollTo(0, document.body.scrollHeight);
+            }
+        </script
+        
     </div>
     </div>
     <div class="caring-cactus-text">
-        <p>Caring Cactus:</p>
+        <p>Caring Cactus™:</p>
         <p>Where Nutrition Meets Lifestyle Elevation:</p>
-        <p>Your passport to a world of tasteful living starts at Caring Cactus. It's not just a brand; it's a lifestyle choice.</p>
-        <p> Your well-being journey, personalized and powered by the essence of Caring Cactus.</p>
+        <p>Your passport to a world of tasteful living starts at Caring Cactus™. It's not just a brand; it's a lifestyle choice.</p>
+        <p> Your well-being journey, personalized and powered by the essence of Caring Cactus™.</p>
     </div>
     <div class="center-box1">
         <h3 class="box-title1">Have Questions?</h3>

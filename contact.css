@@ -219,8 +219,8 @@ body, .header {
     left: 0;
     width: 100%;
     height: 100%;
-    background-color:white;
-    color: black;
+    background-color:black;
+    color: white;
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
@@ -235,7 +235,7 @@ body, .header {
     margin-bottom: 2rem;
 }
 .footer-heading a{
-    color: black;
+    color: white;
     text-decoration: none;
     margin-bottom: 0.5rem;
 }
@@ -309,10 +309,13 @@ body, .header {
     background: white;
     display: flex;
 }
-.contact-left{
+.contact-left {
     flex-basis: 60%;
-    padding: 40px 60px; 
+    padding: 40px 60px;
+    border: 2px solid #000; /* Add border style */
 }
+
+
 .contact-right{
     flex-basis: 40%;
     padding: 40px; 

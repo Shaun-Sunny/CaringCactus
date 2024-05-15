@@ -1,11 +1,10 @@
-
-
 body {
     margin: 0;
     padding: 0;
     background-color: white;
     font-family: Arial, sans-serif;
     overflow-x: hidden;
+    font-family: Poppins, sans-serif;
 }
 
 .header {
@@ -251,7 +250,7 @@ body, .header {
     height: 40px;
     border-radius: 4px;
     outline: none;
-
+    border: none;
     padding-left: 0.5rem;
     font-size: 1rem;
     margin-bottom: 1rem;
@@ -274,61 +273,12 @@ body, .header {
     background-color: blue;
     transition: all 0.4s ease-out;
 }
-/* Separate CSS for vision-mission section */
-.vision-mission {
-    background-color: #f2f2f2;
-    padding: 30px;
-    text-align: center;
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    background-image: url('bg3.jpg'); /* Replace 'bg3.jpg' with the path to your background image */
-    background-size: cover; /* Cover the entire div */
-    background-position: center center; /* Center align the background image */
-    margin-top: 150px;
-}
-
-/* Adjusted margin top for smaller screens */
-@media screen and (max-width: 480px) {
-    .vision-mission {
-        margin-top: 100px; /* Adjust as needed for smaller screens */
-    }
-}
-
-
-.vision-mission .left-content,
-.vision-mission .right-content {
-    max-width: 45%; /* Adjusted max-width for responsiveness */
-}
-
-.vision-mission h2 {
-    margin-bottom: 10px;
-}
-
-.vision-mission p {
-    line-height: 1.6;
-    margin-bottom: 20px;
-    font-weight: bold;
-    font-family: Poppins, sans-serif;
-}
-
-.vision-mission img {
-    width: 255px;
-    height: 255px;
-    margin-right: 20px;
-}
-.left-content h2{
-    color: #000;
-}
-.left-content p{
+.heading-1{
+    margin-left: 40px;
+    margin-top: 180px;;
     color: black;
-}
-.right-content h2{
-    color: white;
-
-}
-.right-content p{
-    color: white;
+    font-weight: bold;
+    text-align: center;
 }
 .newsletter-button
     {
@@ -341,150 +291,194 @@ body, .header {
         color: white;
         font-size: 1rem;
     }
-    @media screen and (max-width: 480px) {
-    .vision img,
-    .mission img {
-        max-width: 80%;
-        display: block;
-        margin: 0 auto 10px; /* Center the images horizontally */
-    }
-
-    .vision h2,
-    .mission h2 {
-        margin: 0 auto 10px; /* Center the headers horizontally */
-        text-align: center; /* Center the text within the headers */
-    }
-
-    .vision p,
-    .mission p {
-        font-size: 14px;
-        text-align: justify;
-        margin: 0 10px;
-        width: 100%;
-        line-height: 1.5;
-    }
-
-    .paragraph-container {
-        width: 220%;
-        margin: 0 auto;
-        padding: 0 10px;
-    }
-
-    .paragraph-container p {
-        font-size: 14px;
-        text-align: justify;
-        margin: 0;
-        line-height: 1.5;
-    }
-
-    .vision,
-    .mission {
-        text-align: left;
-        width: 100%;
-        margin-bottom: 20px;
-        padding: 0 10px;
-    }
-
-    .vision-mission {
-        display: flex;
+@media screen and (max-width: 480px) {
+    .header {
         flex-direction: column;
-        align-items: flex-start;
+        align-items: center;
+        position: relative;
+    }
+
+    .nav {
+        flex-direction: column;
+        gap: 10px;
+        align-items: center;
+        display: none;
+        position: absolute; /* Keep the menu fixed at its initial position */
+        top: 200px; /* Adjust as needed */
+        left: 0;
+        width: 100%;
+        background-color: #ffffff;
+        padding: 20px 0;
+        box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+        z-index: 9999;
+    }
+
+    .nav.active {
+        display: flex;
+    }
+
+    .button {
+        display: block;
+        width: 100%;
+        box-sizing: border-box;
+        text-align: center;
+        padding: 10px 0;
+    }
+
+    .logo img {
+        width: 280px; /* Set the width of the logo */
+        height: auto;
+        margin-right: 20px;
+    }
+
+    .logo {
+        position: relative;
+        display: flex;
+        align-items: center;
+        margin-bottom: 20px; /* Add margin to create space between logo and buttons */
+    }
+
+    .left-content,
+    .right-content {
+        max-width: 90%;
+    }
+
+    .left-content {
+        order: 2;
+    }
+
+    .right-content {
+        order: 1;
+    }
+
+    .menu-button {
+        display: block;
+        cursor: pointer;
+        position: absolute; /* Keep the menu button fixed at its initial position */
+        top: 80px; /* Adjust as needed */
+        right: 20px; /* Adjust as needed */
+        transform: translateY(-50%);
+        z-index: 10000;
+    }
+
+    .line {
+        width: 30px;
+        height: 3px;
+        background-color: #000;
+        margin: 6px 0;
+        transition: 0.4s;
+    }
+
+    .menu-button.active .line:nth-child(1) {
+        transform: rotate(-45deg) translate(-5px, 6px);
+    }
+
+    .menu-button.active .line:nth-child(2) {
+        opacity: 0;
+    }
+
+    .menu-button.active .line:nth-child(3) {
+        transform: rotate(45deg) translate(-6px, -8px);
+    }
+
+    /* Show the navigation when the hamburger menu is active */
+    .menu-button.active + .nav {
+        display: flex;
     }
 }
 
-    
-    @media screen and (max-width: 480px) {
-        .header {
-            flex-direction: column;
-            align-items: center;
-            position: relative;
-        }
-    
-        .nav {
-            flex-direction: column;
-            gap: 10px;
-            align-items: center;
-            display: none;
-            position: absolute; /* Keep the menu fixed at its initial position */
-            top: 200px; /* Adjust as needed */
-            left: 0;
-            width: 100%;
-            background-color: #ffffff;
-            padding: 20px 0;
-            box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
-            z-index: 9999;
-        }
-    
-        .nav.active {
-            display: flex;
-        }
-    
-        .button {
-            display: block;
-            width: 100%;
-            box-sizing: border-box;
-            text-align: center;
-            padding: 10px 0;
-        }
-    
-        .logo img {
-            width: 280px; /* Set the width of the logo */
-            height: auto;
-            margin-right: 20px;
-        }
-    
-        .logo {
-            position: relative;
-            display: flex;
-            align-items: center;
-            margin-bottom: 20px; /* Add margin to create space between logo and buttons */
-        }
-    
-        .left-content,
-        .right-content {
-            max-width: 90%;
-        }
-    
-        .left-content {
-            order: 2;
-        }
-    
-        .right-content {
-            order: 1;
-        }
-    
-        .menu-button {
-            display: block;
-            cursor: pointer;
-            position: absolute; /* Keep the menu button fixed at its initial position */
-            top: 80px; /* Adjust as needed */
-            right: 20px; /* Adjust as needed */
-            transform: translateY(-50%);
-            z-index: 10000;
-        }
-    
-        .line {
-            width: 30px;
-            height: 3px;
-            background-color: #000;
-            margin: 6px 0;
-            transition: 0.4s;
-        }
-    
-        .menu-button.active .line:nth-child(1) {
-            transform: rotate(-45deg) translate(-5px, 6px);
-        }
-    
-        .menu-button.active .line:nth-child(2) {
-            opacity: 0;
-        }
-    
-        .menu-button.active .line:nth-child(3) {
-            transform: rotate(45deg) translate(-6px, -8px);
-        }
-    
-        /* Show the navigation when the hamburger menu is active */
-        .menu-button.active + .nav {
-            display: flex;
-        }
-    }
+
+
+.center-heading {
+    font-size: 40px;
+    text-align: center;
+    margin-top: 150px;
+    font-family: 'Poppins', sans-serif;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+}
+
+.offer-box {
+    position: relative;
+    background-color: #ffffff;
+    border: 2px solid #333333;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
+    padding: 20px;
+    margin: 20px;
+    margin-bottom: 20px;
+    width: 455px;
+    height: 300px; /* Set the height of the box */
+    box-sizing: border-box;
+    overflow: hidden;
+}
+
+.box-image {
+    width: 100%; /* Fill the box width */
+    height: 70%; /* Set the height of the image */
+    object-fit: cover; /* Ensure the image covers the box */
+    display: block;
+    margin: 0 auto;
+    transition: opacity 0.3s ease; /* Transition for opacity */
+}
+
+.box-title {
+    font-size: 20px;
+    margin-bottom: 10px;
+    font-family: 'Poppins', sans-serif;
+    text-align: center;
+    transition: opacity 0.3s ease; /* Transition for opacity */
+    color: #000;
+    text-decoration: none;
+}
+/* Override default link styles */
+.offer-box a {
+    color: inherit; /* Inherit color from parent */
+    text-decoration: none; /* Remove underline */
+}
+
+/* Hover effect */
+.offer-box a:hover {
+    opacity: 0.8; /* Adjust opacity on hover */
+}
+
+.box-description {
+    font-size: 14.5px;
+    color: #555555;
+    margin-bottom: 10px;
+    font-family: Poppins, sans-serif;
+    text-align: center;
+    opacity: 0;
+    transition: opacity 0.3s ease; /* Transition for opacity */
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.offer-box:hover .box-image {
+    opacity: 0.2; /* Reduce opacity on hover */
+}
+
+.offer-box:hover .box-title {
+    opacity: 0; /* Hide title on hover */
+}
+
+.offer-box:hover .box-description {
+    opacity: 1; /* Show description on hover */
+    color: #000;
+    font-weight: bold;
+    font-size: medium;
+}
+.box-image.center {
+    width: auto; /* Set image width to auto */
+    height: auto; /* Set image height to auto */
+    max-width: 100%; /* Ensure image doesn't exceed box width */
+    max-height: 100%; /* Ensure image doesn't exceed box height */
+    display: block;
+    margin: 0 auto;
+    transition: opacity 0.3s ease; /* Transition for opacity */
+}
