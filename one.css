@@ -148,7 +148,7 @@ body, .header {
 }
 
 .dropdown-content a:hover {
-    background-color: #c1e1c1;
+    background-color: #D3D3D3;
 }
 .with-dropdown:hover .dropdown-content {
     display: block;
@@ -206,6 +206,36 @@ body, .header {
 .search-bar button:hover {
     background-color: #000;
 }
+.button1 {
+    padding: 5px; /* Add padding to increase hover area */
+}
+
+.dropdown-content1 {
+    display: none;
+    position: absolute;
+    top: 100%; /* Halfway lower */
+    left: 100%; /* To the right of .dropdown-content */
+    transform: translateY(-50%); /* Vertically centering */
+    width: 195px;
+    background-color: #ffffff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    padding: 10px;
+    z-index: 1;
+    white-space: nowrap;
+    transition: opacity 0.3s ease-in-out, visibility 0s linear 0.3s; /* Smooth transition with a delay */
+    opacity: 0; /* Hide content by default */
+    visibility: hidden; /* Hide content by default */
+}
+
+.button1:hover + .dropdown-content1 {
+    display: block;
+    opacity: 1; /* Show dropdown content smoothly */
+    visibility: visible; /* Show dropdown content smoothly */
+}
+
+
+
 
 .footer-content{
     background-color: black;

@@ -51,40 +51,43 @@ body {
   background-position: center;
   height: 100%;
 }
-.slide2 {
-    position: relative;
-    text-align: center;
-}
-
-.slide2 .text-container {
+.slide-content {
     position: absolute;
     top: 50%;
-    left: 10%; /* Adjust as needed */
-    transform: translateY(-50%);
+    left: 30%;
+    transform: translate(-50%, -50%);
     text-align: left;
+    width: 80%;
     color: black;
-    width: 40%; /* Adjust the width of the container */
-}
-
-.slide2 .text {
-    font-size: 32px; /* Increased font size for better visibility */
-    line-height: 1.4; /* Adjust line height as needed */
-    font-family: Poppins, sans-serif ;
-}
-
-.slide2 h1 {
-    font-size: 48px; /* Increased font size for better visibility */
-    color: black;
-    font-family: Poppins, sans-serif ;
-}
-
-.slide2 .numbertext {
-    font-size: 20px; /* Adjust font size as needed */
     text-align: center;
-    margin-top: 20px; /* Adjust as needed */
-    color: #000;
-    font-family: Poppins, sans-serif ;
 }
+
+.slide-content h1 {
+    font-size: 2em;
+    margin-bottom: 10px;
+}
+
+.slide-content p {
+    font-size: 1.2em;
+    margin-bottom: 20px;
+}
+
+.slide-content a {
+    display: inline-block;
+    background-color: #000; /* Change color as needed */
+    color: white; /* Change color as needed */
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+}
+
+.slide-content a:hover {
+    transition: background-color 0.3s ease;
+}
+
+
 .slide3 {
     position: relative;
     text-align: center;
@@ -462,6 +465,35 @@ body, .header {
 .search-bar button:hover {
     background-color: #000;
 }
+.button1 {
+    padding: 5px; /* Add padding to increase hover area */
+}
+
+.dropdown-content1 {
+    display: none;
+    position: absolute;
+    top: 100%; /* Halfway lower */
+    left: 100%; /* To the right of .dropdown-content */
+    transform: translateY(-50%); /* Vertically centering */
+    width: 195px;
+    background-color: #ffffff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    padding: 10px;
+    z-index: 1;
+    white-space: nowrap;
+    transition: opacity 0.3s ease-in-out, visibility 0s linear 0.3s; /* Smooth transition with a delay */
+    opacity: 0; /* Hide content by default */
+    visibility: hidden; /* Hide content by default */
+}
+
+.button1:hover + .dropdown-content1 {
+    display: block;
+    opacity: 1; /* Show dropdown content smoothly */
+    visibility: visible; /* Show dropdown content smoothly */
+}
+
+
 
 .footer-content{
     background-color: black;

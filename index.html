@@ -2,8 +2,9 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>Caring Cactus™</title>
+        <title>Caring Cactus</title>
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <link rel="stylesheet" href="index.css">
         <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css">
         <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -41,7 +42,11 @@
                     <!--<a href="booking.html">Seminars</a>
                     <a href="booking-web.html">Webinars</a>-->
                     <a href="one.html">One-on-One Consultation</a>
-                    <a href="group.html">Group Wellness</a>
+                    <a href="group.html" class="button1">Group Wellness</a>
+                        <div class="dropdown-content1">
+                            <a href="corporate.html">Corporate Wellness</a>
+                            <a href="autism.html">Autism Nutrition</a>
+                        </div>
                     <!--<a href="sub.html">Subscription Program</a>-->
                 </div>
             </div>
@@ -120,27 +125,28 @@
         <a href="corporate.html">
             <img src="img2.jpg" class="slide-image" style="width:100%">
         </a>
-        <div class="text-container">
-            <h1 class="text">Prioritize Employee Wellness</h1>
-            <div class="numbertext-action-container">
-                <div class="numbertext">Cheer up and motivate your employees with our Virtual Corporate Wellness Contests and Curated Health Content.            </div>
-            </div>
+        <div class="slide-content">
+            <h1>Prioritize Employee Wellness</h1>
+            <p>Cheer up and motivate your employees with our <br> Virtual Corporate Wellness Contests and Curated Health Content.</p>
+            <a href="corporate.html" class="slide-link">Take the first step</a>
         </div>
     </div>
+    
+    
+    
     
     
     <div class="mySlides fade slide3">
         <a href="autism.html">
             <img src="img3.jpg" class="slide-image" style="width:100%">
         </a>
-        <div class="text-container">
-            <h1 class="text">Welcome to Neuroverse Connect!</h1>
-            <div class="numbertext-action-container">
-                <div class="numbertext">You're Not Alone: Finding Nutritional Solutions for Autism Together.
-            </div>
-        </div>
+        <div class="slide-content">
+            <h1>Welcome to Neuroverse Connect!</h1>
+            <p>You're Not Alone: Finding Nutritional Solutions for Autism Together.</p>
+            <a href="autism.html" class="slide-link">Explore</a>
         </div>
     </div>
+    
     
     <!-- Next and previous buttons -->
     <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
@@ -223,21 +229,22 @@
     <div class="what-we-offer-section">
         <h2 class="section-heading">What We Offer</h2>
 
-        <!-- Box 1 -->
-        <div class="offer-box top-left">
-            <img src="doc.png" alt="Personalized Guidance" class="box-image">
-            <h3 class="box-title">Personalized Guidance</h3>
-            <p class="box-description">Meet our expert dietitians, your partners in crafting a personalized journey to optimum health. Book a consultation and embark on a culinary adventure designed just for you. Say goodbye to generic diets; your plate, your rules!</p>
-            <!--<button class ="go-to-button"><a href="one.html">Go to →</button></a>-->
-        </div>
-
-        <!-- Box 2 -->
-        <div class="offer-box top-right">
-            <img src="sem.png" alt="Webinars & Seminars" class="box-image">
-            <h3 class="box-title">Webinars & Seminars</h3>
-            <p class="box-description">Join our exclusive sessions led by wellness maestros. Delve into the world of balanced living, nutrition myths, and practical tips that transform everyday meals into extraordinary experiences. Let's make wellness a lifestyle, not a task!</p>
-            <!--<button class="go-to-button"><a href="booking.html">Go to →</button></a>-->
-        </div>
+        <nav class="offer-box bottom-left">
+            <a href="one.html">
+                <img src="doc.png" alt="Personalized Guidance" class="box-image">
+                <h3 class="box-title">Personalized Guidance</h3>
+                <p class="box-description">Meet our expert dietitians, your partners in crafting a personalized journey to optimum health. Book a consultation and embark on a culinary adventure designed just for you. Say goodbye to generic diets; your plate, your rules!</p>
+            </a>
+        </nav>
+        
+        <nav class="offer-box bottom-right">
+            <a href="group.html">
+                <img src="sem.png" alt="Webinars & Seminars" class="box-image">
+                <h3 class="box-title">Webinars & Seminars</h3>
+                <p class="box-description">Join our exclusive sessions led by wellness maestros. Delve into the world of balanced living, nutrition myths, and practical tips that transform everyday meals into extraordinary experiences. Let's make wellness a lifestyle, not a task!</p>
+            </a>
+        </nav>
+        
 
         <nav class="offer-box bottom-left">
             <a href="blog.html">
