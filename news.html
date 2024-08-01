@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Rino Simonetti Memorial School of Nursing</title>
+  <link rel="icon" type="image/jpeg" href="logo.jpg">
+  <link rel="stylesheet" href="news.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+  <header>
+    <div class="top-info">
+      <div class="logo">
+        <a href="index.html"><img src="logo.jpg" alt="Rino Simonetti Memorial School of Nursing Logo"></a>
+      </div>
+      <div class="contact-info">
+        <div class="icon">
+          <i class="fas fa-phone-alt"></i>
+          <span>+91 xxxxx xxxxx</span>
+        </div>
+        <div class="icon">
+          <i class="fa fa-envelope"></i>
+          <span>contact@example.com</span>
+        </div>
+        <div class="icon">
+          <i class="fas fa-map-marker-alt"></i>
+          <span>Tura, Meghalaya 794101</span>
+        </div>
+      </div>
+    </div>
+    <nav>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About Us</a></li>
+        <li><a href="facility.html?section=hospital">Facilities</a></li>
+        <li><a href="#">Admission</a></li>
+        <li><a href="news.html">News and Events</a></li>
+        <li><a href="#">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+  
+  
+  <main>
+    <h1 class="main-heading">News and Events</h1>
+    <div class="news-box">
+      <div class="news-image-container">
+        <img src="news.png" alt="News and Events" class="hoverImage" id="newsImage">
+      </div>
+    </div>
+  </main>
+  
+  
+  
+  
+  
+  <script>
+    window.onload = function() {
+      const imageElement = document.querySelector('.hoverImage');
+      if (imageElement) {
+        const handleMouseMove = (e) => {
+          let rect = imageElement.getBoundingClientRect();
+          let x = e.clientX - rect.left;
+          let y = e.clientY - rect.top;
+  
+          let dx = (x - rect.width / 2) / (rect.width / 2);
+          let dy = (y - rect.height / 2) / (rect.height / 2);
+  
+          imageElement.style.transform = `perspective(500px) rotateY(${dx * 5}deg) rotateX(${-dy * 5}deg)`;
+          imageElement.style.boxShadow = `${dx * 10}px ${dy * 10}px 20px rgba(0, 0, 0, 0.3)`;
+        };
+  
+        const handleMouseLeave = () => {
+          imageElement.style.transform = "perspective(500px) rotateY(0) rotateX(0)";
+          imageElement.style.boxShadow = "0 0 10px rgba(0, 0, 0, 0.5)";
+        };
+  
+        imageElement.addEventListener('mousemove', handleMouseMove);
+        imageElement.addEventListener('mouseleave', handleMouseLeave);
+      }
+    };
+  </script>
+  
+  
+  
+  
+  
+  
+
+
+  <footer class="footer">
+    <div class="footer-segment logo-segment">
+      <img src="logo.jpg" alt="College Logo" class="footer-logo">
+      <div class="footer-college-name">R.S.M School of Nursing</div>
+      <p>R.S.M School of Nursing is recognized by the Indian as well as the Meghalaya Nursing Councils for the revised General Nursing & Midwifery Course of three years.</p>
+    </div>
+    <div class="footer-segment">
+      <h3>Important Links</h3>
+      <ul>
+        <li><a href="about.html">About Us</a></li>
+        <li><a href="#">Facilities</a></li>
+        <li><a href="#">Admission</a></li>
+        <li><a href="#">News and Events</a></li>
+      </ul>
+    </div>
+    <div class="footer-segment">
+      <h3>Get in Touch</h3>
+      <p>New Tura, West Garo Hills, Pin-794001, New Tura West Garo Hills Meghalaya India</p>
+      <p><i class="fas fa-phone"></i> <a href="#">#</a></p>
+      <p><i class="fas fa-map-marker-alt"></i> <a href="#">#</a></p>
+    </div>
+  </footer>
+</body>
+</html>
