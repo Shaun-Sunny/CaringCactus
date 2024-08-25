@@ -18,7 +18,20 @@
   box-sizing: border-box;
 }
 
+body {
+  font-family: "Constantia", "Georgia", serif;
+  margin: 0;
+  padding: 0;
+  line-height: 1.6;
+}
 
+header, footer {
+  font-family: "Arial", sans-serif;
+  background-color: #333;
+  color: #fff;
+  padding: 10px 0;
+  text-align: center;
+}
 
 body {
   font-family: 'Raleway', sans-serif;
@@ -348,18 +361,70 @@ nav ul ul a::before {
 .welcome-section h1 {
   font-family: 'Poppins', sans-serif;
   font-size: 2.5rem;
-  color: var(--primary-color);
+  color: rgba(30, 63, 157, 255);
   margin-bottom: 20px;
 }
 
 .welcome-section p {
   font-family: 'Raleway', sans-serif;
-  font-size: 1.2rem;
-  color: var(--text-color);
+  font-size: 1.5rem;
+  color: black;
   max-width: 800px;
   margin: 0 auto;
   margin-bottom: 20px;
 }
+
+
+
+
+.nurse-call-box {
+  position: relative; /* Position relative for pseudo-element */
+  border: 5px solid lightblue;
+  border-radius: 10px;
+  padding: 20px;
+  box-shadow: 6px 6px 20px rgba(0, 0, 0, 0.6);
+  max-width: 1000px;
+  margin: 20px auto;
+  font-family: 'Poppins', sans-serif;
+  background-color: rgba(255, 255, 255, 0.9); /* Slightly transparent for blending */
+  z-index: 1; /* Ensure content is above the pseudo-element */
+}
+
+.nurse-call-box::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: url('background.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  border-radius: 10px; /* Match the box's border radius */
+  z-index: -1; /* Place the background behind the content */
+  opacity: 0.3; /* Adjust opacity if needed */
+}
+
+.nurse-call-box h2 {
+  font-size: 2rem;
+  margin-bottom: 20px;
+  color: #1e3f9d;
+  text-align: center;
+}
+
+.nurse-call-box ul {
+  font-size: 1.5rem;
+  list-style-type: none;
+  padding-left: 20px;
+}
+
+.nurse-call-box ul li {
+  margin-bottom: 10px;
+}
+
+
+
 
 
 
@@ -370,12 +435,12 @@ nav ul ul a::before {
 
 .core-values-section {
   background-image: url('tab.jpg');
-  background-size: 30%;
+  background-size: 40%; /* Expanded background image size */
   background-repeat: no-repeat;
   background-position: center;
   background-attachment: fixed;
   position: relative;
-  padding: 60px 0;
+  padding: 80px 0; /* Increased padding for more space */
   display: flex;
   justify-content: center;
   align-items: center;
@@ -395,33 +460,33 @@ nav ul ul a::before {
 .content-wrapper {
   position: relative;
   z-index: 2;
-  max-width: 800px;
-  padding: 20px;
+  max-width: 1200px; /* Further increased max-width */
+  padding: 30px; /* Increased padding for more space */
   background-color: rgba(255, 255, 255, 0.6); /* Light background for text readability */
   border-radius: 8px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2); /* Enhanced shadow for better effect */
   text-align: center;
 }
 
 .core-values-section h2 {
   font-family: 'Poppins', sans-serif;
-  font-size: 2.5rem;
-  color: #333;
-  margin-bottom: 20px;
+  font-size: 3rem; /* Increased title size */
+  color: #1e3f9d; /* Updated title color */
+  margin-bottom: 30px; /* Increased bottom margin */
 }
 
 .core-values-columns {
   display: flex;
   justify-content: space-between;
   align-items: stretch; /* Stretch the items to align parallelly */
-  gap: 80px; /* Increased space between the two columns */
+  gap: 100px; /* Further increased space between the two columns */
 }
 
 .core-values-list {
   list-style-type: none;
   padding: 0;
   margin: 0;
-  width: 45%; /* Set width to ensure two columns */
+  width: 50%; /* Increased width for better distribution */
   text-align: left;
   display: flex;
   flex-direction: column;
@@ -431,25 +496,26 @@ nav ul ul a::before {
 
 .core-values-list li {
   font-family: 'Raleway', sans-serif;
-  font-size: 1.2rem;
-  color: #555;
-  margin-bottom: 0; /* Remove bottom margin to ensure even spacing */
+  font-size: 1.4rem; /* Increased text size */
+  color: black;
+  margin-bottom: 10px; /* Increased bottom margin */
   padding-left: 0; /* Remove left padding */
   position: relative;
   display: flex;
   align-items: center;
-  min-height: 60px; /* Ensures equal spacing for all items */
+  min-height: 70px; /* Increased min-height for better spacing */
 }
 
 .core-values-list li i {
-  margin-right: 10px; /* Space between icon and text */
-  color: #0ef; /* Icon color */
-  font-size: 1.5rem; /* Increase icon size for better visibility */
+  margin-right: 15px; /* Increased space between icon and text */
+  color: #000; /* Icon color */
+  font-size: 1.8rem; /* Increased icon size for better visibility */
 }
 
 .core-values-list li::before {
   content: ''; /* Remove the bullet point */
 }
+
 
 
 
@@ -475,8 +541,8 @@ nav ul ul a::before {
   justify-content: center; /* Center align the content */
   text-align: center; /* Center align text in the section */
   min-height: 100vh; /* Ensure full viewport height for background coverage */
-  width: 100vw; /* Full viewport width */
-  overflow: hidden; /* Hide any overflow */
+  width: 100%; /* Full width of the parent container */
+  overflow-x: hidden; /* Prevent horizontal overflow */
   box-sizing: border-box; /* Include padding and border in the element’s total width and height */
 }
 
@@ -494,53 +560,81 @@ nav ul ul a::before {
 .principal-message-section h2 {
   font-family: 'Poppins', sans-serif;
   font-size: 2.5rem;
-  color: #333;
+  color: #1e3f9d; /* Title color */
   margin-bottom: 20px;
 }
 
 .message-content {
   display: flex;
-  align-items: center;
-  justify-content: center; /* Center items horizontally */
-  gap: 20px; /* Reduced space between text and image */
-  flex-wrap: wrap; /* Ensure responsiveness for smaller screens */
+  align-items: center; /* Align items vertically center */
+  gap: 20px; /* Space between text and image */
 }
 
 .message-text {
-  max-width: 60%; /* Adjust width as needed */
-  text-align: center; /* Center align text */
+  display: flex;
+  flex-direction: column; /* Stack items vertically */
+  justify-content: center; /* Center the content vertically */
+  flex: 1 1 60%; /* Allow text to take up 60% of the width, flexible */
+  text-align: left; /* Left align text for better readability */
 }
 
 .message-text h3 {
-  font-family: 'Raleway', sans-serif;
+  font-family: 'Times New Roman', serif;
   font-size: 1.6rem; /* Adjusted font size for quote */
-  color: #555;
+  color: black; /* Black text color */
   font-style: italic; /* Italic style for quote */
-  margin-bottom: 10px;
+  margin: 0; /* Remove margin */
+  text-align: left; /* Left align the quote */
+  white-space: nowrap; /* Prevent the quote from wrapping to a new line */
+  overflow: hidden; /* Hide overflow text */
+  text-overflow: ellipsis; /* Add ellipsis if the text is too long */
+  display: flex; /* Enable flexbox for alignment */
+  align-items: center; /* Center align items vertically */
+}
+
+.message-text h3:last-of-type {
+  font-size: 1.1rem; /* Adjusted size for the author */
+  text-align: right; /* Right align the author */
+  margin-top: 10px; /* Reduced spacing between quote and author */
+  display: block; /* Ensure the author is on its own line */
+  white-space: nowrap; /* Prevent wrapping */
 }
 
 .message-text p {
   font-family: 'Raleway', sans-serif;
   font-size: 1.2rem;
-  color: #555;
+  color: black; /* Black text color */
   line-height: 1.6; /* Improve readability with line height */
-  margin: 0; /* Remove bottom margin */
+  margin-top: 20px; /* Increased space above the paragraph */
+  margin-bottom: 0; /* Remove bottom margin */
 }
 
 .message-image {
   position: relative;
+  display: flex;
+  align-items: center; /* Center align image vertically */
+  flex: 0 1 35%; /* Allow image to take up 35% of the width, flexible */
+  justify-content: center; /* Center align image horizontally */
 }
 
 .message-image img {
-  width: 300px; /* Adjusted size of the image */
+  width: 350px; /* Increased size of the image */
   height: auto; /* Maintain aspect ratio */
   border-radius: 8px; /* Rounded corners for image */
   transition: transform 0.3s ease; /* Smooth transition for the hover effect */
+  position: relative;
+  top: 20px; /* Lower the image to match the center of the text */
 }
 
 .message-image img:hover {
   transform: scale(1.1); /* Scale image on hover */
 }
+
+
+
+
+
+
 
 
 
@@ -556,7 +650,7 @@ nav ul ul a::before {
   position: fixed; /* Fixed positioning for the button */
   bottom: 40px; /* Distance from the bottom */
   right: 40px; /* Distance from the right */
-  background-color: var(--primary-color); /* Button background color */
+  background-color: rgba(30,63,157,255); /* Button background color */
   color: white; /* Button text color */
   border: none; /* Remove border */
   border-radius: 50%; /* Rounded shape */
@@ -573,7 +667,7 @@ nav ul ul a::before {
 }
 
 #scrollToTopBtn:hover {
-  background-color: #0c9; /* Darker shade on hover */
+  background-color: #587ab9; /* Darker shade on hover */
 }
 
 #scrollToTopBtn:active {
@@ -602,18 +696,20 @@ nav ul ul a::before {
   padding: 20px 0;
   text-align: center;
   display: flex;
-  justify-content: space-around;
+  justify-content: space-between; /* Align segments evenly */
   flex-wrap: wrap;
 }
 
 .footer-segment {
   flex: 1;
   margin: 20px;
-  max-width: 300px;
+  max-width: 280px;
+  min-width: 200px;
 }
 
 .logo-segment {
   text-align: left;
+  max-width: 100%;
 }
 
 .footer-logo {
@@ -675,8 +771,8 @@ nav ul ul a::before {
   border-radius: 8px; /* Rounded corners for the map */
   overflow: hidden; /* Ensures the map does not overflow */
   max-width: 100%; /* Ensures the map is responsive */
-  width: 380px; /* Set a fixed width */
-  height: 200px; /* Set a fixed height */
+  width: 230px; /* Decreased the fixed width */
+  height: 160px; /* Decreased the fixed height */
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Optional: Add a subtle shadow */
 }
 
@@ -685,6 +781,7 @@ nav ul ul a::before {
   height: 100%; /* Makes the map responsive to container height */
   border: none; /* Removes the default border */
 }
+
 
 .footer-segment .phone-number {
   color: white; /* Set the phone number color to white */
@@ -695,6 +792,82 @@ nav ul ul a::before {
 .footer-segment .phone-number:hover {
   color: white; /* Ensures no color change on hover */
   text-decoration: none; /* No underline on hover */
+}
+
+/* Gallery Styling */
+.gallery-segment {
+  max-width: 100%;
+  text-align: left;
+}
+
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+}
+
+.gallery-item {
+  position: relative;
+  width: 100%;
+  padding-bottom: 100%; /* 1:1 Aspect Ratio */
+  overflow: hidden;
+  border-radius: 5px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  background-color: #333; /* Fallback background */
+}
+
+.gallery-image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Ensures the image fills the square */
+  cursor: pointer;
+  transition: transform 0.3s ease;
+  border-radius: 5px;
+  overflow: hidden;
+}
+
+.gallery-image:hover {
+  transform: scale(1.05);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Fullscreen Modal */
+.fullscreen-modal {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.9);
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+
+.fullscreen-modal img {
+  max-width: 90%;
+  max-height: 90%;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+  border-radius: 8px;
+}
+
+.fullscreen-modal .close {
+  position: absolute;
+  top: 20px;
+  right: 30px;
+  color: white;
+  font-size: 40px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: color 0.3s ease;
+}
+
+.fullscreen-modal .close:hover {
+  color: red;
 }
 
 

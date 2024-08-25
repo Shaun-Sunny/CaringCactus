@@ -10,8 +10,12 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
 
 </head>
+<marquee style="background-color: rgba(30, 63, 157, 255); padding: 5px 0; font-family: 'Poppins', sans-serif; color: white; font-size: 1.2rem; width: 100%; white-space: nowrap;" behavior="scroll" scrollamount="6" direction="left">
+  Rino Simonetti Memorial School of Nursing,  New Tura, West Garo Hills, Meghalaya
+</marquee>
+
 <body>
-  <header>
+  <header>    
     <div class="top-info">
       <div class="logo">
         <a href="index.html"><img src="logo.jpg" alt="Rino Simonetti Memorial School of Nursing Logo"></a>
@@ -54,7 +58,6 @@
         <li>
           <a href="">Co-Curricular Activities</a>
           <ul>
-            <li><a href="#">Professional Development Activities</a></li>
             <li><a href="#">Student Welfare Activities</a></li>
             <li><a href="#">SNA</a></li>
           </ul>
@@ -147,6 +150,13 @@ window.addEventListener('scroll', () => {
 </div>
 
 
+<div class="nurse-call-box">
+  <h2>A Nurse's Call: Compassionate Care, Support Healing, Inspire Hope.</h2>
+  <ul>
+      <li>&#x27A4; Compassionate Caregivers: Nurses are the epitome of compassion, providing care that goes beyond medical treatments to comfort and support patients in their times of need.</li>
+      <li>&#x27A4; Empathy in Action: Nurses embody empathy in action, putting themselves in their patients' shoes and providing care with genuine understanding and kindness.</li>
+  </ul>
+</div>
 
 
 
@@ -184,8 +194,8 @@ window.addEventListener('scroll', () => {
     <h2>Message from Principal’s Desk</h2>
     <div class="message-content">
       <div class="message-text">
-        <h3>"The best way to find yourself is to lose yourself in the service of others"</h3>
-        <h3>- Mahatma Gandhi</h3>
+        <h3 class="quote">"The best way to find yourself is to lose yourself in the service of others"</h3>
+        <h3 class="author">- Mahatma Gandhi</h3>
         <p>
           RSM School of Nursing is a distinguished institution rooted in the rich tradition of Catholic values. We are dedicated to fostering excellence in nursing education, research, and clinical practice. Our commitment to providing a supportive and innovative learning environment ensures that our students are equipped with the knowledge, skills, and values necessary to excel in the dynamic field of healthcare. We embrace the values of compassion, service, and excellence, inspired by the teachings of Jesus, the great teacher. As the Principal of this institution, I am honored to nurture both the minds and spirits of our students. Our rigorous academic programs empower our students to make a meaningful difference in the lives of those they care for. We believe that healthcare is not merely a profession but a sacred calling, and we are committed to instilling in our students a deep sense of responsibility towards even the most vulnerable members of our society.
         </p>
@@ -196,6 +206,7 @@ window.addEventListener('scroll', () => {
     </div>
   </div>
 </div>
+
 
 
 
@@ -249,9 +260,50 @@ scrollToTopBtn.addEventListener("click", function() {
 <footer class="footer">
   <div class="footer-segment logo-segment">
     <img src="logo.jpg" alt="College Logo" class="footer-logo">
-    <div class="footer-college-name">R.S.M School of Nursing</div>
+    <div class="footer-college-name">Rino Simonetti Memorial School of Nursing</div>
     <p>R.S.M School of Nursing is recognized by the Indian as well as the Meghalaya Nursing Councils for the revised General Nursing & Midwifery Course of three years.</p>
   </div>
+
+  <!-- Gallery Section -->
+  <div class="footer-segment gallery-segment">
+    <h3>Gallery</h3>
+    <div class="gallery-grid">
+      <div class="gallery-item">
+        <img src="1.jpg" alt="Gallery Image 1" class="gallery-image">
+      </div>
+      <div class="gallery-item">
+        <img src="2.jpg" alt="Gallery Image 2" class="gallery-image">
+      </div>
+      <div class="gallery-item">
+        <img src="3.jpg" alt="Gallery Image 3" class="gallery-image">
+      </div>
+      <div class="gallery-item">
+        <img src="4.jpg" alt="Gallery Image 4" class="gallery-image">
+      </div>
+      <div class="gallery-item">
+        <img src="5.jpg" alt="Gallery Image 5" class="gallery-image">
+      </div>
+      <div class="gallery-item">
+        <img src="6.jpg" alt="Gallery Image 6" class="gallery-image">
+      </div>
+      <div class="gallery-item">
+        <img src="7.jpg" alt="Gallery Image 7" class="gallery-image">
+      </div>
+      <div class="gallery-item">
+        <img src="8.jpg" alt="Gallery Image 8" class="gallery-image">
+      </div>
+      <div class="gallery-item">
+        <img src="9.jpg" alt="Gallery Image 9" class="gallery-image">
+      </div>
+    </div>
+    <!-- Fullscreen Modal -->
+    <div class="fullscreen-modal">
+      <span class="close">&times;</span>
+      <img class="fullscreen-image" alt="Fullscreen View">
+    </div>
+  </div>
+  <!-- End of Gallery Section -->
+
   <div class="footer-segment">
     <h3>Important Links</h3>
     <ul>
@@ -262,6 +314,7 @@ scrollToTopBtn.addEventListener("click", function() {
       <li><a href="hostel.html">Hostel</a></li>
     </ul>
   </div>
+
   <div class="footer-segment">
     <h3>Get in Touch</h3>
     <p>New Tura, West Garo Hills, Pin-794001, New Tura West Garo Hills Meghalaya India</p>
@@ -276,6 +329,45 @@ scrollToTopBtn.addEventListener("click", function() {
     </div>
   </div>
 </footer>
+
+
+
+
+<script>
+  document.addEventListener("DOMContentLoaded", function() {
+    const galleryImages = document.querySelectorAll(".gallery-image");
+    const modal = document.querySelector(".fullscreen-modal");
+    const modalImg = modal.querySelector(".fullscreen-image");
+    const closeModal = modal.querySelector(".close");
+
+    galleryImages.forEach(image => {
+      image.addEventListener("click", function () {
+        modal.style.display = "flex";
+        modalImg.src = this.src;
+      });
+    });
+
+    closeModal.addEventListener("click", function () {
+      modal.style.display = "none";
+    });
+
+    modal.addEventListener("click", function (e) {
+      if (e.target !== modalImg) {
+        modal.style.display = "none";
+      }
+    });
+  });
+</script>
+
+
+
+
+
+
+
+
+
+
 
 
 
